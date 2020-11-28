@@ -1,0 +1,21 @@
+image: node:latest
+stages:
+  - install
+  - lint
+install-dependencies:
+  stage: install
+  script:
+    - npm install
+  artifacts:
+    expire_in: 1hr
+    paths:
+      - node_modules/
+  cache:
+    paths:
+      - node_modules/
+test-lint:
+  stage: lint
+  dependencies:
+    - install-dependencies
+  script:
+    - npm run lint
