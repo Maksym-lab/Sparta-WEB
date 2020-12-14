@@ -1,13 +1,6 @@
 import React from 'react';
-import { Router } from '@reach/router';
-import Home from '../pages/Home';
-import NotFound from '../pages/NotFound';
+import './App.css';
 const App = () => {
-  return (
-    <Router>
-      <NotFound default />
-      <Home path='/' />
-    </Router>
-  )
-}
+  return <div className="App" />;
+};
 export default App;
