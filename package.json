@@ -26,7 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "",
-    "lint": "standard",
+    "lint": "eslint src/",
     "eject": "react-scripts eject"
   },
   "repository": {
@@ -64,8 +64,9 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-prettier": "^6.11.0",
+    "eslint": "^7.3.1",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4"
   },
   "license": "GPL-3.0"
