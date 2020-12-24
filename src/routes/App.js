@@ -1,13 +1,23 @@
-import React from 'react';
-import { Router } from '@reach/router';
-import Home from '../pages/Home';
-import NotFound from '../pages/NotFound';
-const App = () => {
+import React from 'react'
+import logo from '../logo.svg'
+import './App.css'
+export const App = () => {
   return (
-    <Router>
-      <NotFound default />
-      <Home path="/" />
-    </Router>
-  );
-};
-export default App;
+    <div className='App'>
+      <header className='App-header'>
+        <img src={logo} className='App-logo' alt='logo' />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className='App-link'
+          href='https:
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  )
+}
