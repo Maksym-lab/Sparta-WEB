@@ -26,7 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "",
-    "lint": "standard",
+    "lint": "eslint src/",
     "eject": "react-scripts eject"
   },
   "repository": {
@@ -64,10 +64,13 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.0.5",
-    "standard": "^14.3.4"
+    "eslint-plugin-react": "^7.20.3"
   },
   "license": "GPL-3.0"
 }
