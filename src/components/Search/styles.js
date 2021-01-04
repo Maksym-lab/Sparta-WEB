@@ -1,5 +1,5 @@
-import styled from "styled-components";
-export const Container = styled.div`
+import styled from 'styled-components';
+const Container = styled.div`
   display: flex;
   align-items: center;
   width: 293px;
@@ -19,4 +19,5 @@ export const Container = styled.div`
     font-size: 14px;
     margin-left: 10px;
   }
-`
+`;
+export default Container;
