@@ -1,5 +1,4 @@
 import React from 'react';
-import useNearScreen from '../../hooks/useNearScreen';
 import {
   Article,
   Container,
@@ -20,14 +19,13 @@ import {
   AddressTitle,
   Address,
 } from './styles';
-import testPhoto from '../images/TestPhotoPreviewCard.png';
-import heart from '../images/Heart.svg';
-import avatar from '../images/TestAvatarPhoto.png';
+import testPhoto from '../../assets/images/TestPhotoPreviewCard.png';
+import heart from '../../assets/images/Heart.svg';
+import avatar from '../../assets/images/TestAvatarPhoto.png';
 const PreviewCard = () => {
-  const [show, ref] = useNearScreen();
   return (
-    <Article ref={ref}>
-      {show && (
+    <>
+      <Article>
         <Container>
           <ContainerImage>
             <OverlayHeart>
@@ -53,8 +51,8 @@ const PreviewCard = () => {
             </AddressContainer>
           </Description>
         </Container>
-      )}
-    </Article>
+      </Article>
+    </>
   );
 };
 export default PreviewCard;
