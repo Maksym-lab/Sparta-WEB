@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 export const Article = styled.article`
   border-radius: 8px;
+  background-color: #f2f2f2;
   width: 100%;
   height: 100px;
   max-width: 294px;
-  background-color: #f2f2f2;
 `;
 export const ContainerImage = styled.div`
   position: relative;
