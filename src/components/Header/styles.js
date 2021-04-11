@@ -2,6 +2,7 @@ import styled from 'styled-components';
 export const HeaderBar = styled.header`
   position: fixed;
   z-index: 1;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
