@@ -4,7 +4,5 @@ const Grid = styled.div`
   grid-template-rows: repeat(1, 1fr);
   column-gap: 8px;
   row-gap: 5px;
-  margin-top: -40px;
-  padding: 0 15px;
 `;
 export default Grid;

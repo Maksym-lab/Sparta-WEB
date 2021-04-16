@@ -8,11 +8,6 @@ const PreviewCardContainer = () => {
         <PreviewCard />
         <PreviewCard />
         <PreviewCard />
-        <PreviewCard />
-        <PreviewCard />
-        <PreviewCard />
-        <PreviewCard />
-        <PreviewCard />
       </Grid>
     </>
   );
