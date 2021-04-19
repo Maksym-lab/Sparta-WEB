@@ -3,8 +3,8 @@ export const Article = styled.article`
   border-radius: 8px;
   width: 100%;
   height: 100px;
-  max-width: 294px;
   background-color: #f2f2f2;
+  cursor: pointer;
 `;
 export const ContainerImage = styled.div`
   position: relative;
@@ -22,6 +22,9 @@ export const ImageHost = styled.img`
   width: 22px;
 `;
 export const ImageRoom = styled.img`
+  -webkit-box-shadow: 13px 0px 6px -9px rgba(217, 217, 217, 1);
+  -moz-box-shadow: 13px 0px 6px -9px rgba(217, 217, 217, 1);
+  box-shadow: 13px 0px 6px -9px rgba(217, 217, 217, 1);
   border-radius: 8px;
   height: 100px;
 `;
@@ -73,6 +76,7 @@ export const Price = styled.strong`
 export const AddressContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 12px;
   width: 100%;
 `;
 export const AddressTitle = styled.p`
