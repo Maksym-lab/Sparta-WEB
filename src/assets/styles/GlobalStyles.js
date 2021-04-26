@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-const GlobalStyles = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,4 +9,4 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 `;
-export default GlobalStyles;
+export default GlobalStyle;
