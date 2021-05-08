@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-export const MainImage = styled.div`
+export const MainImage = styled.figure`
   position: relative;
   width: 100%;
+  margin: 0 auto;
   img {
     width: 100%;
   }
@@ -41,12 +42,6 @@ export const OverlayPrice = styled.div`
     color: #f6f6f6;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   }
-`;
-export const CarouselContainer = styled.div`
-  margin: auto;
-  margin-top: -35px;
-  width: 100%;
-  max-width: 90%;
 `;
 export const Container = styled.div`
   margin: auto;
@@ -172,7 +167,7 @@ export const Title = styled.div`
     }
   }
 `;
-export const AddressAndReferencesDesktop = styled.div`
+export const AddressAndReferencesDesktop = styled.address`
   @media (min-width: 1025px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -185,7 +180,7 @@ export const AddressAndReferencesDesktop = styled.div`
 export const DescriptionAndImageDesktop = styled.div`
   @media (min-width: 1025px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
     column-gap: 10px;
     margin: 30px 0px;
     img {
@@ -199,7 +194,7 @@ export const DescriptionAndImageDesktop = styled.div`
 export const TheRoomAndImageDesktop = styled.div`
   @media (min-width: 1025px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
     column-gap: 10px;
     margin: 30px 0px;
   }
@@ -207,7 +202,7 @@ export const TheRoomAndImageDesktop = styled.div`
 export const AtmosphereDesktop = styled.div`
   @media (min-width: 1025px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
     column-gap: 10px;
     margin: 30px 0px;
   }
@@ -250,7 +245,7 @@ export const Address = styled.div`
 export const Red = styled.p`
   color: #eb5757;
 `;
-export const Section = styled.div`
+export const Section = styled.article`
   p {
     color: #404040;
   }
@@ -263,7 +258,7 @@ export const Subtitle = styled.h3`
     margin-top: 50px;
   }
 `;
-export const GridIcons = styled.div`
+export const GridIcons = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 10px;
@@ -271,44 +266,45 @@ export const GridIcons = styled.div`
   @media (min-width: 1025px) {
     margin-right: 50px;
   }
-  p {
-    margin: 0;
-    text-align: center;
-    font-size: 1em;
-    font-weight: bold;
-  }
   @media (min-width: 768px) and (max-width: 1024px) {
     grid-template-columns: repeat(6, 1fr);
   }
 `;
 export const GridEach = styled.div`
   display: grid;
-  grid-template-columns: [one] 1fr [two] 1fr [tree] 1fr [four] 1fr [five] 1fr [six] 1fr [seven] 1fr [eight] 1fr [nine] 1fr [ten];
-  grid-template-rows: [oneRow] 1fr [twoRow] 1fr [treeRow] 1fr [fourRow] 1fr [fiveRow] 1fr [sixRow] 1fr [sevenRow] 1fr [eightRow] 1fr [nineRow] 1fr [tenRow] 1fr [elevenRow] 1fr [twelveRow];
-  width: 60px;
-  margin: auto;
+  grid-template-columns: repeat(10, 7px);
+  grid-template-rows: repeat(12, 7px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 5px;
+  @media (max-width: 460px) {
+    margin: 0;
+  }
   img:nth-child(1) {
-    grid-column-start: one;
-    grid-column-end: ten;
-    grid-row-start: oneRow;
-    grid-row-end: tenRow;
-    width: 100%;
+    grid-area: 1 / 1 / 9 / 10;
+    width: 55px;
   }
   img:nth-child(2) {
-    grid-column-start: nine;
-    grid-column-end: ten;
-    grid-row-start: tenRow;
-    grid-row-end: twelveRow;
-    width: 150%;
+    grid-area: 9 / 8 / 11 / 11;
+    width: 8px;
     cursor: pointer;
   }
+  p {
+    grid-area: 11 / 1 / 13 / 11;
+    margin: 0;
+    font-size: 0.9em;
+    @media (max-width: 460px) {
+      font-size: 0.8em;
+    }
+  }
 `;
-export const TagsInterest = styled.div`
+export const TagsInterest = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 10px;
   row-gap: 10px;
-  div {
+  padding: 0;
+  li {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -320,6 +316,7 @@ export const TagsInterest = styled.div`
     background-color: #f6f6f6;
     font-weight: bold;
     font-size: 0.7em;
+    list-style: none;
   }
   @media (min-width: 768px) and (max-width: 1024px) {
     grid-template-columns: repeat(5, 1fr);
@@ -328,7 +325,7 @@ export const TagsInterest = styled.div`
     margin-top: 60px;
   }
 `;
-export const ContactButtons = styled.div`
+export const ContactButtons = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -343,6 +340,7 @@ export const ContactButtons = styled.div`
     width: 100%;
     height: 40px;
     background-color: #eb5757;
+    font-size: 1.1em;
     color: white;
     outline: none;
     cursor: pointer;

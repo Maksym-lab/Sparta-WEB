@@ -15,7 +15,6 @@ import {
   GridEach,
   TagsInterest,
   ContactButtons,
-  CarouselContainer,
   HostTab,
   FirstContactInfoTabAndDesktop,
   OverlayPrice,
@@ -54,9 +53,7 @@ const Detail = () => {
           </OverlayPrice>
           <img src={testMainImageDetail} alt="room" />
         </MainImage>
-        <CarouselContainer>
-          <Carousel />
-        </CarouselContainer>
+        <Carousel />
         <Container>
           <FirstContactInfo>
             <div>
@@ -82,7 +79,7 @@ const Detail = () => {
               <p>Diana Cooper</p>
             </HostTab>
             <div>
-              <p>Created: 10/28/12</p>
+              <time>Created: 10/28/12</time>
               <p>Availability: 7/11/19</p>
             </div>
             <Social>
@@ -135,76 +132,56 @@ const Detail = () => {
                 </p>
               </Section>
               <GridIcons>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
+                </GridEach>
               </GridIcons>
             </div>
             <div>
@@ -221,76 +198,56 @@ const Detail = () => {
                 <Subtitle>The room:</Subtitle>
               </Section>
               <GridIcons>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
-                <div>
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                  </GridEach>
+                </GridEach>
+                <GridEach>
+                  <img src={closetIcon} alt="icon" />
+                  <img src={infoIcon} alt="more info about XXX" />
                   <p>4 rooms</p>
-                </div>
+                </GridEach>
               </GridIcons>
             </div>
           </TheRoomAndImageDesktop>
@@ -306,13 +263,13 @@ const Detail = () => {
               </p>
             </Section>
             <TagsInterest>
-              <div>Pet friendly</div>
-              <div>Pet friendly</div>
-              <div>Pet friendly</div>
-              <div>Pet friendly</div>
-              <div>Pet friendly</div>
-              <div>Pet friendly</div>
-              <div>Pet friendly</div>
+              <li>Pet friendly</li>
+              <li>Pet friendly</li>
+              <li>Pet friendly</li>
+              <li>Pet friendly</li>
+              <li>Pet friendly</li>
+              <li>Pet friendly</li>
+              <li>Pet friendly</li>
             </TagsInterest>
           </AtmosphereDesktop>
           <ContactButtons>
