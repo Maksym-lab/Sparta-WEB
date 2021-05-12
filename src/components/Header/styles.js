@@ -6,9 +6,9 @@ export const HeaderBar = styled.header`
   -webkit-box-shadow: 0px 0px 8px 0px rgba(38, 37, 38, 1);
   -moz-box-shadow: 0px 0px 8px 0px rgba(38, 37, 38, 1);
   box-shadow: 0px 0px 8px 0px rgba(38, 37, 38, 1);
-  width: 100%;
-  max-width: 1920px;
+  width: calc(100% - 24px);
   height: 32px;
+  padding: 0px 13px;
   background: #262526;
   @media screen and (min-width: 768px) {
     height: 40px;

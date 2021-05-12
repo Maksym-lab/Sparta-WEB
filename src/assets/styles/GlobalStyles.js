@@ -7,11 +7,6 @@ const GlobalStyles = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1em;
-  }
-  #root {
-    margin: auto;
-    max-width: 1920px;
   }
 `;
 export default GlobalStyles;
