@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 export const Container = styled.div`
-  width: 281px;
+  width: 90%;
   margin: 0 auto;
-  & .carousel-prev, .carousel-next {
+  margin-top: -50px;
+  & .carousel-prev,
+  .carousel-next {
     color: darkslategrey;
     width: 3rem;
   }
@@ -15,6 +17,6 @@ export const Container = styled.div`
 `;
 export const Img = styled.figure`
   & img {
-    width: 55px;
+    width: 90%;
   }
 `;

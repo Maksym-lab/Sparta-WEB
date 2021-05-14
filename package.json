@@ -18,11 +18,13 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^3.10.0",
     "react-scripts": "3.4.1",
+    "serve": "^11.3.2",
     "styled-components": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "server": "serve -s build",
     "test": "CI=true react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "lint": "eslint src/",
@@ -73,13 +75,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.3",
     "react-test-renderer": "^16.13.1"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/index.js",
-      "!src/serviceWorker.js"
-    ]
   },
   "license": "GPL-3.0"
 }
