@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 305px);
-  column-gap: 8px;
+  grid-template-columns: repeat(auto-fill, ${({ theme }) => theme.grid305});
+  column-gap: ${({ theme }) => theme.size8};
   row-gap: 3vw;
   justify-content: space-around;
-  max-width: 648px;
-  margin: -32px auto 0;
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill, 319px);
-    row-gap: 35px;
+  max-width: ${({ theme }) => theme.cardsContainerTablet};
+  margin: -32px auto ${({ theme }) => theme.size0};
+  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
+    grid-template-columns: repeat(auto-fill, ${({ theme }) => theme.grid320});
+    row-gap: ${({ theme }) => theme.size34};
     justify-content: space-between;
-    margin: -22px auto 0;
+    margin: -22px auto ${({ theme }) => theme.size0};
   }
-  @media screen and (min-width: 1024px) {
-    grid-template-columns: repeat(auto-fill, 414px);
-    max-width: 875px;
-    margin: -80px auto 0;
+  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
+    grid-template-columns: repeat(auto-fill, ${({ theme }) => theme.grid414});
+    max-width: ${({ theme }) => theme.cardsContainerDesktop};
+    margin: -80px auto ${({ theme }) => theme.size0};
   }
 `;
 export default Grid;
