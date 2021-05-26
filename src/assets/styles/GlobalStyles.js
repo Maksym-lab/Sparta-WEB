@@ -1,29 +1,17 @@
-import { createGlobalStyle, css } from 'styled-components';
-export const paragraph = css`
-  color: ${({ theme }) => theme.black};
-  font-size: ${({ theme }) => theme.size12};
-  line-height: ${({ theme }) => theme.lineSpacing};
-`;
-export const title = css`
-  color: ${({ theme }) => theme.darkGray};
-`;
+import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
-  *{
-    margin:${({ theme }) => theme.size0};
-    padding:${({ theme }) => theme.size0};
-    box-sizing: border-box;
   body {
-    margin: ${({ theme }) => theme.size0};
-    font-family: 'Cabin', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 1em;
   }
-  }
-  p{
-    ${paragraph}
-  }
-  h1,h2,h3,h4,h5,h6{
-    ${title}
+  #root {
+    margin: auto;
+    max-width: 1920px;
   }
 `;
 export default GlobalStyles;

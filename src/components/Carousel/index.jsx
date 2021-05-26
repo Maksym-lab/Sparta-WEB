@@ -15,17 +15,47 @@ const Carousel = () => {
     <Container ref={ref}>
       <Slider
         {...settings}
-        prevArrow={<MdKeyboardArrowLeft tabIndex="0" title="Arrow left" aria-label="Arrow left" alt="arrow left" />}
-        nextArrow={<MdKeyboardArrowRight tabIndex="0" title="Arrow right" aria-label="Arrow right" alt="arrow right" />}
+        prevArrow={
+          <MdKeyboardArrowLeft
+            tabIndex="0"
+            title="Arrow left"
+            aria-label="Arrow left"
+            alt="arrow left"
+          />
+        }
+        nextArrow={
+          <MdKeyboardArrowRight
+            tabIndex="0"
+            title="Arrow right"
+            aria-label="Arrow right"
+            alt="arrow right"
+          />
+        }
       >
-        <Img><img src={testPhoto} alt="room preview #" /></Img>
-        <Img><img src={testPhoto} alt="room preview #" /></Img>
-        <Img><img src={testPhoto} alt="room preview #" /></Img>
-        <Img><img src={testPhoto} alt="room preview #" /></Img>
-        <Img><img src={testPhoto} alt="room preview #" /></Img>
-        <Img><img src={testPhoto} alt="room preview #" /></Img>
-        <Img><img src={testPhoto} alt="room preview #" /></Img>
-        <Img><img src={testPhoto} alt="room preview #" /></Img>
+        <Img>
+          <img src={testPhoto} alt="room preview #" />
+        </Img>
+        <Img>
+          <img src={testPhoto} alt="room preview #" />
+        </Img>
+        <Img>
+          <img src={testPhoto} alt="room preview #" />
+        </Img>
+        <Img>
+          <img src={testPhoto} alt="room preview #" />
+        </Img>
+        <Img>
+          <img src={testPhoto} alt="room preview #" />
+        </Img>
+        <Img>
+          <img src={testPhoto} alt="room preview #" />
+        </Img>
+        <Img>
+          <img src={testPhoto} alt="room preview #" />
+        </Img>
+        <Img>
+          <img src={testPhoto} alt="room preview #" />
+        </Img>
       </Slider>
     </Container>
   );

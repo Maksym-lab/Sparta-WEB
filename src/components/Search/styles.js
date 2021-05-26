@@ -2,75 +2,75 @@ import styled from 'styled-components';
 export const SearchContainer = styled.section`
   display: flex;
   flex-direction: column;
-  height: ${({ theme }) => theme.searchHeightContainer};;
-  margin-top: ${({ theme }) => theme.size32};
-  padding: ${({ theme }) => theme.size0} 3%;
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-    margin-top: ${({ theme }) => theme.size40};
+  height: 142px;
+  margin-top: 32px;
+  padding: 0 3%;
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    height: ${({ theme }) => theme.searchHeightDesktop};
-    margin-top: ${({ theme }) => theme.size46};
+  @media screen and (min-width: 1024px) {
+    height: 240px;
+    margin-top: 46px;
   }
 `;
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  margin: ${({ theme }) => theme.size12} auto ${({ theme }) => theme.size0} auto;
-  width: ${({ theme }) => theme.pct100};
-  max-width: ${({ theme }) => theme.cardsContainerTablet};
-  height: ${({ theme }) => theme.size36};
-  border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.black};
-  border-radius: calc(${({ theme }) => theme.size50} + ${({ theme }) => theme.size16});
-  background: ${({ theme }) => theme.white};
-  font-size: ${({ theme }) => theme.size18};
-  color: ${({ theme }) => theme.darkGray};
+  margin: 13px auto 0 auto;
+  width: 100%;
+  max-width: 648px;
+  height: 36px;
+  border: 1px solid #333333;
+  border-radius: 68px;
+  background: #f2f2f2;
+  font-size: 18px;
+  color: #262526;
   & input {
     width: -webkit-fill-available;
     border: none;
     background: transparent;
     outline: none;
-    font-size: ${({ theme }) => theme.size10};
+    font-size: 10px;
   }
   & svg:first-child {
-    font-size: ${({ theme }) => theme.size12};
-    margin-left: ${({ theme }) => theme.size10};
+    font-size: 13px;
+    margin-left: 10px;
   }
   & svg:last-child {
-    margin-right: ${({ theme }) => theme.size14};
+    margin-right: 15px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    margin: ${({ theme }) => theme.size34} auto ${({ theme }) => theme.size0};
+  @media screen and (min-width: 1024px) {
+    margin: 35px auto 0;
     & input {
-      font-size: ${({ theme }) => theme.size12};
+      font-size: 12px;
     }
   }
 `;
 export const Flex = styled.div`
   display: flex;
   justify-content: space-between;
-  width: ${({ theme }) => theme.pct100};
-  max-width: ${({ theme }) => theme.cardsContainerTablet};
-  margin: ${({ theme }) => theme.size16} auto ${({ theme }) => theme.size0};
+  width: 100%;
+  max-width: 648px;
+  margin: 17px auto 0;
   div {
     display: flex;
   }
   button {
     display: flex;
-    margin-right: ${({ theme }) => theme.size4};
-    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.white};
-    border-radius: ${({ theme }) => theme.radiusBtn};
-    padding: ${({ theme }) => theme.size6} ${({ theme }) => theme.size4} ${({ theme }) => theme.size6} ${({ theme }) => theme.size6};
+    margin-right: 4px;
+    border: 0.5px solid white;
+    border-radius: 3px;
+    padding: 6px 4px 6px 6px;
     background: transparent;
     cursor: pointer;
-    font-size: ${({ theme }) => theme.size10};
-    color: ${({ theme }) => theme.white};
+    font-size: 10px;
+    color: white;
     outline: none;
   }
 `;
 export const ImageDown = styled.img`
   align-self: center;
-  margin-left: ${({ theme }) => theme.size8};
+  margin-left: 8px;
 `;
 export const MapIcon = styled.img`
   cursor: pointer;
