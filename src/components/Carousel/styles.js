@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 export const Container = styled.div`
-  width: 90%;
-  margin: 0 auto;
-  margin-top: -50px;
-  & .carousel-prev,
-  .carousel-next {
-    color: darkslategrey;
+  width: ${({ theme }) => theme.mobileContainerCarrousel};
+  margin: ${({ theme }) => theme.size0} auto;
+  & .carousel-prev, .carousel-next {
+    color: ${({ theme }) => theme.darkGray};;
     width: 3rem;
   }
   & .carousel-prev {
@@ -17,6 +15,6 @@ export const Container = styled.div`
 `;
 export const Img = styled.figure`
   & img {
-    width: 90%;
+    width: calc(${({ theme }) => theme.size50}+ ${({ theme }) => theme.size5});
   }
 `;
