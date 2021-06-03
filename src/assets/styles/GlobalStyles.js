@@ -17,6 +17,11 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Cabin', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 1em;
+  }
+  #root {
+    margin: auto;
+    max-width: 1920px;
   }
   }
   p{
