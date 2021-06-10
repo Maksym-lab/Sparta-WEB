@@ -2,10 +2,10 @@
 
 exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
 <footer
-  className="sc-AxjAm eCKzHt"
+  className="sc-AxjAm cTvtjY"
 >
   <section
-    className="sc-AxirZ gKUsqw"
+    className="sc-AxirZ fBLnue"
   >
     <svg
       fill="currentColor"
@@ -84,7 +84,7 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
     </svg>
   </section>
   <section
-    className="sc-AxiKw hDsMzE"
+    className="sc-AxiKw ljteWB"
   >
     <p>
       <a

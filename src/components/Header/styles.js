@@ -1,30 +1,25 @@
-import styled, { css } from 'styled-components';
-const boxShadow = css`
-  -webkit-box-shadow: ${({ theme }) => theme.shadow4};
-  -moz-box-shadow: ${({ theme }) => theme.shadow4};
-  box-shadow: ${({ theme }) => theme.shadow4};
-`;
+import styled from 'styled-components';
 export const HeaderBar = styled.header`
   position: fixed;
-  display:flex;
-  align-items:center;
   z-index: 1;
-  top: ${({ theme }) => theme.size0};
-  ${boxShadow};
-  width: ${({ theme }) => theme.pct100};
-  height: ${({ theme }) => theme.size32};
-  padding: ${({ theme }) => theme.size0} ${({ theme }) => theme.size12};
-  background: ${({ theme }) => theme.black};
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-    height: ${({ theme }) => theme.size40};
+  top: 0;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(38, 37, 38, 1);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(38, 37, 38, 1);
+  box-shadow: 0px 0px 8px 0px rgba(38, 37, 38, 1);
+  width: 100%;
+  max-width: 1920px;
+  height: 32px;
+  background: #262526;
+  @media screen and (min-width: 768px) {
+    height: 40px;
     & img:first-child {
-      width: calc(${({ theme }) => theme.size50} + ${({ theme }) => theme.size14});
+      width: 65px;
     }
   }
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    height: ${({ theme }) => theme.size48};
+  @media screen and (min-width: 1024px) {
+    height: 47px;
     & img:first-child {
-      width: calc(${({ theme }) => theme.size50} + ${({ theme }) => theme.size32});
+      width: 82px;
     }
   }
 `;
@@ -32,9 +27,9 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: ${({ theme }) => theme.pct100};
-  max-width: ${({ theme }) => theme.desktopContainer};
-  margin: ${({ theme }) => theme.size0} auto;
+  width: 100%;
+  max-width: 1215px;
+  margin: 0 auto;
 `;
 export const Section = styled.section`
   display: flex;
@@ -42,25 +37,25 @@ export const Section = styled.section`
   align-items: center;
 `;
 export const Heart = styled.img`
-  margin-right: ${({ theme }) => theme.size8};
-  width: ${({ theme }) => theme.size18};
-  height: ${({ theme }) => theme.size18};
+  margin-right: 8px;
+  width: 12px;
+  height: 12px;
 `;
 export const TextLogin = styled.p`
-  margin-right: ${({ theme }) => theme.size8};
-  font-size: ${({ theme }) => theme.size12};
-  color: ${({ theme }) => theme.white};
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-    font-size: ${({ theme }) => theme.size14};
+  margin-right: 8px;
+  font-size: 12px;
+  color: white;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
   }
 `;
 export const UserPhoto = styled.img`
-  margin-right: ${({ theme }) => theme.size8};
-  width: ${({ theme }) => theme.size26};
-  height: ${({ theme }) => theme.size26};
+  margin-right: 8px;
+  width: 27px;
+  height: 27px;
 `;
 export const BurguerMenu = styled.img`
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 `;

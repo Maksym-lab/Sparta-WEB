@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 export const Article = styled.article`
-  border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.lightGray};
-  border-radius: ${({ theme }) => theme.size14};
-  width: ${({ theme }) => theme.pct100};
-  height: ${({ theme }) => theme.size100};
-  background-color: ${({ theme }) => theme.white};
+  border: 1px solid lightgray;
+  border-radius: 13px;
+  width: 100%;
+  height: 100px;
+  background-color: #f2f2f2;
   cursor: pointer;
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-    height: ${({ theme }) => theme.cardHeightTablet};
+  @media screen and (min-width: 768px) {
+    height: 113px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    height: ${({ theme }) => theme.cardHeightDesktop};
+  @media screen and (min-width: 1024px) {
+    height: 147px;
   }
 `;
 export const ContainerImage = styled.div`
@@ -23,116 +23,117 @@ export const Container = styled.div`
 `;
 export const ContainerHost = styled.div`
   display: flex;
-  margin-bottom: ${({ theme }) => theme.size4};
+  margin-bottom: 5px;
 `;
 export const ImageHeart = styled.img`
-  width: ${({ theme }) => theme.pct100};
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    width: ${({ theme }) => theme.size14};
+  width: 100%;
+  @media screen and (min-width: 1024px) {
+    width: 15px;
   }
 `;
 export const ImageHost = styled.img`
-  width: ${({ theme }) => theme.size22};
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    width: ${({ theme }) => theme.size28};
+  width: 22px;
+  @media screen and (min-width: 1024px) {
+    width: 27px;
   }
 `;
 export const ImageRoom = styled.img`
-  -webkit-box-shadow: ${({ theme }) => theme.size14} ${({ theme }) => theme.size0} ${({ theme }) => theme.size6} -9px ${({ theme }) => theme.white};
-  -moz-box-shadow: ${({ theme }) => theme.size14} ${({ theme }) => theme.size0} ${({ theme }) => theme.size6} -9px ${({ theme }) => theme.white};
-  box-shadow: ${({ theme }) => theme.size14} ${({ theme }) => theme.size0} ${({ theme }) => theme.size6} -9px ${({ theme }) => theme.white};
-  border-radius: ${({ theme }) => theme.size8};
-  height: ${({ theme }) => theme.pct100};
+  -webkit-box-shadow: 13px 0px 6px -9px rgba(217, 217, 217, 1);
+  -moz-box-shadow: 13px 0px 6px -9px rgba(217, 217, 217, 1);
+  box-shadow: 13px 0px 6px -9px rgba(217, 217, 217, 1);
+  border-radius: 8px;
+  height: 100%;
 `;
 export const OverlayHeart = styled.div`
   position: absolute;
-  right: ${({ theme }) => theme.size6};
-  top: ${({ theme }) => theme.size6};
+  right: 7px;
+  top: 7px;
 `;
 export const OverlayHost = styled.div`
   position: absolute;
-  bottom: ${({ theme }) => theme.size6};
-  right: ${({ theme }) => theme.size6};
+  bottom: 7px;
+  right: 7px;
 `;
 export const HostName = styled.p`
   align-self: flex-end;
-  margin: ${({ theme }) => theme.size0};
-  font-size: ${({ theme }) => theme.size8};
-  font-weight: ${({ theme }) => theme.regular};
-  color: ${({ theme }) => theme.white};;
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    font-size: ${({ theme }) => theme.size12};
+  margin: 0;
+  font-size: 8px;
+  font-weight: 400;
+  color: white;
+  @media screen and (min-width: 1024px) {
+    font-size: 12px;
   }
 `;
 export const Description = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${({ theme }) => theme.pct100};
-  height: ${({ theme }) => theme.pct100};
-  padding: ${({ theme }) => theme.size6};
+  width: 100%;
+  height: 100%;
+  padding: 6px;
 `;
 export const Title = styled.h2`
-  font-size: ${({ theme }) => theme.size10};
-  margin: ${({ theme }) => theme.size6} 0;
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-    font-size: ${({ theme }) => theme.size12};
+  font-size: 10px;
+  margin: 6px 0;
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    font-size: ${({ theme }) => theme.size14};
+  @media screen and (min-width: 1024px) {
+    font-size: 15px;
   }
 `;
 export const Availability = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: ${({ theme }) => theme.pct100};
-  height: ${({ theme }) => theme.size14};
-  color: ${({ theme }) => theme.darkGray};
+  width: 100%;
+  height: 15px;
+  color: #404040;
 `;
 export const Available = styled.p`
   margin: 0;
-  font-size: ${({ theme }) => theme.size10};
+  font-size: 10px;
   font-weight: 500;
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-    font-size: ${({ theme }) => theme.size12};
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    font-size: ${({ theme }) => theme.size14};
+  @media screen and (min-width: 1024px) {
+    font-size: 15px;
   }
 `;
 export const Price = styled.strong`
-  margin: ${({ theme }) => theme.size0};;
-  font-size: ${({ theme }) => theme.size10};
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-    font-size: ${({ theme }) => theme.size12};
+  margin: 0;
+  font-size: 10px;
+  text-shadow: 3px 1px 2px rgba(0,0,0,0.25);
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    font-size: ${({ theme }) => theme.size14};
+  @media screen and (min-width: 1024px) {
+    font-size: 15px;
   }
 `;
 export const AddressContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${({ theme }) => theme.pct100};
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-    width: ${({ theme }) => theme.ptc100};
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: 80%;
   }
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    margin-top: ${({ theme }) => theme.size14};
+  @media screen and (min-width: 1024px) {
+    margin-top: 15px;
   }
 `;
 export const AddressTitle = styled.p`
-  margin: ${({ theme }) => theme.size0};
-  font-size: ${({ theme }) => theme.size10};
-  font-weight: ${({ theme }) => theme.bold};
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    font-size: ${({ theme }) => theme.size12};
+  margin: 0;
+  font-size: 10px;
+  font-weight: bold;
+  @media screen and (min-width: 1024px) {
+    font-size: 12px;
   }
 `;
 export const Address = styled.p`
-  margin: ${({ theme }) => theme.size0};
-  font-size: ${({ theme }) => theme.size8};
-  @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-    font-size: ${({ theme }) => theme.size14};
+  margin: 0;
+  font-size: 8px;
+  @media screen and (min-width: 1024px) {
+    font-size: 13px;
   }
 `;
