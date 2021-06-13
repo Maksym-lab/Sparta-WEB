@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from './styles';
 import PreviewCard from '../PreviewCard';
-const PreviewCardContainer = () => {
+const PreviewCardContainer = (props) => {
   return (
     <>
       <Grid>
