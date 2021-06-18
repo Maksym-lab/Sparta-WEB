@@ -2,7 +2,7 @@ import styled from 'styled-components';
 export const Main = styled.main`
   max-width: 1282px;
   margin: 0 auto;
-  background: #FBFBFB;
+  background: #fbfbfb;
 `;
 export const Hero = styled.figure`
   position: relative;
@@ -43,7 +43,7 @@ export const FileUploader = styled.span`
   align-items: center;
   height: 185px;
   background: #404040;
-  color: #F6F6F6;
+  color: #f6f6f6;
   & h5 {
     margin: 25px 0 17px;
     font-weight: 500;
@@ -145,7 +145,8 @@ export const Form = styled.form`
       font-size: 15px;
       margin-bottom: 10px;
     }
-    & input, textarea {
+    & input,
+    textarea {
       font-size: 13px;
     }
     & #availability {
@@ -157,7 +158,8 @@ export const Form = styled.form`
       font-size: 24px;
       margin-bottom: 20px;
     }
-    & input, textarea {
+    & input,
+    textarea {
       font-size: 16px;
     }
     & input {
@@ -208,14 +210,14 @@ export const Reference = styled.div`
   }
 `;
 export const Characteristics = styled.ul`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 65px);
-    grid-column-gap: 7px;
-    grid-row-gap: 14px;
-    margin-bottom: 35px;
-    padding: 0;
-    list-style: none;
-    font-size: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 65px);
+  grid-column-gap: 7px;
+  grid-row-gap: 14px;
+  margin-bottom: 35px;
+  padding: 0;
+  list-style: none;
+  font-size: 10px;
   & li {
     display: flex;
     align-items: center;
@@ -241,8 +243,8 @@ export const Button = styled.button`
   height: 32px;
   border: none;
   border-radius: 4px;
-  background: #EB5757;
-  color: #F6F6F6;
+  background: #eb5757;
+  color: #f6f6f6;
   @media screen and (min-width: 768px) {
     width: 191px;
     height: 50px;
