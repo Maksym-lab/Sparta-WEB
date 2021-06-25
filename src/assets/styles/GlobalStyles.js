@@ -12,11 +12,12 @@ const GlobalStyles = createGlobalStyle`
     margin:${({ theme }) => theme.size0};
     padding:${({ theme }) => theme.size0};
     box-sizing: border-box;
-  body {
-    margin: ${({ theme }) => theme.size0};
     font-family: 'Cabin', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    margin: ${({ theme }) => theme.size0};
     font-size: 1em;
   }
   #root {
@@ -29,6 +30,12 @@ const GlobalStyles = createGlobalStyle`
   }
   h1,h2,h3,h4,h5,h6{
     ${title}
+  }
+  a{
+    color: ${({ theme }) => theme.red};
+    text-decoration: ${({ theme }) => theme.red};;
+  }
+  input{
   }
 `;
 export default GlobalStyles;

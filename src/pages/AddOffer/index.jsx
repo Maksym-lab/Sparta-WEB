@@ -32,8 +32,8 @@ const AddOffer = () => {
             <MdInfoOutline />
           </label>
           <input type="date" id="availability" name="availability" />
-          <label htmlFor="ubication">
-            Ubication:
+          <label htmlFor="Location">
+            Location:
             <MdInfoOutline />
           </label>
           <input type="text" id="ubication" name="ubication" placeholder="Write your home address..." />
