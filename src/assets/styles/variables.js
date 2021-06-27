@@ -10,7 +10,7 @@ export const variables = {
   cardsContainerTablet: '648px',
   cardsContainerDesktop: '875px',
   searchHeightContainer: '142px',
-  maxWidthPublicationDesktop:'1282px',
+  maxWidthPublicationDesktop: '1282px',
   maxWidthBorderDesktop: '912px',
   size0: '0',
   size4: '4px',
@@ -72,7 +72,7 @@ export const variables = {
     'linear-gradient(180deg, rgba(38, 37, 38, 0) 35.5%, rgba(38, 37, 38, 0.66) 100%)',
   backgroundBanner:
     'linear-gradient(180deg, rgba(38, 37, 38, 0.085) 0%, rgba(38, 37, 38, 0.5) 100%)',
-  font:'Cabin',
+  font: 'Cabin',
   coverImageDesktop: '1282px',
   logoMobil: '57px',
   logoTablet: '65px',
