@@ -7,24 +7,28 @@ const BadgeContainer = styled.span`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    height: 48px;
-    width: 48px;
-    background: #EB5757;
-    font-size: 22px;
-    color: white;
+    border-radius: ${({ theme }) => theme.radiusCircle};
+    height: ${({ theme }) => theme.size48};
+    width: ${({ theme }) => theme.size48};
+    background: ${({ theme }) => theme.red};
+    font-size: ${({ theme }) => theme.size22};
+    color: ${({ theme }) => theme.white};
   }
   & h4 {
-    margin: 0;
+    margin: ${({ theme }) => theme.size0};
   }
   @media screen and (min-width: 768px) {
     & i {
-      height: 55px;
-      width: 55px;
-      font-size: 30px;
+      height: calc(
+        ${({ theme }) => theme.size50} + ${({ theme }) => theme.size4}
+      );
+      width: calc(
+        ${({ theme }) => theme.size50} + ${({ theme }) => theme.size4}
+      );
+      font-size: ${({ theme }) => theme.size30};
     }
     & h4 {
-      font-size: 14px;
+      font-size: ${({ theme }) => theme.size14};
     }
   }
   @media screen and (min-width: 1024px) {
