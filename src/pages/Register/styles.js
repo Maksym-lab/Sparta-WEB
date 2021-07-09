@@ -1,65 +1,68 @@
-import styled, { css } from 'styled-components';
-const flex = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
+import styled from 'styled-components';
 export const Hero = styled.figure`
   position: relative;
-  margin: ${({ theme }) => theme.size32} ${({ theme }) => theme.size0} ${({ theme }) => theme.size75};
+  margin: 32px 0 75px;
   & img {
-    height: ${({ theme }) => theme.size100};
-    width: ${({ theme }) => theme.pct100};
+    height: 94px;
+    width: 100%;
     object-fit: cover;
   }
   & span {
     position: absolute;
-    left: ${({ theme }) => theme.size0};
-    right: ${({ theme }) => theme.size0};
+    left: 0;
+    right: 0;
     bottom: -40px;
   }
-  @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-    margin-top: ${({ theme }) => theme.size40};
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
+  @media screen and (min-width: 1024px) {
+    margin-top: 47px;
   }
 `;
 export const Main = styled.main`
-  ${flex}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: auto;
-  max-width: ${({ theme }) => theme.maxWidthBorderDesktop};
-  @media (min-width: ${({ theme }) => theme.tablet}) {
-    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.darkGray};
-    border-radius: ${({ theme }) => theme.size8};
-    margin: ${({ theme }) => theme.size0} 4%;
-    max-width: ${({ theme }) => theme.maxWidthBorderDesktop};
+  max-width: 912px;
+  @media (min-width: 768px) {
+    border: 0.25px solid #404040;
+    border-radius: 8px;
+    margin: 0 4%;
+    max-width: 714px;
   }
-  @media (min-width: ${({ theme }) => theme.tablet}) {
+  @media (min-width: 1024px) {
     margin: auto;
-    max-width: ${({ theme }) => theme.maxWidthBorderDesktop};
+    max-width: 912px;
   }
 `;
 export const SectionUpload = styled.section`
   position: relative;
-  ${flex}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 165px;
   img {
-    width: calc(${({ theme }) => theme.size50} + ${({ theme }) => theme.size46});
+    width: 90px;
   }
   input {
-    width: ${({ theme }) => theme.border};
-    height: ${({ theme }) => theme.border};
+    width: 0.1px;
+    height: 0.1px;
     border: none;
-    background-color: ${({ theme }) => theme.white};
+    background-color: #f6f6f6;
     outline: none;
     &:before {
       content: attr(data-title);
       position: absolute;
       left: -25px;
-      right: ${({ theme }) => theme.size0};
-      width: ${({ theme }) => theme.pct100};
-      height: ${({ theme }) => theme.size20};
+      right: 0;
+      width: 100%;
+      height: 20px;
       font-size: 1.8em;
-      font-weight: ${({ theme }) => theme.regular};
+      font-weight: 400;
       white-space: nowrap;
       cursor: pointer;
     }
@@ -67,18 +70,18 @@ export const SectionUpload = styled.section`
 `;
 export const Form = styled.form`
   width: 90%;
-  max-width: ${({ theme }) => theme.grid414};
+  max-width: 444px;
   div {
     display: grid;
     grid-template-columns: 5% 32% 1fr;
-    grid-row-gap: ${({ theme }) => theme.size20};
+    grid-row-gap: 20px;
     align-items: center;
-    margin: ${({ theme }) => theme.size20} ${({ theme }) => theme.size0};
-    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.darkGray};
-    height: ${({ theme }) => theme.size30};
-    padding: ${({ theme }) => theme.size0} 2%;
+    margin: 20px 0;
+    border: 0.25px solid #404040;
+    height: 30px;
+    padding: 0 2%;
     svg {
-      font-size: ${({ theme }) => theme.size8};
+      font-size: 18px;
     }
     input {
       border: none;
@@ -88,7 +91,7 @@ export const Form = styled.form`
       white-space: nowrap;
     }
     label:nth-child(2) {
-      margin-left: ${({ theme }) => theme.size10};
+      margin-left: 10px;
     }
   }
 `;
@@ -96,29 +99,29 @@ export const Buttons = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: ${({ theme }) => theme.size50} ${({ theme }) => theme.size0};
+  margin: 60px 0;
   button {
-    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.darkGray};
-    border-radius: ${({ theme }) => theme.size3};
+    border: 0.25px solid #404040;
+    border-radius: 3px;
     width: 140px;
-    height: ${({ theme }) => theme.size45};
+    height: 45px;
     font-size: 1.1em;
-    color: ${({ theme }) => theme.black};
+    color: black;
   }
   button:nth-child(1) {
-    margin-right: ${({ theme }) => theme.size10};
-    background-color: ${({ theme }) => theme.red};
-    color: ${({ theme }) => theme.white};
+    margin-right: 10px;
+    background-color: #eb5757;
+    color: white;
   }
 `;
 export const RadioInput = styled.section`
   display: flex;
   align-items: center;
   input {
-    margin-right: ${({ theme }) => theme.size3};
+    margin-right: 3px;
   }
   label {
-    margin-right: ${({ theme }) => theme.size10};
+    margin-right: 10px;
   }
   input[type='radio'] {
     display: none;
@@ -126,15 +129,15 @@ export const RadioInput = styled.section`
   input[type='radio'] + label:before {
     content: '';
     display: inline-block;
-    margin-right: ${({ theme }) => theme.size3};
-    width: ${({ theme }) => theme.size14};
-    height: ${({ theme }) => theme.size14};
-    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.darkGray};
-    border-radius: ${({ theme }) => theme.radiusCircle};
+    margin-right: 3px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #bbbbbb;
+    border-radius: 50%;
     background-clip: content-box;
-    background-color: ${({ theme }) => theme.white};
+    background-color: #fafafa;
   }
   input[type='radio']:checked + label:before {
-    background-color: ${({ theme }) => theme.red};
+    background-color: #eb5757;
   }
 `;

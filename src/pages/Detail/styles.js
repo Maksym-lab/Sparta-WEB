@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 export const MainImage = styled.figure`
   position: relative;
-  width: ${({ theme }) => theme.pct100};
-  margin: ${({ theme }) => theme.size0} auto;
+  width: 100%;
+  margin: 0 auto;
   img {
-    width: ${({ theme }) => theme.pct100};
+    width: 100%;
   }
   @media (min-width: 1025px) and (max-width: 1920px) {
     img {
-      width: ${({ theme }) => theme.pct100};
+      width: 100%;
       height: 354px;
       object-fit: cover;
     }
@@ -22,32 +22,33 @@ export const DetailDesktop = styled.div`
   }
 `;
 export const BackgroundDetailDesktop = styled.div`
-  @media (max-width: ${({ theme }) => theme.desktop1024}) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
 export const Hero = styled.img`
-  width: ${({ theme }) => theme.pct100};
+  width: 100%;
   height: 240px;
   object-fit: cover;
 `;
 export const OverlayPrice = styled.div`
   position: absolute;
-  top: ${({ theme }) => theme.size36};
-  right: ${({ theme }) => theme.size16};
+  top: 35px;
+  right: 20px;
   p {
+    background-color: rgba(0, 0, 0, 0.4);
     font-size: 2em;
-    font-weight: ${({ theme }) => theme.bold};;
-    color: ${({ theme }) => theme.white};
-    text-shadow: ${({ theme }) => theme.shadow2};
+    font-weight: bold;
+    color: #f6f6f6;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   }
 `;
 export const Container = styled.div`
   margin: auto;
   max-width: 90%;
-  @media (min-width: ${({ theme }) => theme.tablet}) {
-    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.white};
-    border-radius: ${({ theme }) => theme.size8};
+  @media (min-width: 768px) {
+    border: 0.5px solid #a7a7a7;
+    border-radius: 8px;
     padding: 3%;
   }
 `;
@@ -57,28 +58,28 @@ export const FirstContactInfo = styled.div`
     display: grid;
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
-    color: ${({ theme }) => theme.darkGray};
+    color: #404040;
     p {
       font-size: 1em;
     }
     div:nth-child(1) {
-      height: ${({ theme }) => theme.pct100};
+      height: 100%;
     }
   }
 `;
 export const FirstContactInfoTabAndDesktop = styled.div`
   display: none;
-  @media (min-width: ${({ theme }) => theme.tablet}) {
+  @media (min-width: 768px) {
     display: grid;
     align-items: center;
-    grid-template-columns: ${({ theme }) => theme.pct50} 22% ${({ theme }) => theme.pct30};
-    color: ${({ theme }) => theme.darkGray};
+    grid-template-columns: 50% 22% 30%;
+    color: #404040;
     p {
       font-size: 1.1em;
-      margin: ${({ theme }) => theme.size0};;
+      margin: 0;
     }
     div:nth-child(1) {
-      height: ${({ theme }) => theme.pct100};
+      height: 100%;
     }
   }
   @media (min-width: 1025px) {
@@ -93,23 +94,23 @@ export const Social = styled.div`
     display: flex;
     justify-content: flex-end;
     p {
-      margin-right: ${({ theme }) => theme.size8};
+      margin-right: 8px;
     }
   }
   button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.darkGray};
-    border-radius: ${({ theme }) => theme.radiusBtn};
-    width: ${({ theme }) => theme.pct100};
-    height: ${({ theme }) => theme.size16};
-    background-color: ${({ theme }) => theme.red};
-    font-weight: ${({ theme }) => theme.bold};;
-    color: ${({ theme }) => theme.white};
+    border: 0.5px solid #404040;
+    border-radius: 3.5px;
+    width: 100%;
+    height: 20px;
+    background-color: #eb5757;
+    font-weight: bold;
+    color: white;
     outline: none;
     img {
-      margin-right: ${({ theme }) => theme.size6};;
+      margin-right: 5px;
     }
   }
 `;
@@ -119,15 +120,15 @@ export const Host = styled.div`
     display: flex;
     align-items: center;
     img {
-      border-radius: ${({ theme }) => theme.radiusCircle};
-      width: ${({ theme }) => theme.size26};
-      height: ${({ theme }) => theme.size26};
+      border-radius: 50%;
+      width: 27px;
+      height: 27px;
     }
     p {
-      margin-left: ${({ theme }) => theme.size6};
+      margin-left: 5px;
       font-size: 1em;
-      font-weight: ${({ theme }) => theme.bold};
-      color: ${({ theme }) => theme.black};
+      font-weight: bold;
+      color: #000000;
     }
   }
 `;
@@ -135,33 +136,33 @@ export const HostTab = styled.div`
   display: flex;
   align-items: center;
   img {
-    border-radius: ${({ theme }) => theme.radiusCircle};
-    width: ${({ theme }) => theme.size26};
-    height: ${({ theme }) => theme.size26};
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
   }
   p {
-    margin-left: ${({ theme }) => theme.size4};
+    margin-left: 5px;
     font-size: 1em;
-    font-weight: ${({ theme }) => theme.bold};
-    color: ${({ theme }) => theme.black};
+    font-weight: bold;
+    color: #000000;
   }
 `;
 export const Title = styled.div`
   display: grid;
-  grid-template-columns: 90% ${({ theme }) => theme.pct10};
-  column-gap: ${({ theme }) => theme.size10};
-  margin: ${({ theme }) => theme.size16} ${({ theme }) => theme.size0};
+  grid-template-columns: 90% 10%;
+  column-gap: 10px;
+  margin: 15px 0;
   h1 {
-    margin: ${({ theme }) => theme.size0};
+    margin: 0;
     font-size: 2em;
   }
   img {
-    width: ${({ theme }) => theme.size16};
+    width: 17px;
   }
   @media (min-width: 1025px) {
-    margin: ${({ theme }) => theme.size30} ${({ theme }) => theme.size0};
+    margin: 30px 0;
     div:nth-child(2) {
-      margin-right: ${({ theme }) => theme.size12};
+      margin-right: 13px;
       text-align: right;
     }
   }
@@ -170,20 +171,20 @@ export const AddressAndReferencesDesktop = styled.address`
   @media (min-width: 1025px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: ${({ theme }) => theme.size10};
+    column-gap: 10px;
     p {
-      color: ${({ theme }) => theme.darkGrid};
+      color: #262526;
     }
   }
 `;
 export const DescriptionAndImageDesktop = styled.div`
   @media (min-width: 1025px) {
     display: grid;
-    grid-template-columns: repeat(2, ${({ theme }) => theme.pct50});
-    column-gap: ${({ theme }) => theme.size10};
-    margin: ${({ theme }) => theme.size30} ${({ theme }) => theme.size0};
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 10px;
+    margin: 30px 0px;
     img {
-      width: ${({ theme }) => theme.pct100};
+      width: 100%;
     }
     h3 {
       margin-top: 120px;
@@ -193,43 +194,43 @@ export const DescriptionAndImageDesktop = styled.div`
 export const TheRoomAndImageDesktop = styled.div`
   @media (min-width: 1025px) {
     display: grid;
-    grid-template-columns: repeat(2, ${({ theme }) => theme.pct50});
-    column-gap: ${({ theme }) => theme.size10};
-    margin: ${({ theme }) => theme.size30} ${({ theme }) => theme.size0};
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 10px;
+    margin: 30px 0px;
   }
 `;
 export const AtmosphereDesktop = styled.div`
   @media (min-width: 1025px) {
     display: grid;
-    grid-template-columns: repeat(2, ${({ theme }) => theme.pct50});
-    column-gap: ${({ theme }) => theme.size10};
-    margin: ${({ theme }) => theme.size30} ${({ theme }) => theme.size0};
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 10px;
+    margin: 30px 0px;
   }
 `;
 export const Bold = styled.p`
   @media (min-width: 1025px) {
-    font-weight: ${({ theme }) => theme.bold};
+    font-weight: bold;
   }
 `;
 export const ImgRoom = styled.img`
   display: none;
-  margin-top: calc(${({ theme }) => theme.size50} +${({ theme }) => theme.size10});
-  width: ${({ theme }) => theme.pct100};
+  margin-top: 60px;
+  width: 100%;
   @media (min-width: 1025px) {
     display: inline-block;
   }
 `;
 export const ImgDescription = styled.img`
   display: none;
-  margin-top: calc(${({ theme }) => theme.size50} +${({ theme }) => theme.size10});
-  width: ${({ theme }) => theme.pct100};
+  margin-top: 60px;
+  width: 100%;
   @media (min-width: 1025px) {
     display: inline-block;
   }
 `;
 export const Hr = styled.hr`
   margin: 25px 0;
-  border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.white};
+  border: 0.25px solid #a7a7a7;
   @media (min-width: 1025px) {
     display: none;
   }
@@ -238,34 +239,34 @@ export const Address = styled.div`
   display: flex;
   flex-direction: column;
   p {
-    margin: ${({ theme }) => theme.size8} ${({ theme }) => theme.size0};;
+    margin: 7px 0;
   }
 `;
 export const Red = styled.p`
-  color: ${({ theme }) => theme.red};
+  color: #eb5757;
 `;
 export const Section = styled.article`
   p {
-    color: ${({ theme }) => theme.darkGray};
+    color: #404040;
   }
 `;
 export const Subtitle = styled.h3`
   font-size: 1.5em;
-  font-weight: ${({ theme }) => theme.bold};
-  color: ${({ theme }) => theme.darkGray};
-  @media (min-width: ${({ theme }) => theme.tablet}) and (max-width: ${({ theme }) => theme.desktop1024}) {
-    margin-top: ${({ theme }) => theme.size50};
+  font-weight: bold;
+  color: #404040;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-top: 50px;
   }
 `;
 export const GridIcons = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: ${({ theme }) => theme.size10};
-  row-gap: ${({ theme }) => theme.size10};
+  column-gap: 10px;
+  row-gap: 10px;
   @media (min-width: 1025px) {
-    margin-right: ${({ theme }) => theme.size50};
+    margin-right: 50px;
   }
-  @media (min-width: ${({ theme }) => theme.tablet}) and (max-width: ${({ theme }) => theme.desktop1024}) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     grid-template-columns: repeat(6, 1fr);
   }
 `;
@@ -273,19 +274,19 @@ export const GridEach = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 7px);
   grid-template-rows: repeat(12, 7px);
-  grid-column-gap: ${({ theme }) => theme.size0};
-  grid-row-gap: ${({ theme }) => theme.size0};
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   margin: 5px;
   @media (max-width: 460px) {
     margin: 0;
   }
   img:nth-child(1) {
     grid-area: 1 / 1 / 9 / 10;
-    width: ${({ theme }) => theme.size50};
+    width: 55px;
   }
   img:nth-child(2) {
     grid-area: 9 / 8 / 11 / 11;
-    width: ${({ theme }) => theme.size8};
+    width: 8px;
     cursor: pointer;
   }
   p {
@@ -300,28 +301,28 @@ export const GridEach = styled.div`
 export const TagsInterest = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: ${({ theme }) => theme.size10};
-  row-gap: ${({ theme }) => theme.size10};
+  column-gap: 10px;
+  row-gap: 10px;
   padding: 0;
   li {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow:${({ theme }) => theme.shadow2};
-    border: ${({ theme }) => theme.border} solid #${({ theme }) => theme.lightGray};
-    border-radius: ${({ theme }) => theme.radiusBtn};;
-    height: ${({ theme }) => theme.size30};
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    border: 0.5px solid #8c8979;
+    border-radius: 3px;
+    height: 30px;
     padding: 5%;
-    background-color: ${({ theme }) => theme.absoluteWhite};
-    font-weight: ${({ theme }) => theme.bold};
+    background-color: #f6f6f6;
+    font-weight: bold;
     font-size: 0.7em;
     list-style: none;
   }
-  @media (min-width: ${({ theme }) => theme.tablet}) and (max-width: ${({ theme }) => theme.desktop1024}) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     grid-template-columns: repeat(5, 1fr);
   }
   @media (min-width: 1025px) {
-    margin-top: calc(${({ theme }) => theme.size50} + ${({ theme }) => theme.size14})
+    margin-top: 60px;
   }
 `;
 export const ContactButtons = styled.section`
@@ -334,34 +335,34 @@ export const ContactButtons = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.darkGray};
-    border-radius:${({ theme }) => theme.radiusBtn};
-    width: ${({ theme }) => theme.pct100};
-    height: ${({ theme }) => theme.size40};
-    background-color: ${({ theme }) => theme.red};
+    border: 0.2px solid #404040;
+    border-radius: 3.5px;
+    width: 100%;
+    height: 40px;
+    background-color: #eb5757;
     font-size: 1.1em;
-    color: ${({ theme }) => theme.white};;
+    color: white;
     outline: none;
     cursor: pointer;
     img {
-      margin-right: ${({ theme }) => theme.size4};
+      margin-right: 5px;
     }
   }
   p {
     font-size: 1em;
-    font-weight: ${({ theme }) => theme.bold};
-    color: ${({ theme }) => theme.black};
+    font-weight: bold;
+    color: #404040;
   }
-  @media (min-width: ${({ theme }) => theme.tablet}) and (max-width: ${({ theme }) => theme.desktop1024}) {
+  @media (min-width: 768px) and (max-width: 1024px) {
     margin: auto;
     margin-top: 130px;
     margin-bottom: 130px;
     max-width: 270px;
     button {
-      height: ${({ theme }) => theme.size50};
+      height: 50px;
     }
   }
   @media (min-width: 1025px) {
-    margin: 64px ${({ theme }) => theme.pct30};
+    margin: 64px 30%;
   }
 `;
