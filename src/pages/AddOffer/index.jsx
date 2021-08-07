@@ -1,8 +1,23 @@
 import React from 'react';
-import { MdWork, MdCloudUpload, MdInfoOutline, MdAddCircle } from 'react-icons/md';
+import {
+  MdWork,
+  MdCloudUpload,
+  MdInfoOutline,
+  MdAddCircle,
+} from 'react-icons/md';
 import BannerTitle from '../../assets/images/BannerTitle.jpg';
-import { Main, Hero, FileUploader, Form, Reference, Characteristics, Button, Section } from './styles';
+import {
+  Main,
+  Hero,
+  FileUploader,
+  Form,
+  Reference,
+  Characteristics,
+  Button,
+  Section,
+} from './styles';
 import Badge from '../../components/Badge';
+import BackButton from '../../components/BackButton';
 const AddOffer = () => {
   return (
     <Main>
@@ -10,23 +25,36 @@ const AddOffer = () => {
         <img src={BannerTitle} alt="" />
         <Badge icon={MdWork} message="My offers" />
       </Hero>
+      <BackButton />
       <Section>
         <FileUploader>
           <h5>Upload files</h5>
           <MdCloudUpload />
-          <input type="file" data-title="drag & drop or browse files to upload!" />
+          <input
+            type="file"
+            data-title="drag & drop or browse files to upload!"
+          />
         </FileUploader>
         <Form>
           <label htmlFor="title">
             Title:
             <MdInfoOutline />
           </label>
-          <input type="text" id="title" name="title" placeholder="I create a title that describes why they should stay with you" />
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="I create a title that describes why they should stay with you"
+          />
           <label htmlFor="description">
             Description:
             <MdInfoOutline />
           </label>
-          <textarea rows="7" id="description" placeholder="I create a title that describes why they should stay with you" />
+          <textarea
+            rows="7"
+            id="description"
+            placeholder="I create a title that describes why they should stay with you"
+          />
           <label htmlFor="availability">
             Availability:
             <MdInfoOutline />
@@ -36,7 +64,12 @@ const AddOffer = () => {
             Location:
             <MdInfoOutline />
           </label>
-          <input type="text" id="ubication" name="ubication" placeholder="Write your home address..." />
+          <input
+            type="text"
+            id="ubication"
+            name="ubication"
+            placeholder="Write your home address..."
+          />
           <label htmlFor="references">
             References:
             <MdInfoOutline />
