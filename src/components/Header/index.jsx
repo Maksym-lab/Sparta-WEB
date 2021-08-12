@@ -1,14 +1,5 @@
 import React from 'react';
-import { Link } from '@reach/router';
-import {
-  HeaderBar,
-  TextLogin,
-  Container,
-  UserPhoto,
-  Heart,
-  BurguerMenu,
-  Section,
-} from './styles';
+import { HeaderBar, TextLogin, Container, UserPhoto, Heart, BurguerMenu, Section } from './styles';
 import logo from '../../assets/images/Logo.svg';
 import menu from '../../assets/images/Menu.svg';
 import userPhoto from '../../assets/images/UserPhoto.png';
@@ -17,9 +8,7 @@ const Header = () => {
   return (
     <HeaderBar>
       <Container>
-        <Link to="/">
-          <img src={logo} alt="Kumpel logo" />
-        </Link>
+        <img src={logo} alt="Kumpel logo" />
         <Section>
           <Heart src={heart} alt="Menu" />
           <TextLogin>User name!</TextLogin>
