@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel from '../../components/Carousel';
 import {
   FirstContactInfo,
   MainImage,
@@ -39,7 +40,6 @@ import heart from '../../assets/images/Heart.svg';
 import twoGirls from '../../assets/images/TwoGirls.png';
 import peopleImage from '../../assets/images/PeopleImage.png';
 import backgroundDetailDesktopImage from '../../assets/images/BackgroundDetailDesktop.png';
-import Carousel from '../../components/Carousel';
 const Detail = () => {
   return (
     <>
@@ -53,7 +53,9 @@ const Detail = () => {
           </OverlayPrice>
           <img src={testMainImageDetail} alt="room" />
         </MainImage>
-        <Carousel />
+        <div className="Carousel">
+          <Carousel />
+        </div>
         <Container>
           <FirstContactInfo>
             <div>
