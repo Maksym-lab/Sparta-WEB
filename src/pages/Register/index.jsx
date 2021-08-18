@@ -5,6 +5,7 @@ import { Hero, Main, SectionUpload, Form, InputContainer, Buttons, RadioInput } 
 import backgroundHero from '../../assets/images/BackgroundRegister.png';
 import whiteCircle from '../../assets/images/whiteCircle.jpeg';
 import Badge from '../../components/Badge';
+import BackButton from '../../components/BackButton';
 const Register = () => {
   return (
     <>
@@ -12,6 +13,7 @@ const Register = () => {
         <img src={backgroundHero} alt="Register form" />
         <Badge icon={FaUserCircle} message="Register" />
       </Hero>
+      <BackButton />
       <Main>
         <SectionUpload>
           <img src={whiteCircle} alt="User" />
