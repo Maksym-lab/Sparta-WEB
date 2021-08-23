@@ -24,12 +24,23 @@ import {
 import testPhoto from '../../assets/images/TestPhotoPreviewCard.png';
 import heart from '../../assets/images/Heart.svg';
 import avatar from '../../assets/images/TestAvatarPhoto.png';
-const PreviewCard = () => {
+const PreviewCard = (props) => {
+  const {
+    id,
+    title = '3 relaxed and fun students in central area',
+    mainImage = testPhoto,
+    host: {
+      fullName = 'Jane Cooper',
+    },
+    address = '4517 Washington Ave. Manchester, Kentucky 39495',
+    price = '948.55',
+    availabilityDate = '7/11/19',
+  } = props;
   const [show, ref] = useNearScreen();
   return (
-    <Link to="/detail" ref={ref}>
-      <Article>
-        {show && (
+    <Link to={`/detail/${id}`} ref={ref}>
+      {show && (
+        <Article>
           <Container>
             <ContainerImage>
               <OverlayHeart>
@@ -37,28 +48,33 @@ const PreviewCard = () => {
               </OverlayHeart>
               <OverlayHost>
                 <ContainerHost>
-                  <HostName>Jane Cooper</HostName>
+                  <HostName>{fullName}</HostName>
                   <ImageHost src={avatar} alt="Janne Cooper" />
                 </ContainerHost>
               </OverlayHost>
-              <ImageRoom src={testPhoto} alt="room" />
+              <ImageRoom src={mainImage} alt="room" />
             </ContainerImage>
             <Description>
               <Availability>
-                <Available>Availability: 7/11/19</Available>
-                <Price>$948.55</Price>
+                <Available>
+                  Availability:
+                  {' '}
+                  {availabilityDate}
+                </Available>
+                <Price>
+                  $
+                  {price}
+                </Price>
               </Availability>
-              <Title>3 relaxed and fun students in central area</Title>
+              <Title>{title}</Title>
               <AddressContainer>
                 <AddressTitle>Address:</AddressTitle>
-                <Address>
-                  4517 Washington Ave. Manchester, Kentucky 39495
-                </Address>
+                <Address>{address}</Address>
               </AddressContainer>
             </Description>
           </Container>
-        )}
-      </Article>
+        </Article>
+      )}
     </Link>
   );
 };

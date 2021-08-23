@@ -12,7 +12,7 @@ const App = () => {
       <Router>
         <NotFound default />
         <Home path="/" />
-        <Detail path="/detail" />
+        <Detail path="/detail/:id" />
         <Register path="/register" />
         <AddOffer path="/addoffer" />
       </Router>

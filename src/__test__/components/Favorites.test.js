@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Favorites from '../../pages/Favorites';
 describe('<Favorites />', () => {
-  const favorites = mount(<Favorites />);
+  const favorites = shallow(<Favorites />);
   test('Render of Favorites component', () => {
     expect(favorites.length).toEqual(1);
   });
