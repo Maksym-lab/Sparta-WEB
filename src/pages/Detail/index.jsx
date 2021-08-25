@@ -1,4 +1,5 @@
 import React from 'react';
+import Carousel from '../../components/Carousel';
 import {
   FirstContactInfo,
   MainImage,
@@ -39,13 +40,15 @@ import heart from '../../assets/images/Heart.svg';
 import twoGirls from '../../assets/images/TwoGirls.png';
 import peopleImage from '../../assets/images/PeopleImage.png';
 import backgroundDetailDesktopImage from '../../assets/images/BackgroundDetailDesktop.png';
-import Carousel from '../../components/Carousel';
+import BackButton from '../../components/BackButton';
+import Tooltip from '../../components/Tooltip';
 const Detail = () => {
   return (
     <>
       <BackgroundDetailDesktop>
         <Hero src={backgroundDetailDesktopImage} alt="Background" />
       </BackgroundDetailDesktop>
+      <BackButton />
       <DetailDesktop>
         <MainImage>
           <OverlayPrice>
@@ -53,7 +56,9 @@ const Detail = () => {
           </OverlayPrice>
           <img src={testMainImageDetail} alt="room" />
         </MainImage>
-        <Carousel />
+        <div className="Carousel">
+          <Carousel />
+        </div>
         <Container>
           <FirstContactInfo>
             <div>
@@ -132,16 +137,20 @@ const Detail = () => {
                 </p>
               </Section>
               <GridIcons>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
+                <Tooltip text="Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue">
+                  <GridEach>
+                    <img src={closetIcon} alt="icon" />
+                    <img src={infoIcon} alt="more info about XXX" />
+                    <p>4 rooms</p>
+                  </GridEach>
+                </Tooltip>
+                <Tooltip text="Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue">
+                  <GridEach>
+                    <img src={closetIcon} alt="icon" />
+                    <img src={infoIcon} alt="more info about XXX" />
+                    <p>4 rooms</p>
+                  </GridEach>
+                </Tooltip>
                 <GridEach>
                   <img src={closetIcon} alt="icon" />
                   <img src={infoIcon} alt="more info about XXX" />

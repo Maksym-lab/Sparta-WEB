@@ -21,6 +21,7 @@ import {
 } from './styles';
 import Badge from '../../components/Badge';
 import BannerTitle from '../../assets/images/editPerfil.jpg';
+import BackButton from '../../components/BackButton';
 const EditProfile = () => {
   return (
     <Main>
@@ -28,6 +29,7 @@ const EditProfile = () => {
         <img src={BannerTitle} alt="" />
         <Badge icon={MdWork} message="EditProfile" />
       </Hero>
+      <BackButton />
       <Section>
         <Form>
           <label htmlFor="Name">
@@ -113,7 +115,7 @@ const EditProfile = () => {
               name="pwd"
               placeholder="Write your password"
             />
-            <a href="#">Change your password</a>
+            <a href="/">Change your password</a>
           </InputContainer>
           <label htmlFor="about me">
             About me:

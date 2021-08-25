@@ -1,10 +1,11 @@
 import React from 'react';
 import { MdFace, MdVpnKey, MdEmail } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
-import { Hero, Main, SectionUpload, Form, Buttons, RadioInput } from './styles';
+import { Hero, Main, SectionUpload, Form, InputContainer, Buttons, RadioInput } from './styles';
 import backgroundHero from '../../assets/images/BackgroundRegister.png';
-import whiteCircle from '../../assets/images/whiteCircle.png';
+import whiteCircle from '../../assets/images/whiteCircle.jpeg';
 import Badge from '../../components/Badge';
+import BackButton from '../../components/BackButton';
 const Register = () => {
   return (
     <>
@@ -12,37 +13,51 @@ const Register = () => {
         <img src={backgroundHero} alt="Register form" />
         <Badge icon={FaUserCircle} message="Register" />
       </Hero>
+      <BackButton />
       <Main>
         <SectionUpload>
           <img src={whiteCircle} alt="User" />
-          <input type="file" data-title="Upload photo" />
+          <input type="file" className="inputUpload" />
         </SectionUpload>
         <Form>
-          <div>
+          <InputContainer>
             <MdFace />
-            <label htmlFor="fname">Name:</label>
-            <input type="text" id="fname" name="fname" />
-          </div>
-          <div>
+            <input
+              type="text"
+              id="fname"
+              name="Name"
+              placeholder="Write your name"
+            />
+          </InputContainer>
+          <InputContainer>
             <MdFace />
-            <label htmlFor="flastname">Last Name:</label>
-            <input type="text" id="flastname" name="flastname" />
-          </div>
-          <div>
+            <input
+              type="text"
+              id="flastname"
+              name="flastname"
+              placeholder="Write your last name"
+            />
+          </InputContainer>
+          <InputContainer>
             <MdEmail />
-            <label htmlFor="email">Email:</label>
-            <input autoComplete="email" type="email" id="email" name="email" />
-          </div>
-          <div>
+            <input
+              autoComplete="email"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Write your Email"
+            />
+          </InputContainer>
+          <InputContainer>
             <MdVpnKey />
-            <label htmlFor="password">Password:</label>
             <input
               autoComplete="current-password"
               type="password"
               id="password"
               name="password"
+              placeholder="Write a password"
             />
-          </div>
+          </InputContainer>
           <RadioInput>
             <input type="radio" name="host" id="host" />
             <label htmlFor="host">Host</label>
