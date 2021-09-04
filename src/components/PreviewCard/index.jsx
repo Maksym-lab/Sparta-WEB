@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import useNearScreen from '../../hooks/useNearScreen';
 import {
   Article,
@@ -23,38 +24,58 @@ import {
 import testPhoto from '../../assets/images/TestPhotoPreviewCard.png';
 import heart from '../../assets/images/Heart.svg';
 import avatar from '../../assets/images/TestAvatarPhoto.png';
-const PreviewCard = () => {
+const PreviewCard = (props) => {
+  const {
+    id,
+    title = '3 relaxed and fun students in central area',
+    mainImage = testPhoto,
+    host: {
+      fullName = 'Jane Cooper',
+    },
+    address = '4517 Washington Ave. Manchester, Kentucky 39495',
+    price = '948.55',
+    availabilityDate = '7/11/19',
+  } = props;
   const [show, ref] = useNearScreen();
   return (
-    <Article ref={ref}>
+    <Link to={`/detail/${id}`} ref={ref}>
       {show && (
-        <Container>
-          <ContainerImage>
-            <OverlayHeart>
-              <ImageHeart src={heart} alt="add to favorite" />
-            </OverlayHeart>
-            <OverlayHost>
-              <ContainerHost>
-                <HostName>Jane Cooper</HostName>
-                <ImageHost src={avatar} alt="Janne Cooper" />
-              </ContainerHost>
-            </OverlayHost>
-            <ImageRoom src={testPhoto} alt="room" />
-          </ContainerImage>
-          <Description>
-            <Availability>
-              <Available>Availability: 7/11/19</Available>
-              <Price>$948.55</Price>
-            </Availability>
-            <Title>3 relaxed and fun students in central area</Title>
-            <AddressContainer>
-              <AddressTitle>Address:</AddressTitle>
-              <Address>4517 Washington Ave. Manchester, Kentucky 39495</Address>
-            </AddressContainer>
-          </Description>
-        </Container>
+        <Article>
+          <Container>
+            <ContainerImage>
+              <OverlayHeart>
+                <ImageHeart src={heart} alt="add to favorite" />
+              </OverlayHeart>
+              <OverlayHost>
+                <ContainerHost>
+                  <HostName>{fullName}</HostName>
+                  <ImageHost src={avatar} alt="Janne Cooper" />
+                </ContainerHost>
+              </OverlayHost>
+              <ImageRoom src={mainImage} alt="room" />
+            </ContainerImage>
+            <Description>
+              <Availability>
+                <Available>
+                  Availability:
+                  {' '}
+                  {availabilityDate}
+                </Available>
+                <Price>
+                  $
+                  {price}
+                </Price>
+              </Availability>
+              <Title>{title}</Title>
+              <AddressContainer>
+                <AddressTitle>Address:</AddressTitle>
+                <Address>{address}</Address>
+              </AddressContainer>
+            </Description>
+          </Container>
+        </Article>
       )}
-    </Article>
+    </Link>
   );
 };
 export default PreviewCard;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import { MdLocalPhone, MdEdit, MdSearch, MdClose } from 'react-icons/md';
 import {
   Section,
@@ -28,12 +29,14 @@ const Modal = () => {
         <Content>
           <h2>Do you want to find a roomie or offer accommodation?</h2>
           <Grid>
-            <div>
-              <Circle>
-                <MdEdit />
-              </Circle>
-              <p>Sign up</p>
-            </div>
+            <Link to="/register">
+              <div>
+                <Circle>
+                  <MdEdit />
+                </Circle>
+                <p>Sign up</p>
+              </div>
+            </Link>
             <div>
               <Circle>
                 <MdSearch />
@@ -47,7 +50,9 @@ const Modal = () => {
               <p>Contact</p>
             </div>
           </Grid>
-          <button type="button">Register</button>
+          <Link to="/register">
+            <button type="button">Register</button>
+          </Link>
         </Content>
       </Section>
     </BlackBackground>

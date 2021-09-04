@@ -16,6 +16,7 @@ export const Article = styled.article`
 export const ContainerImage = styled.div`
   position: relative;
   height: inherit;
+  min-width: ${({ theme }) => theme.size100};
 `;
 export const Container = styled.div`
   display: flex;

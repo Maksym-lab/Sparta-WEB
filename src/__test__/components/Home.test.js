@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Home from '../../pages/Home';
 describe('<Home />', () => {
-  const home = mount(<Home />);
+  const home = shallow(<Home />);
   test('Render of Home component', () => {
     expect(home.length).toEqual(1);
   });

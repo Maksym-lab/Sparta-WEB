@@ -1,27 +1,24 @@
 import { graphql } from 'react-apollo';
 import { gql } from 'apollo-boost';
 const GET_ROOMS = gql`
-  query getRooms($page: Int) {
-    rooms(page: $page) {
-      page
-      pages
-      hasNext
-      data {
-        id
-        title
-        mainImage
-        host {
-          firstName
-          lastName
-          profile {
-            picture
-          }
-        }
-        address
-        availabilityDate
+query getRooms($page: Int) {
+  rooms(page: $page) {
+    page
+    pages
+    hasNext
+    data {
+      id
+      title
+      mainImage
+      host {
+        fullName
       }
+      address
+      price
+      availabilityDate
     }
   }
+}
 `;
 const withQuery = graphql(GET_ROOMS, {
   options: () => ({ variables: { page: 1 } }),
