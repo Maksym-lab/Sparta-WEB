@@ -18,17 +18,29 @@ const Header = () => {
   const [headerModal, setHeaderModal] = useState(false);
   return (
     <>
-      <HeaderModal closeModal={headerModal} changeModal={setHeaderModal} />
-      <HeaderBar>
-        <Container>
-          <Link to="/">
-            <img src={logo} alt="Kumpel logo" />
+      <HeaderModal
+        role="menu"
+        closeModal={headerModal}
+        changeModal={setHeaderModal}
+      />
+      <HeaderBar aria-label="Header">
+        <Container role="banner">
+          <Link to="/" tabIndex="0">
+            <img src={logo} alt="Kumpel logo" className="logo" />
           </Link>
-          <Section>
-            <Heart src={heart} alt="Menu" />
-            <TextLogin>User name!</TextLogin>
-            <UserPhoto src={userPhoto} alt="Menu" />
-            <BurguerMenu onClick={() => setHeaderModal(!headerModal)}>
+          <Section role="menu" tabIndex="-1">
+            <Link to="/myFavorites" tabIndex="0">
+              <Heart role="menuitem" src={heart} alt="Menu" />
+            </Link>
+            <TextLogin role="menuitem" aria-label="User Name" tabIndex="0">
+              User name!
+            </TextLogin>
+            <UserPhoto role="img" src={userPhoto} alt="Menu for Mobil" />
+            <BurguerMenu
+              aria-modal="true"
+              onClick={() => setHeaderModal(!headerModal)}
+              tabIndex="0"
+            >
               {headerModal ? <FiX /> : <FiMenu />}
             </BurguerMenu>
           </Section>

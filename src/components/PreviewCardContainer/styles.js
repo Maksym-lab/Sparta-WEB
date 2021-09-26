@@ -6,17 +6,17 @@ const Grid = styled.div`
   row-gap: 3vw;
   justify-content: space-around;
   max-width: ${({ theme }) => theme.cardsContainerTablet};
-  margin: -32px auto ${({ theme }) => theme.size0};
+  margin: -60px auto ${({ theme }) => theme.size0};
   @media screen and (min-width: ${({ theme }) => theme.tablet}) {
     grid-template-columns: repeat(auto-fill, ${({ theme }) => theme.grid320});
     row-gap: ${({ theme }) => theme.size34};
     justify-content: space-between;
-    margin: -22px auto ${({ theme }) => theme.size0};
+    margin: -60px auto ${({ theme }) => theme.size0};
   }
   @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
     grid-template-columns: repeat(auto-fill, ${({ theme }) => theme.grid414});
     max-width: ${({ theme }) => theme.cardsContainerDesktop};
-    margin: -80px auto ${({ theme }) => theme.size0};
+    margin: -120px auto ${({ theme }) => theme.size0};
   }
 `;
 export default Grid;

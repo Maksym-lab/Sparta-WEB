@@ -38,38 +38,38 @@ const PreviewCard = (props) => {
   } = props;
   const [show, ref] = useNearScreen();
   return (
-    <Link to={`/detail/${id}`} ref={ref}>
+    <Link role="group" aria-label={`room ${id}`} to={`/detail/${id}`} ref={ref} alt={`Room Offer ${id}`}>
       {show && (
-        <Article>
-          <Container>
-            <ContainerImage>
-              <OverlayHeart>
-                <ImageHeart src={heart} alt="add to favorite" />
+        <Article role="textbox">
+          <Container role="group">
+            <ContainerImage role="group">
+              <OverlayHeart role="none">
+                <ImageHeart aria-label="add to favorites" src={heart} alt="add to favorite" />
               </OverlayHeart>
-              <OverlayHost>
-                <ContainerHost>
-                  <HostName>{fullName}</HostName>
-                  <ImageHost src={avatar} alt="Janne Cooper" />
+              <OverlayHost role="group">
+                <ContainerHost role="none">
+                  <HostName aria-label="Host photo">{fullName}</HostName>
+                  <ImageHost role="img" aria-label="Host name" src={avatar} alt="Janne Cooper" />
                 </ContainerHost>
               </OverlayHost>
-              <ImageRoom src={mainImage} alt="room" />
+              <ImageRoom role="img" aria-label="room preview preview" src={mainImage} alt="room photo preview" />
             </ContainerImage>
-            <Description>
-              <Availability>
-                <Available>
+            <Description role="group">
+              <Availability role="list">
+                <Available role="listitem" arial-label="availability">
                   Availability:
                   {' '}
                   {availabilityDate}
                 </Available>
-                <Price>
+                <Price role="listitem" aria-label="price">
                   $
                   {price}
                 </Price>
               </Availability>
-              <Title>{title}</Title>
-              <AddressContainer>
-                <AddressTitle>Address:</AddressTitle>
-                <Address>{address}</Address>
+              <Title aria-label="title">{title}</Title>
+              <AddressContainer role="group">
+                <AddressTitle role="none">Address:</AddressTitle>
+                <Address aria-label="address">{address}</Address>
               </AddressContainer>
             </Description>
           </Container>

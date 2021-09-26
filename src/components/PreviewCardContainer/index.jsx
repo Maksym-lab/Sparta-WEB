@@ -2,6 +2,9 @@ import React from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import Grid from './styles';
 import PreviewCard from '../PreviewCard';
+import Error from '../Error';
+import Loading from '../Loading';
+import DataNotFound from '../DataNotFound';
 const PreviewCardContainer = (props) => {
   const {
     data: {
@@ -11,19 +14,19 @@ const PreviewCardContainer = (props) => {
       loadMore,
     },
   } = props;
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error...</p>;
+  if (loading) return <Loading />;
+  if (error) return <Error />;
   const {
     hasNext,
     data = [],
   } = rooms || {};
-  if (data.length === 0) return <p>{'Sorry, we couldn\'t fint the rooms'}</p>;
+  if (data.length === 0) return <DataNotFound />;
   return (
     <InfiniteScroll
       loadMore={loadMore}
       hasMore={hasNext}
     >
-      <Grid>
+      <Grid aria-label="list of available rooms">
         {data
           .map((room) => <PreviewCard key={room.id} {...room} />)}
       </Grid>

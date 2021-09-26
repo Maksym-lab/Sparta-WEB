@@ -71,7 +71,7 @@ export const variables = {
   shadow4: '0px 2px 2px rgba(64, 64, 64, 0.25)',
   shadowInset: 'inset 0px -2px 0px rgba(0, 0, 0, 0.1)',
   lineSpacing: '1.3',
-  red: '#eb5757',
+  red: '#F34A53',
   lightPink: '#fce7e4',
   darkPink: '#ffd4cd',
   black: '#262526',
