@@ -19,11 +19,8 @@ export const Links = styled.section`
     & a {
       margin: ${({ theme }) => theme.size8};
       text-decoration: none;
-      color: ${({ theme }) => theme.darkGray};
+      color: ${({ theme }) => theme.red};
       margin-left: ${({ theme }) => theme.size4};
-      &:hover, &:focus{
-        color: ${({ theme }) => theme.red};
-      }
     }
   }
 `;

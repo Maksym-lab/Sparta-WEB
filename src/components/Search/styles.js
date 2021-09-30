@@ -31,10 +31,6 @@ export const Container = styled.div`
     background: transparent;
     outline: none;
     font-size: ${({ theme }) => theme.size10};
-    &:focus{
-      border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.lightGray};
-      padding:4px;
-    }
   }
   & svg:first-child {
     font-size: ${({ theme }) => theme.size12};
@@ -49,4 +45,33 @@ export const Container = styled.div`
       font-size: ${({ theme }) => theme.size12};
     }
   }
+`;
+export const Flex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: ${({ theme }) => theme.pct100};
+  max-width: ${({ theme }) => theme.cardsContainerTablet};
+  margin: ${({ theme }) => theme.size16} auto ${({ theme }) => theme.size0};
+  div {
+    display: flex;
+  }
+  button {
+    display: flex;
+    margin-right: ${({ theme }) => theme.size4};
+    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.white};
+    border-radius: ${({ theme }) => theme.radiusBtn};
+    padding: ${({ theme }) => theme.size6} ${({ theme }) => theme.size4} ${({ theme }) => theme.size6} ${({ theme }) => theme.size6};
+    background: transparent;
+    cursor: pointer;
+    font-size: ${({ theme }) => theme.size10};
+    color: ${({ theme }) => theme.white};
+    outline: none;
+  }
+`;
+export const ImageDown = styled.img`
+  align-self: center;
+  margin-left: ${({ theme }) => theme.size8};
+`;
+export const MapIcon = styled.img`
+  cursor: pointer;
 `;

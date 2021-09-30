@@ -30,18 +30,20 @@ const Modal = () => {
         <BlackBackground onClick={handleCloseModal}>
           <Section style={imageBackgroundStyle}>
             <Logo src={logoKumpel} alt="Kumpel" />
-            <CloseModal tabIndex="0 " onClick={handleCloseModal}>
+            <CloseModal onClick={handleCloseModal}>
               <MdClose />
             </CloseModal>
             <Content>
               <h2>Do you want to find a roomie or offer accommodation?</h2>
               <Grid>
-                <div>
-                  <Circle>
-                    <MdEdit />
-                  </Circle>
-                  <p>Sign up</p>
-                </div>
+                <Link to="/register">
+                  <div>
+                    <Circle>
+                      <MdEdit />
+                    </Circle>
+                    <p>Sign up</p>
+                  </div>
+                </Link>
                 <div>
                   <Circle>
                     <MdSearch />

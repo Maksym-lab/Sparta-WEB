@@ -2,15 +2,12 @@
 
 exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
 <footer
-  aria-label="Footer"
   className="sc-AxjAm eCKzHt"
 >
   <section
-    aria-label="Social Media"
     className="sc-AxirZ gKUsqw"
   >
     <svg
-      aria-label="WhatsApp Link"
       fill="currentColor"
       height="1em"
       stroke="currentColor"
@@ -20,7 +17,6 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
           "color": undefined,
         }
       }
-      tabIndex="0"
       viewBox="0 0 448 512"
       width="1em"
       xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +26,6 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
       />
     </svg>
     <svg
-      arial-label="Facebook Link"
       fill="currentColor"
       height="1em"
       stroke="currentColor"
@@ -40,7 +35,6 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
           "color": undefined,
         }
       }
-      tabIndex="0"
       viewBox="0 0 512 512"
       width="1em"
       xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +44,6 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
       />
     </svg>
     <svg
-      aria-label="Instagram Link"
       fill="currentColor"
       height="1em"
       stroke="currentColor"
@@ -60,7 +53,6 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
           "color": undefined,
         }
       }
-      tabIndex="0"
       viewBox="0 0 512 512"
       width="1em"
       xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +65,6 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
       />
     </svg>
     <svg
-      arial-label="Twitter Link"
       fill="currentColor"
       height="1em"
       stroke="currentColor"
@@ -83,7 +74,6 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
           "color": undefined,
         }
       }
-      tabIndex="0"
       viewBox="0 0 448 512"
       width="1em"
       xmlns="http://www.w3.org/2000/svg"
@@ -94,15 +84,12 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
     </svg>
   </section>
   <section
-    className="sc-AxiKw fkZbMu"
-    role="menu"
+    className="sc-AxiKw hDsMzE"
   >
     <p>
       <a
         href="/privacy"
         onClick={[Function]}
-        role="menuitem"
-        tabIndex="0"
       >
         Notice of Privacy
       </a>
@@ -111,8 +98,6 @@ exports[`Footer Snapshot Check the UI of the Footer component 1`] = `
       <a
         href="/about"
         onClick={[Function]}
-        role="menuitem"
-        tabIndex="0"
       >
         About us
       </a>

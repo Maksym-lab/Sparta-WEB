@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={variables}>
       <GlobalStyle />
-      <Header role="heading" />
+      <Header />
       {children}
       <Footer />
     </ThemeProvider>

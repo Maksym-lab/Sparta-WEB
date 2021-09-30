@@ -41,25 +41,17 @@ export const BlackBackground = styled.span`
 `;
 export const Logo = styled.img`
   position: absolute;
-  top: ${({ theme }) => theme.size14};;
-  left: ${({ theme }) => theme.size14};;
+  top: 14px;
+  left: 14px;
   width: ${({ theme }) => theme.pct20};
 `;
 export const CloseModal = styled.div`
   position: absolute;
-  top: ${({ theme }) => theme.size14};;
-  right: ${({ theme }) => theme.size14};;
+  top: 14px;
+  right: 14px;
   cursor: pointer;
   svg {
     color: ${({ theme }) => theme.white};
-  }
-  &:hover, &:active, &:focus{
-    background: ${({ theme }) => theme.black};
-    border-radius:${({ theme }) => theme.radiusCircle};;
-    width:${({ theme }) => theme.size20};;
-    height:${({ theme }) => theme.size20};;
-    padding:2px;
-    outline:none;
   }
 `;
 export const Content = styled.div`
@@ -81,24 +73,22 @@ export const Content = styled.div`
     justify-content: center;
     align-items: center;
     margin: auto;
-    border: none;
+    border: ${({ theme }) => theme.border} solid
+      ${({ theme }) => theme.lightGray};
     border-radius: ${({ theme }) => theme.radiusBtn};
     width: 140px;
     height: ${({ theme }) => theme.size40};
     background-color: ${({ theme }) => theme.red};
     cursor: pointer;
     font-size: 1em;
-    font-weight: ${({ theme }) => theme.bold};
-    color: black;
-    &:hover, &:active, &:focus{
-      background:#ff555e;
-    }
+    font-weight: ${({ theme }) => theme.regular};
+    color: ${({ theme }) => theme.white};
   }
 `;
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: ${({ theme }) => theme.size16};;
+  grid-column-gap: 15px;
   margin: ${({ theme }) => theme.size30} 0;
   div {
     margin: auto;
