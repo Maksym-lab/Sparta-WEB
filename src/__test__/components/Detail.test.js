@@ -1,8 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Detail from '../../pages/Detail';
 describe('<Header />', () => {
-  const detail = shallow(<Detail />);
+  const detail = mount(<Detail />);
   test('Render of Header component', () => {
     expect(detail.length).toEqual(1);
   });

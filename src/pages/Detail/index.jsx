@@ -43,9 +43,6 @@ import backgroundDetailDesktopImage from '../../assets/images/BackgroundDetailDe
 import BackButton from '../../components/BackButton';
 import Tooltip from '../../components/Tooltip';
 const Detail = () => {
-  const TEST_NUMBER = '525579861571';
-  const TEST_MESSAGE =
-    'Hi%20there,%20Im%20HOSTNAME,%20please%20let%20me%20know%20your%20requests.';
   return (
     <>
       <BackgroundDetailDesktop>
@@ -70,13 +67,10 @@ const Detail = () => {
             </div>
             <Social>
               <div>
-                <a href={`https:
-                  <button type="submit">
-                    <img src={whatsappIconWhite} alt="WhatsApp" />
-                    WhatsApp
-                  </button>
-                </a>
-                <div id="WAButton" />
+                <button type="submit">
+                  <img src={whatsappIconWhite} alt="WhatsApp" />
+                  WhatsApp
+                </button>
               </div>
               <div>
                 <p>tranthuy.nute@gmail.com</p>

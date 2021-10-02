@@ -6,6 +6,13 @@ export const Article = styled.article`
   height: ${({ theme }) => theme.size100};
   background-color: ${({ theme }) => theme.white};
   cursor: pointer;
+  &:hover{
+    transform: scale(1.025);
+    background:${({ theme }) => theme.absoluteWhite};
+  }
+  &:focus{
+    outline:1px solid ${({ theme }) => theme.blue}
+  }
   @media screen and (min-width: ${({ theme }) => theme.tablet}) {
     height: ${({ theme }) => theme.cardHeightTablet};
   }
@@ -13,18 +20,23 @@ export const Article = styled.article`
     height: ${({ theme }) => theme.cardHeightDesktop};
   }
 `;
+export const Container = styled.div`
+  display: flex;
+  height: inherit;
+`;
 export const ContainerImage = styled.div`
   position: relative;
   height: inherit;
   min-width: ${({ theme }) => theme.size100};
 `;
-export const Container = styled.div`
-  display: flex;
-  height: inherit;
-`;
 export const ContainerHost = styled.div`
   display: flex;
   margin-bottom: ${({ theme }) => theme.size4};
+`;
+export const OverlayHeart = styled.div`
+  position: absolute;
+  right: ${({ theme }) => theme.size6};
+  top: ${({ theme }) => theme.size6};
 `;
 export const ImageHeart = styled.img`
   width: ${({ theme }) => theme.pct100};
@@ -44,11 +56,6 @@ export const ImageRoom = styled.img`
   box-shadow: ${({ theme }) => theme.size14} ${({ theme }) => theme.size0} ${({ theme }) => theme.size6} -9px ${({ theme }) => theme.white};
   border-radius: ${({ theme }) => theme.size8};
   height: ${({ theme }) => theme.pct100};
-`;
-export const OverlayHeart = styled.div`
-  position: absolute;
-  right: ${({ theme }) => theme.size6};
-  top: ${({ theme }) => theme.size6};
 `;
 export const OverlayHost = styled.div`
   position: absolute;

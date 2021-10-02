@@ -9,36 +9,56 @@ const HeaderModal = ({ closeModal, changeModal }) => {
   return (
     <>
       {closeModal && (
-        <BackgroundModal onClick={() => changeModal(!closeModal)}>
-          <Modal>
-            <Profile>
+        <BackgroundModal
+          onClick={() => changeModal(!closeModal)}
+          aria-label="Background"
+          tabIndex="0"
+        >
+          <Modal role="navigation">
+            <Profile role="group">
               <img src={ImageHeaderModalTest} alt="Robert" />
-              <p>Hello Robert!</p>
+              <p title="User profile name">Hello Robert!</p>
             </Profile>
-            <Options>
-              <Link to="/">
-                <p>Home</p>
+            <Options role="menu">
+              <Link role="menuitem" aria-label="Home" tabIndex="0" to="/">
+                <p title="home">Home</p>
               </Link>
-              <hr />
-              <Link to="/favorites">
-                <p>
-                  {' '}
-                  <BsHeartFill /> My Favorites
+              <hr title="Home" />
+              <Link
+                role="menuitem"
+                aria-label="My favorites"
+                tabIndex="0"
+                to="/myfavorites"
+              >
+                <p title="My favorites">
+                  <BsHeartFill aria-label="Heart icon" /> My Favorites
                 </p>
               </Link>
-              <hr />
-              <Link to="/editprofile">
-                <p>Edit Profile</p>
+              <hr title="My favorites" />
+              <Link 
+                role="menuitem" 
+                aria-label="Edit profile" 
+                tabIndex="0" 
+                to="/editprofile"
+              >
+                <p title="Edit profile">Edit Profile</p>
               </Link>
-              <hr />
+              <hr title="Edit profile" />
             </Options>
-            <Footer>
-              <p>Privacy Policy</p>
-              <div>
-                <FaWhatsapp />
-                <IoLogoFacebook />
-                <IoLogoInstagram />
-                <FaTwitterSquare />
+            <Footer role="group">
+              <p title="Privacy Policy">Privacy Policy</p>
+              <div role="group" aria-label="Social Media">
+                <a
+                  href="http:
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                >
+                  <FaWhatsapp />
+                </a>
+                <IoLogoFacebook aria-label="Facebook" />
+                <IoLogoInstagram aria-label="Instagram" />
+                <FaTwitterSquare aria-label="Twitter" />
               </div>
             </Footer>
           </Modal>

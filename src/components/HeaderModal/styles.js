@@ -1,26 +1,28 @@
 import styled from 'styled-components';
 export const BackgroundModal = styled.span`
-  position: absolute;
+  position: fixed;
+  z-index:3;
   display: flex;
   width: 100vw;
-  height: 88vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
 `;
 export const Modal = styled.span`
-  animation: slideLeft 0.4s forwards;
-  z-index: 2;
   position: absolute;
-  top: 0;
+  z-index: 2;
+  top: ${({ theme }) => theme.size0};;
   right: -100px;
   display: flex;
   flex-direction: column;
+  animation: slideLeft 0.4s forwards;
   justify-content: space-between;
+  box-shadow: -8px 8px 16px rgba(123, 123, 123, 0.2);
   width: ${({ theme }) => theme.pct80};
-  height: ${({ theme }) => theme.pct100};
+  height: ${({ theme }) => theme.pct80};
   padding: ${({ theme }) => theme.size6} ${({ theme }) => theme.size18};
-  text-align: right;
   background-color: #202020;
   color: ${({ theme }) => theme.white};
+  text-align: right;
   @keyframes slideLeft {
     100% {
       right: ${({ theme }) => theme.size0};
@@ -35,30 +37,32 @@ export const Profile = styled.figure`
     width: ${({ theme }) => theme.size50};
   }
   p {
-    font-size: ${({ theme }) => theme.fontSize16};
     color: ${({ theme }) => theme.white};
+    font-size: ${({ theme }) => theme.fontSize16};
   }
 `;
 export const Options = styled.nav`
+  position:relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  top: -15%;
   p {
     display: flex;
     align-items: center;
     margin-top: ${({ theme }) => theme.size40};
     margin-bottom: ${({ theme }) => theme.size8};
-    font-size: ${({ theme }) => theme.fontSize16};
     color: ${({ theme }) => theme.white};
+    font-size: ${({ theme }) => theme.fontSize16};
   }
   svg {
     margin-right: ${({ theme }) => theme.size8};
-    font-size: ${({ theme }) => theme.fontSize12};
     color: ${({ theme }) => theme.red};
+    font-size: ${({ theme }) => theme.fontSize12};
   }
   hr {
-    border: 0.25px solid ${({ theme }) => theme.white};
     width: ${({ theme }) => theme.pct100};
+    color:${({ theme }) => theme.white};
   }
 `;
 export const Footer = styled.div`
@@ -70,6 +74,7 @@ export const Footer = styled.div`
     color: ${({ theme }) => theme.white};
   }
   svg {
+    margin: ${({ theme }) => theme.size0} ${({ theme }) => theme.size4};;
     color: ${({ theme }) => theme.white};
   }
 `;
