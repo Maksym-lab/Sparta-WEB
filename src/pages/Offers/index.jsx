@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdClose, MdEdit, MdAddToPhotos } from 'react-icons/md';
-import { Main, Section, Hero } from '../AddOffer/styles';
+import { Main, Section, Hero } from '../../components/RoomForm/styles';
 import PeopleImage from '../../assets/images/PeopleImage.png';
 import { Icons, Card } from './styles';
 import PreviewCard from '../../components/PreviewCard';

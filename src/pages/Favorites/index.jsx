@@ -4,7 +4,7 @@ import MovingBanner from '../../assets/images/MovingBanner.jpg';
 import Badge from '../../components/Badge';
 import Grid from './styles';
 import PreviewCard from '../../components/PreviewCard';
-import { Main, Hero, Section } from '../AddOffer/styles';
+import { Main, Hero, Section } from '../../components/RoomForm/styles';
 const Favorites = () => {
   return (
     <Main>

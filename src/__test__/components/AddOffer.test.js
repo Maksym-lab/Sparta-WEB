@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import AddOffer from '../../pages/AddOffer';
 describe('<AddOffer />', () => {
-  const addOffer = mount(<AddOffer />);
+  const addOffer = shallow(<AddOffer />);
   test('Render of AddOffer page', () => {
     expect(addOffer.length).toEqual(1);
   });
