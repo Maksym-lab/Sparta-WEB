@@ -6,6 +6,9 @@ import backgroundHero from '../../assets/images/BackgroundRegister.png';
 import Badge from '../../components/Badge';
 import BackButton from '../../components/BackButton';
 const Login = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <Hero>
@@ -14,7 +17,7 @@ const Login = () => {
       </Hero>
       <BackButton />
       <Main>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <InputContainer>
             <MdEmail />
             <input
@@ -22,7 +25,10 @@ const Login = () => {
               type="email"
               id="email"
               name="email"
-              placeholder="Write your Email"
+              placeholder="Write your Email *"
+              required
+              minLength="7"
+              maxLength="50"
             />
           </InputContainer>
           <InputContainer>
@@ -32,7 +38,10 @@ const Login = () => {
               type="password"
               id="password"
               name="password"
-              placeholder="Write a password"
+              placeholder="Write a password *"
+              required
+              minLength="6"
+              maxLength="40"
             />
           </InputContainer>
           <Buttons>

@@ -14,7 +14,6 @@ import background from '../../assets/images/BGModal.png';
 import logoKumpel from '../../assets/images/Logo.svg';
 const Modal = () => {
   const [modal, setModal] = useState(true);
-  console.log(modal);
   const imageBackgroundStyle = {
     backgroundImage: `url(${background})`,
     backgroundRepeat: 'no-repeat',

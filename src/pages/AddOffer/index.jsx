@@ -2,6 +2,9 @@ import React from 'react';
 import RoomForm from '../../components/RoomForm';
 import CreateRoomMutation from '../../containers/CreateRoomMutation';
 const AddOffer = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <CreateRoomMutation>
       {

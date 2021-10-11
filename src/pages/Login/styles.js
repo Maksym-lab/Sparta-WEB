@@ -21,7 +21,8 @@ const input = css`
 `;
 export const Hero = styled.figure`
   position: relative;
-  margin: ${({ theme }) => theme.size32} ${({ theme }) => theme.size0} ${({ theme }) => theme.size75};
+  margin: ${({ theme }) => theme.size32} ${({ theme }) => theme.size0}
+    ${({ theme }) => theme.size75};
   & img {
     height: ${({ theme }) => theme.size100};
     width: ${({ theme }) => theme.pct100};
@@ -42,20 +43,24 @@ export const Main = styled.main`
   margin: auto;
   max-width: ${({ theme }) => theme.maxWidthBorderDesktop};
   @media (min-width: ${({ theme }) => theme.tablet}) {
-    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.darkGray};
+    border: ${({ theme }) => theme.border} solid
+      ${({ theme }) => theme.darkGray};
     border-radius: ${({ theme }) => theme.size8};
     margin: ${({ theme }) => theme.size0} 4%;
     max-width: ${({ theme }) => theme.maxWidthBorderDesktop};
   }
   @media (min-width: ${({ theme }) => theme.tablet}) {
     margin: auto;
-    max-width: ${({ theme }) => theme.cardsContainerTablet};;
+    max-width: ${({ theme }) => theme.cardsContainerTablet};
   }
 `;
 export const Form = styled.form`
   width: ${({ theme }) => theme.pct90};
   max-width: ${({ theme }) => theme.grid414};
-  margin:10% auto 25%;
+  margin: 10% auto 25%;
+  & input:valid {
+    border: 2px solid green;
+  }
 `;
 export const InputContainer = styled.div`
   position: relative;

@@ -220,6 +220,33 @@ export const AddressAndReferencesDesktop = styled.address`
     }
   }
 `;
+export const TagsReferences = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: ${({ theme }) => theme.size10};
+  row-gap: ${({ theme }) => theme.size14};
+  padding: ${({ theme }) => theme.size0};
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:${({ theme }) => theme.shadow4};
+    border: ${({ theme }) => theme.border} solid #${({ theme }) => theme.lightGray};
+    border-radius: ${({ theme }) => theme.radiusBtn};
+    height: ${({ theme }) => theme.size30};
+    padding: 5%;
+    background-color: ${({ theme }) => theme.absoluteWhite};
+    font-weight: ${({ theme }) => theme.regular};
+    font-size: 0.7em;
+    list-style: none;
+  }
+  @media (min-width: ${({ theme }) => theme.tablet}) and (max-width: ${({ theme }) => theme.desktop1024}) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  @media (min-width: 1025px) {
+    height: fit-content;
+  }
+`;
 export const DescriptionAndImageDesktop = styled.div`
   @media (min-width: 1025px) {
     display: grid;

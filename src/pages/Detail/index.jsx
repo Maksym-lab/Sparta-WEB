@@ -15,13 +15,13 @@ import {
   GridIcons,
   GridEach,
   TagsInterest,
+  TagsReferences,
   ContactButtons,
   HostTab,
   FirstContactInfoTabAndDesktop,
   OverlayPrice,
   DetailDesktop,
   ImgRoom,
-  Bold,
   Hero,
   ImgDescription,
   AddressAndReferencesDesktop,
@@ -42,254 +42,192 @@ import peopleImage from '../../assets/images/PeopleImage.png';
 import backgroundDetailDesktopImage from '../../assets/images/BackgroundDetailDesktop.png';
 import BackButton from '../../components/BackButton';
 import Tooltip from '../../components/Tooltip';
-const Detail = () => {
+const Detail = (props) => {
+  console.log('props: ', props);
+  const {
+    data: {
+      loading,
+      error,
+      room,
+    },
+  } = (props) || {};
+  console.log('data: ', room);
+  if (error) {
+    return <p>Sorry, we couldn&apos;t find the room</p>;
+  }
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  const { title,
+    description,
+    host: { fullName, email } = {},
+    price,
+    address,
+    features = [],
+    places = [],
+    availabilityDate } = room || {};
   return (
     <>
-      <BackgroundDetailDesktop>
-        <Hero src={backgroundDetailDesktopImage} alt="Background" />
-      </BackgroundDetailDesktop>
-      <BackButton />
-      <DetailDesktop>
-        <MainImage>
-          <OverlayPrice>
-            <p>$948.55</p>
-          </OverlayPrice>
-          <img src={testMainImageDetail} alt="room" />
-        </MainImage>
-        <div className="Carousel">
-          <Carousel />
-        </div>
-        <Container>
-          <FirstContactInfo>
-            <div>
-              <p>Created: 10/28/12</p>
-              <p>Availability: 7/11/19</p>
+      {room && (
+        <>
+          <BackgroundDetailDesktop>
+            <Hero src={backgroundDetailDesktopImage} alt="Background" />
+          </BackgroundDetailDesktop>
+          <BackButton />
+          <DetailDesktop>
+            <MainImage>
+              <OverlayPrice>
+                <p>${price}</p>
+              </OverlayPrice>
+              <img src={testMainImageDetail} alt="room" />
+            </MainImage>
+            <div className="Carousel">
+              <Carousel />
             </div>
-            <Social>
-              <div>
-                <button type="submit">
-                  <img src={whatsappIconWhite} alt="WhatsApp" />
-                  WhatsApp
-                </button>
-              </div>
-              <div>
-                <p>tranthuy.nute@gmail.com</p>
-                <img src={emailIcon} alt="WhatsApp" />
-              </div>
-            </Social>
-          </FirstContactInfo>
-          <FirstContactInfoTabAndDesktop>
-            <HostTab>
-              <img src={hostImage} alt="Diana Cooper Host" />
-              <p>Diana Cooper</p>
-            </HostTab>
-            <div>
-              <time>Created: 10/28/12</time>
-              <p>Availability: 7/11/19</p>
-            </div>
-            <Social>
-              <div>
-                <button type="submit">
+            <Container>
+              <FirstContactInfo>
+                <div>
+                  <p>Availability: {availabilityDate.slice(0, -15)}</p>
+                </div>
+                <Social>
+                  <div>
+                    <button type="submit">
+                      <img src={whatsappIconWhite} alt="WhatsApp" />
+                      WhatsApp
+                    </button>
+                  </div>
+                  <div>
+                    <p>{email}</p>
+                    <img src={emailIcon} alt="WhatsApp" />
+                  </div>
+                </Social>
+              </FirstContactInfo>
+              <FirstContactInfoTabAndDesktop>
+                <HostTab>
+                  <img src={hostImage} alt="Diana Cooper Host" />
+                  <p>{fullName}</p>
+                </HostTab>
+                <div>
+                  <p>Availability: {availabilityDate}</p>
+                </div>
+                <Social>
+                  <div>
+                    <button type="submit">
+                      <img src={whatsappIconWhite} alt="WhatsApp" />
+                      Contact the host
+                    </button>
+                  </div>
+                  <div>
+                    <p>{email}</p>
+                    <img src={emailIcon} alt="WhatsApp" />
+                  </div>
+                </Social>
+              </FirstContactInfoTabAndDesktop>
+              <Host>
+                <img src={hostImage} alt="Diana Cooper Host" />
+                <p>{fullName}</p>
+              </Host>
+              <Title>
+                <h1>{title}</h1>
+                <div>
+                  <img src={heart} alt="add to favorite" />
+                </div>
+              </Title>
+              <Hr />
+              <AddressAndReferencesDesktop>
+                <Address>
+                  <Subtitle>Address:</Subtitle>
+                  <Red>{address}</Red>
+                </Address>
+                <Section>
+                  <Subtitle>References:</Subtitle>
+                  <TagsReferences>
+                    {
+                      places.map((item) => <li key={item.id}>{item.details}</li>)
+                    }
+                  </TagsReferences>
+                </Section>
+              </AddressAndReferencesDesktop>
+              <Hr />
+              <DescriptionAndImageDesktop>
+                <div>
+                  <Section>
+                    <Subtitle>Description:</Subtitle>
+                    <p>{description}</p>
+                  </Section>
+                  <GridIcons>
+                    {
+                      features.map(({ feature }) => {
+                        if (feature.category.id === '1') {
+                          return (
+                            <Tooltip text={feature.name} key={feature.id}>
+                              <GridEach>
+                                <img src={closetIcon} alt="icon" />
+                                <img src={infoIcon} alt={`More information about ${feature.name}`} />
+                                <p>{feature.name}</p>
+                              </GridEach>
+                            </Tooltip>
+                          );
+                        }
+                      })
+                    }
+                  </GridIcons>
+                </div>
+                <div>
+                  <ImgDescription src={twoGirls} alt="Preview description" />
+                </div>
+              </DescriptionAndImageDesktop>
+              <Hr />
+              <TheRoomAndImageDesktop>
+                <div>
+                  <ImgRoom src={peopleImage} alt="The room preview" />
+                </div>
+                <div>
+                  <Section>
+                    <Subtitle>The room:</Subtitle>
+                  </Section>
+                  <GridIcons>
+                    {
+                      features.map(({ feature }) => {
+                        if (feature.category.id === '2') {
+                          return (
+                            <Tooltip text={feature.name} key={feature.id}>
+                              <GridEach>
+                                <img src={closetIcon} alt="icon" />
+                                <img src={infoIcon} alt={`More information about ${feature.name}`} />
+                                <p>{feature.name}</p>
+                              </GridEach>
+                            </Tooltip>
+                          );
+                        }
+                      })
+                    }
+                  </GridIcons>
+                </div>
+              </TheRoomAndImageDesktop>
+              <Hr />
+              <AtmosphereDesktop>
+                <Section>
+                  <Subtitle>Atmosphere</Subtitle>
+                  {}
+                </Section>
+                <TagsInterest>
+                  {
+                    places.map((item) => <li key={item.id}>{item.details}</li>)
+                  }
+                </TagsInterest>
+              </AtmosphereDesktop>
+              <ContactButtons>
+                <button type="button">
                   <img src={whatsappIconWhite} alt="WhatsApp" />
                   Contact the host
                 </button>
-              </div>
-              <div>
-                <p>tranthuy.nute@gmail.com</p>
-                <img src={emailIcon} alt="WhatsApp" />
-              </div>
-            </Social>
-          </FirstContactInfoTabAndDesktop>
-          <Host>
-            <img src={hostImage} alt="Diana Cooper Host" />
-            <p>Diana Cooper</p>
-          </Host>
-          <Title>
-            <h1>3 relaxed and fun students in central area</h1>
-            <div>
-              <img src={heart} alt="add to favorite" />
-            </div>
-          </Title>
-          <Hr />
-          <AddressAndReferencesDesktop>
-            <Address>
-              <Subtitle>Address:</Subtitle>
-              <Red>3891 Ranchview Dr. Richardson, California 62639</Red>
-            </Address>
-            <Section>
-              <Subtitle>References:</Subtitle>
-              <p>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
-                Exercitation veniam consequat sunt nostrud amet.
-              </p>
-            </Section>
-          </AddressAndReferencesDesktop>
-          <Hr />
-          <DescriptionAndImageDesktop>
-            <div>
-              <Section>
-                <Subtitle>Description:</Subtitle>
-                <p>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint. Velit officia consequat duis enim velit mollit.
-                  Exercitation veniam consequat sunt nostrud amet.
-                </p>
-              </Section>
-              <GridIcons>
-                <Tooltip text="Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue">
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                    <p>4 rooms</p>
-                  </GridEach>
-                </Tooltip>
-                <Tooltip text="Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue">
-                  <GridEach>
-                    <img src={closetIcon} alt="icon" />
-                    <img src={infoIcon} alt="more info about XXX" />
-                    <p>4 rooms</p>
-                  </GridEach>
-                </Tooltip>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-              </GridIcons>
-            </div>
-            <div>
-              <ImgDescription src={twoGirls} alt="Preview description" />
-            </div>
-          </DescriptionAndImageDesktop>
-          <Hr />
-          <TheRoomAndImageDesktop>
-            <div>
-              <ImgRoom src={peopleImage} alt="The room preview" />
-            </div>
-            <div>
-              <Section>
-                <Subtitle>The room:</Subtitle>
-              </Section>
-              <GridIcons>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-                <GridEach>
-                  <img src={closetIcon} alt="icon" />
-                  <img src={infoIcon} alt="more info about XXX" />
-                  <p>4 rooms</p>
-                </GridEach>
-              </GridIcons>
-            </div>
-          </TheRoomAndImageDesktop>
-          <Hr />
-          <AtmosphereDesktop>
-            <Section>
-              <Subtitle>Atmosphere</Subtitle>
-              <Bold>What are we looking for?</Bold>
-              <p>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
-                Exercitation veniam consequat sunt nostrud amet.
-              </p>
-            </Section>
-            <TagsInterest>
-              <li>Pet friendly</li>
-              <li>Pet friendly</li>
-              <li>Pet friendly</li>
-              <li>Pet friendly</li>
-              <li>Pet friendly</li>
-              <li>Pet friendly</li>
-              <li>Pet friendly</li>
-            </TagsInterest>
-          </AtmosphereDesktop>
-          <ContactButtons>
-            <button type="button">
-              <img src={whatsappIconWhite} alt="WhatsApp" />
-              Contact the host
-            </button>
-            <p>Are you not registered?</p>
-          </ContactButtons>
-        </Container>
-      </DetailDesktop>
+                <p>Are you not registered?</p>
+              </ContactButtons>
+            </Container>
+          </DetailDesktop>
+        </>
+      )}
     </>
   );
 };
