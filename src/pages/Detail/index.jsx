@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import Carousel from '../../components/Carousel';
 import {
   FirstContactInfo,
@@ -22,6 +23,7 @@ import {
   OverlayPrice,
   DetailDesktop,
   ImgRoom,
+  Bold,
   Hero,
   ImgDescription,
   AddressAndReferencesDesktop,
@@ -45,12 +47,8 @@ import Tooltip from '../../components/Tooltip';
 const Detail = (props) => {
   console.log('props: ', props);
   const {
-    data: {
-      loading,
-      error,
-      room,
-    },
-  } = (props) || {};
+    data: { loading, error, room },
+  } = props || {};
   console.log('data: ', room);
   if (error) {
     return <p>Sorry, we couldn&apos;t find the room</p>;
@@ -58,14 +56,16 @@ const Detail = (props) => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  const { title,
+  const {
+    title,
     description,
-    host: { fullName, email } = {},
+    host: { fullName, firstName, email } = {},
     price,
     address,
     features = [],
     places = [],
-    availabilityDate } = room || {};
+    availabilityDate,
+  } = room || {};
   return (
     <>
       {room && (
@@ -87,14 +87,21 @@ const Detail = (props) => {
             <Container>
               <FirstContactInfo>
                 <div>
-                  <p>Availability: {availabilityDate.slice(0, -15)}</p>
+                  <p>
+                    Availability:{' '}
+                    {new Date(availabilityDate).toLocaleDateString('en-US')}
+                  </p>
                 </div>
                 <Social>
                   <div>
-                    <button type="submit">
-                      <img src={whatsappIconWhite} alt="WhatsApp" />
-                      WhatsApp
-                    </button>
+                    <a
+                      href={`https:
+                    >
+                      <button type="submit">
+                        <img src={whatsappIconWhite} alt="WhatsApp" />
+                        WhatsApp
+                      </button>
+                    </a>
                   </div>
                   <div>
                     <p>{email}</p>
@@ -108,14 +115,21 @@ const Detail = (props) => {
                   <p>{fullName}</p>
                 </HostTab>
                 <div>
-                  <p>Availability: {availabilityDate}</p>
+                  <p>
+                    Availability:{' '}
+                    {new Date(availabilityDate).toLocaleDateString('en-US')}
+                  </p>
                 </div>
                 <Social>
                   <div>
-                    <button type="submit">
-                      <img src={whatsappIconWhite} alt="WhatsApp" />
-                      Contact the host
-                    </button>
+                    <a
+                      href={`https:
+                    >
+                      <button type="submit">
+                        <img src={whatsappIconWhite} alt="WhatsApp" />
+                        WhatsApp
+                      </button>
+                    </a>
                   </div>
                   <div>
                     <p>{email}</p>
@@ -142,9 +156,9 @@ const Detail = (props) => {
                 <Section>
                   <Subtitle>References:</Subtitle>
                   <TagsReferences>
-                    {
-                      places.map((item) => <li key={item.id}>{item.details}</li>)
-                    }
+                    {places.map((item) => (
+                      <li key={item.id}>{item.details}</li>
+                    ))}
                   </TagsReferences>
                 </Section>
               </AddressAndReferencesDesktop>
@@ -156,21 +170,22 @@ const Detail = (props) => {
                     <p>{description}</p>
                   </Section>
                   <GridIcons>
-                    {
-                      features.map(({ feature }) => {
-                        if (feature.category.id === '1') {
-                          return (
-                            <Tooltip text={feature.name} key={feature.id}>
-                              <GridEach>
-                                <img src={closetIcon} alt="icon" />
-                                <img src={infoIcon} alt={`More information about ${feature.name}`} />
-                                <p>{feature.name}</p>
-                              </GridEach>
-                            </Tooltip>
-                          );
-                        }
-                      })
-                    }
+                    {features.map(({ feature }) => {
+                      if (feature.category.id === '1') {
+                        return (
+                          <Tooltip text={feature.name} key={feature.id}>
+                            <GridEach>
+                              <img src={closetIcon} alt="icon" />
+                              <img
+                                src={infoIcon}
+                                alt={`More information about ${feature.name}`}
+                              />
+                              <p>{feature.name}</p>
+                            </GridEach>
+                          </Tooltip>
+                        );
+                      }
+                    })}
                   </GridIcons>
                 </div>
                 <div>
@@ -187,21 +202,22 @@ const Detail = (props) => {
                     <Subtitle>The room:</Subtitle>
                   </Section>
                   <GridIcons>
-                    {
-                      features.map(({ feature }) => {
-                        if (feature.category.id === '2') {
-                          return (
-                            <Tooltip text={feature.name} key={feature.id}>
-                              <GridEach>
-                                <img src={closetIcon} alt="icon" />
-                                <img src={infoIcon} alt={`More information about ${feature.name}`} />
-                                <p>{feature.name}</p>
-                              </GridEach>
-                            </Tooltip>
-                          );
-                        }
-                      })
-                    }
+                    {features.map(({ feature }) => {
+                      if (feature.category.id === '2') {
+                        return (
+                          <Tooltip text={feature.name} key={feature.id}>
+                            <GridEach>
+                              <img src={closetIcon} alt="icon" />
+                              <img
+                                src={infoIcon}
+                                alt={`More information about ${feature.name}`}
+                              />
+                              <p>{feature.name}</p>
+                            </GridEach>
+                          </Tooltip>
+                        );
+                      }
+                    })}
                   </GridIcons>
                 </div>
               </TheRoomAndImageDesktop>
@@ -209,20 +225,32 @@ const Detail = (props) => {
               <AtmosphereDesktop>
                 <Section>
                   <Subtitle>Atmosphere</Subtitle>
-                  {}
+                  <Bold>What are we looking for?</Bold>
+                  <p>
+                    Whether you look forward to a city break, a romantic
+                    getaway, a family or beach holiday, a cultural or
+                    gastronomic trip, alone or with friends, you will be spoilt
+                    for choice.
+                  </p>
                 </Section>
                 <TagsInterest>
-                  {
-                    places.map((item) => <li key={item.id}>{item.details}</li>)
-                  }
+                  {places.map((item) => (
+                    <li key={item.id}>{item.details}</li>
+                  ))}
                 </TagsInterest>
               </AtmosphereDesktop>
               <ContactButtons>
-                <button type="button">
-                  <img src={whatsappIconWhite} alt="WhatsApp" />
-                  Contact the host
-                </button>
-                <p>Are you not registered?</p>
+                <a
+                  href={`https:
+                >
+                  <button type="button">
+                    <img src={whatsappIconWhite} alt="WhatsApp" />
+                    Contact the host
+                  </button>
+                </a>
+                <Link to="/register">
+                  <p>Are you not registered?</p>
+                </Link>
               </ContactButtons>
             </Container>
           </DetailDesktop>

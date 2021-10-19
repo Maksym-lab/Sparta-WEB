@@ -9,6 +9,7 @@ query getRoom($id: Int!) {
     mainImage
     host {
       fullName
+      firstName
       email
       phoneNumber
     }
