@@ -1,9 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import Search from '../../components/Search';
+import useInputValue from '../../hooks/useInputValue';
 import PreviewCardContainer from '../../containers/PreviewCardContainer';
+import PreviewCardContainerWithSearch from '../../containers/PreviewCardContainerWithSearch';
 import Modal from '../../components/Modal';
-const Home = () => {
+const Home = ({ imagesBaseUrl }) => {
+  const [keyWord, setKeyWord] = useInputValue('');
   return (
     <>
       <Helmet>
@@ -20,8 +23,10 @@ const Home = () => {
         <title>Kumpel || Find your roomie </title>
       </Helmet>
       <Modal aria-modal="true" />
-      <Search role="searchbox" />
-      <PreviewCardContainer role="main" />
+      <Search role="searchbox" keyWord={keyWord} setKeyWord={setKeyWord} />
+      {keyWord.value ?
+        <PreviewCardContainerWithSearch role="main" keyword={keyWord.value} imagesBaseUrl={imagesBaseUrl} /> :
+        <PreviewCardContainer role="main" imagesBaseUrl={imagesBaseUrl} />}
     </>
   );
 };

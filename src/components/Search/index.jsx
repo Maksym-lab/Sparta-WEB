@@ -8,12 +8,12 @@ const imageBackgroundStyle = {
   backgroundSize: 'cover',
   backgroundPosition: 'center',
 };
-const Search = () => {
+const Search = ({ keyWord }) => {
   return (
     <SearchContainer style={imageBackgroundStyle}>
       <Container role="none">
         <MdClose aria-label="delete" />
-        <input tabIndex="0" aria-label="search" type="search" placeholder="Search anywhere in Mexico City" htmlFor="search" />
+        <input {...keyWord} tabIndex="0" aria-label="search" type="search" placeholder="Search anywhere in Mexico City" htmlFor="search" />
         <MdSearch role="none" />
       </Container>
     </SearchContainer>

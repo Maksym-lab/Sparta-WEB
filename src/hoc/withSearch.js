@@ -1,39 +1,38 @@
 import { graphql } from 'react-apollo';
 import { gql } from 'apollo-boost';
-const GET_ROOMS = gql`
-query getRooms($page: Int) {
-  rooms(page: $page, limit: 10) {
-    page
-    pages
-    hasNext
-    data {
-      id
-      title
-      mainImage
-      host {
-        fullName
+const SEARCH_ROOMS = gql`
+  query searchRooms($keyword: String!, $page: Int) {
+    roomsSearch(textToSearch: $keyword, page: $page, limit: 10) {
+      page
+      hasNext
+      data {
+        id
+        title
+        mainImage
+        host {
+          fullName
+        }
+        address
+        price
+        availabilityDate
       }
-      address
-      price
-      availabilityDate
     }
   }
-}
 `;
-const withQuery = graphql(GET_ROOMS, {
-  options: () => ({ variables: { page: 1 } }),
+const withSearch = graphql(SEARCH_ROOMS, {
+  options: ({ keyword }) => ({ variables: { keyword, page: 1 } }),
   props: ({ data }) => ({
     data: {
       ...data,
       loadMore: () => data.fetchMore({
-        variables: { page: data.rooms.page + 1 },
+        variables: { page: data.roomsSearch.page + 1 },
         updateQuery: (previousResult = {}, { fetchMoreResult = {} }) => {
           const previousRooms = previousResult.rooms || {};
           const currentRooms = fetchMoreResult.rooms || {};
           const previousData = previousRooms.data || [];
           const currentData = currentRooms.data || [];
           return {
-            rooms: {
+            roomsSearch: {
               ...previousRooms,
               data: [...previousData, ...currentData],
               page: currentRooms.page,
@@ -45,4 +44,4 @@ const withQuery = graphql(GET_ROOMS, {
     },
   }),
 });
-export default withQuery;
+export default withSearch;

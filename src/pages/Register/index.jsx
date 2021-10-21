@@ -1,21 +1,12 @@
 import React from 'react';
 import { MdFace, MdVpnKey, MdEmail } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
-import {
-  Hero,
-  Main,
-  Form,
-  InputContainer,
-  Buttons,
-  RadioInput,
-} from './styles';
+import { Hero, Main, SectionUpload, Form, InputContainer, Buttons, RadioInput } from './styles';
 import backgroundHero from '../../assets/images/BackgroundRegister.png';
+import whiteCircle from '../../assets/images/whiteCircle.jpeg';
 import Badge from '../../components/Badge';
 import BackButton from '../../components/BackButton';
 const Register = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
   return (
     <>
       <Hero>
@@ -24,27 +15,27 @@ const Register = () => {
       </Hero>
       <BackButton />
       <Main>
-        <Form onSubmit={handleSubmit}>
+        <SectionUpload>
+          <img src={whiteCircle} alt="User" />
+          <input type="file" className="inputUpload" />
+        </SectionUpload>
+        <Form>
           <InputContainer>
             <MdFace />
             <input
               type="text"
-              id="name"
-              name="name"
-              placeholder="Write your name *"
-              required
-              maxLength="40"
+              id="fname"
+              name="Name"
+              placeholder="Write your name"
             />
           </InputContainer>
           <InputContainer>
             <MdFace />
             <input
               type="text"
-              id="lastName"
-              name="lastName"
-              placeholder="Write your last name *"
-              required
-              maxLength="50"
+              id="flastname"
+              name="flastname"
+              placeholder="Write your last name"
             />
           </InputContainer>
           <InputContainer>
@@ -54,29 +45,23 @@ const Register = () => {
               type="email"
               id="email"
               name="email"
-              placeholder="Write your Email *"
-              required
-              minLength="7"
-              maxLength="50"
+              placeholder="Write your Email"
             />
           </InputContainer>
           <InputContainer>
             <MdVpnKey />
             <input
+              autoComplete="current-password"
               type="password"
               id="password"
               name="password"
-              autoComplete="current-password"
-              placeholder="Write your password *"
-              required
-              minLength="6"
-              maxLength="40"
+              placeholder="Write a password"
             />
           </InputContainer>
           <RadioInput>
-            <input type="radio" name="user_rol" id="host" defaultChecked />
+            <input type="radio" name="host" id="host" />
             <label htmlFor="host">Host</label>
-            <input type="radio" name="user_rol" id="guess" />
+            <input type="radio" name="guess" id="guess" />
             <label htmlFor="guess">Guess</label>
           </RadioInput>
           <Buttons>

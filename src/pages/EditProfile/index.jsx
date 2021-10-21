@@ -23,9 +23,6 @@ import Badge from '../../components/Badge';
 import BannerTitle from '../../assets/images/editPerfil.jpg';
 import BackButton from '../../components/BackButton';
 const EditProfile = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
   return (
     <Main>
       <Hero>
@@ -34,7 +31,7 @@ const EditProfile = () => {
       </Hero>
       <BackButton />
       <Section>
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <label htmlFor="Name">
             Name:
             <MdInfoOutline />
@@ -45,9 +42,7 @@ const EditProfile = () => {
               type="text"
               id="name"
               name="name"
-              placeholder="Write your name *"
-              required
-              maxLength="40"
+              placeholder="Write your name"
             />
           </InputContainer>
           <label htmlFor="LastName">
@@ -60,9 +55,7 @@ const EditProfile = () => {
               type="text"
               id="lastName"
               name="lastName"
-              placeholder="Write your last name *"
-              required
-              maxLength="50"
+              placeholder="Write your last name"
             />
           </InputContainer>
           <label htmlFor="email">
@@ -72,14 +65,10 @@ const EditProfile = () => {
           <InputContainer>
             <MdEmail />
             <input
-              autoComplete="email"
               type="email"
               id="email"
               name="email"
-              placeholder="Write your Email *"
-              required
-              minLength="7"
-              maxLength="50"
+              placeholder="Write your email"
             />
           </InputContainer>
           <HalfSection>
@@ -91,12 +80,10 @@ const EditProfile = () => {
               <InputContainer>
                 <MdLocalPhone />
                 <input
-                  type="number"
+                  type="tel"
                   id="tel"
                   name="phone"
-                  placeholder="Write your cellphone *"
-                  required
-                  pattern="[0-9]{10}"
+                  placeholder="Write your phone"
                 />
               </InputContainer>
             </Phone>
@@ -111,8 +98,7 @@ const EditProfile = () => {
                   type="date"
                   id="date"
                   name="Date of Birth"
-                  placeholder="Date of Birth *"
-                  required
+                  placeholder="Write your phone"
                 />
               </InputContainer>
             </Birth>
@@ -125,13 +111,9 @@ const EditProfile = () => {
             <MdVpnKey />
             <input
               type="password"
-              id="password"
-              name="password"
-              autoComplete="current-password"
-              placeholder="Write your password *"
-              required
-              minLength="6"
-              maxLength="40"
+              id="pwd"
+              name="pwd"
+              placeholder="Write your password"
             />
             <a href="/">Change your password</a>
           </InputContainer>
@@ -142,10 +124,7 @@ const EditProfile = () => {
           <textarea
             rows="7"
             id="description"
-            placeholder="Write something so that your guest knows you *"
-            required
-            minLength="20"
-            maxLength="255"
+            placeholder="Write something so that your guest knows you"
           />
           <label htmlFor="description">
             What I look for in my roomies?
@@ -155,12 +134,9 @@ const EditProfile = () => {
             type="search"
             id="search"
             name="search"
-            placeholder="Search tags *"
-            required
-            minLength="10"
-            maxLength="120"
+            placeholder="Search tags"
           />
-          <Button type="submit">Save</Button>
+          <Button>Save</Button>
         </Form>
       </Section>
     </Main>

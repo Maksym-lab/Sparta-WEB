@@ -11,15 +11,17 @@ const PreviewCardContainer = (props) => {
       loading,
       error,
       rooms,
+      roomsSearch,
       loadMore,
     },
+    imagesBaseUrl,
   } = props;
   if (loading) return <Loading />;
   if (error) return <Error />;
   const {
     hasNext,
     data = [],
-  } = rooms || {};
+  } = rooms || roomsSearch || {};
   if (data.length === 0) return <DataNotFound />;
   return (
     <InfiniteScroll
@@ -28,7 +30,7 @@ const PreviewCardContainer = (props) => {
     >
       <Grid aria-label="list of available rooms">
         {data
-          .map((room) => <PreviewCard key={room.id} {...room} />)}
+          .map((room) => <PreviewCard key={room.id} {...room} imagesBaseUrl={imagesBaseUrl} />)}
       </Grid>
     </InfiniteScroll>
   );

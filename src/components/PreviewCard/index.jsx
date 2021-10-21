@@ -35,6 +35,7 @@ const PreviewCard = (props) => {
     address = '4517 Washington Ave. Manchester, Kentucky 39495',
     price = '948.55',
     availabilityDate = '7/11/19',
+    imagesBaseUrl,
   } = props;
   const [show, ref] = useNearScreen();
   return (
@@ -52,14 +53,14 @@ const PreviewCard = (props) => {
                   <ImageHost role="img" aria-label="Host name" src={avatar} alt="Janne Cooper" />
                 </ContainerHost>
               </OverlayHost>
-              <ImageRoom role="img" aria-label="room preview preview" src={mainImage} alt="room photo preview" />
+              <ImageRoom role="img" aria-label="room preview preview" src={`${imagesBaseUrl}/${mainImage}`} alt="room photo preview" />
             </ContainerImage>
             <Description role="group">
               <Availability role="list">
                 <Available role="listitem" arial-label="availability">
                   Availability:
                   {' '}
-                  {availabilityDate}
+                  {new Date(availabilityDate).toLocaleDateString('en-US')}
                 </Available>
                 <Price role="listitem" aria-label="price">
                   $

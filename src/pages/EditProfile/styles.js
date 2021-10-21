@@ -20,8 +20,7 @@ export const Main = styled.main`
 `;
 export const Hero = styled.figure`
   position: relative;
-  margin: ${({ theme }) => theme.size32} ${({ theme }) => theme.size0}
-    ${({ theme }) => theme.size75};
+  margin: ${({ theme }) => theme.size32} ${({ theme }) => theme.size0} ${({ theme }) => theme.size75};
   & img {
     width: ${({ theme }) => theme.pct100};
     height: ${({ theme }) => theme.size100};
@@ -43,8 +42,7 @@ export const Hero = styled.figure`
 export const Section = styled.section`
   @media screen and (min-width: ${({ theme }) => theme.tablet}) {
     margin: ${({ theme }) => theme.size0} ${({ theme }) => theme.size26};
-    border: ${({ theme }) => theme.border} solid
-      ${({ theme }) => theme.lightGray};
+    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.lightGray};
     border-radius: ${({ theme }) => theme.size8};
   }
   @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
@@ -56,14 +54,8 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin: ${({ theme }) => theme.size14} 19px ${({ theme }) => theme.size36};
-  & input:valid {
-    border: 2px solid green;
-  }
-  & textarea:valid {
-    border: 2px solid green;
-  }
-  & textarea {
-    margin-bottom: ${({ theme }) => theme.size36};
+  & textarea{
+    margin-bottom:${({ theme }) => theme.size36};
     padding: ${({ theme }) => theme.size14};
   }
   & label {
@@ -79,7 +71,7 @@ export const Form = styled.form`
       color: ${({ theme }) => theme.lightGray};
     }
   }
-  & input#search {
+  & input#search{
     height: ${({ theme }) => theme.size50};
     margin-bottom: ${({ theme }) => theme.size50};
     padding-left: ${({ theme }) => theme.size14};
@@ -90,8 +82,7 @@ export const Form = styled.form`
       margin-bottom: ${({ theme }) => theme.size28};
       font-size: ${({ theme }) => theme.size14};
     }
-    & input,
-    textarea {
+    & input, textarea {
       font-size: ${({ theme }) => theme.size12};
     }
   }
@@ -100,8 +91,7 @@ export const Form = styled.form`
       margin-bottom: ${({ theme }) => theme.size20};
       font-size: ${({ theme }) => theme.size24};
     }
-    & input,
-    textarea {
+    & input, textarea {
       font-size: ${({ theme }) => theme.size16};
     }
     & input {
@@ -110,38 +100,38 @@ export const Form = styled.form`
   }
 `;
 export const InputContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: ${({ theme }) => theme.size34};
-  width: ${({ theme }) => theme.pct100};
-  & a {
-    margin-top: ${({ theme }) => theme.size10};
-    font-size: ${({ theme }) => theme.size10};
-    @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-      font-size: ${({ theme }) => theme.size12};
-    }
+position:relative;
+display: flex;
+flex-direction:column;
+margin-bottom: ${({ theme }) => theme.size34};
+width:${({ theme }) => theme.pct100};
+& a{
+  margin-top: ${({ theme }) => theme.size10};
+  font-size: ${({ theme }) => theme.size10};
+  @media screen and (min-width: ${({ theme }) => theme.tablet}){
+    font-size: ${({ theme }) => theme.size12};
   }
-  & .password {
-    margin-bottom: 0px;
+}
+& .password{
+  margin-bottom:0px;
+}
+& svg{
+  position: absolute;
+  top: ${({ theme }) => theme.size10};
+  left: ${({ theme }) => theme.size8};
+  font-size: ${({ theme }) => theme.size16};
+  color: ${({ theme }) => theme.darkGray};
+  @media screen and (min-width: ${({ theme }) => theme.tablet}){
+  top: ${({ theme }) => theme.size18};
+  font-size: ${({ theme }) => theme.size20};
   }
-  & svg {
-    position: absolute;
-    top: ${({ theme }) => theme.size10};
-    left: ${({ theme }) => theme.size8};
-    font-size: ${({ theme }) => theme.size16};
-    color: ${({ theme }) => theme.darkGray};
-    @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-      top: ${({ theme }) => theme.size18};
-      font-size: ${({ theme }) => theme.size20};
-    }
-    @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
-      top: ${({ theme }) => theme.size16};
-    }
+  @media screen and (min-width: ${({ theme }) => theme.desktop1024}){
+  top: ${({ theme }) => theme.size16};
   }
-  & input {
+}
+& input {
     padding-left: ${({ theme }) => theme.size30};
-    width: ${({ theme }) => theme.pct100};
+    width:${({ theme }) => theme.pct100};
     height: ${({ theme }) => theme.size30};
     ${input}
   }
@@ -176,15 +166,15 @@ export const InputContainer = styled.div`
 `;
 export const HalfSection = styled.div`
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns:60% 40%;
 `;
 export const Phone = styled.div`
-  display: flex;
-  flex-direction: column;
+  display:flex;
+  flex-direction:column;
 `;
 export const Birth = styled.div`
-  display: flex;
-  flex-direction: column;
+  display:flex;
+  flex-direction:column;
 `;
 export const Button = styled.button`
   margin-top: ${({ theme }) => theme.size50};

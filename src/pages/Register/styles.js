@@ -21,8 +21,7 @@ const input = css`
 `;
 export const Hero = styled.figure`
   position: relative;
-  margin: ${({ theme }) => theme.size32} ${({ theme }) => theme.size0}
-    ${({ theme }) => theme.size75};
+  margin: ${({ theme }) => theme.size32} ${({ theme }) => theme.size0} ${({ theme }) => theme.size75};
   & img {
     height: ${({ theme }) => theme.size100};
     width: ${({ theme }) => theme.pct100};
@@ -43,32 +42,34 @@ export const Main = styled.main`
   margin: auto;
   max-width: ${({ theme }) => theme.maxWidthBorderDesktop};
   @media (min-width: ${({ theme }) => theme.tablet}) {
-    border: ${({ theme }) => theme.border} solid
-      ${({ theme }) => theme.darkGray};
+    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.darkGray};
     border-radius: ${({ theme }) => theme.size8};
     margin: ${({ theme }) => theme.size0} 4%;
     max-width: ${({ theme }) => theme.maxWidthBorderDesktop};
   }
   @media (min-width: ${({ theme }) => theme.tablet}) {
     margin: auto;
-    max-width: ${({ theme }) => theme.cardsContainerTablet};
+    max-width: ${({ theme }) => theme.cardsContainerTablet};;
   }
 `;
 export const SectionUpload = styled.section`
   position: relative;
   ${flex}
-  margin: ${({ theme }) => theme.size26} auto;
+  margin: ${({ theme }) => theme.size50} ${({ theme }) => theme.size0} ${({ theme }) => theme.size20};;
   width:calc( ${({ theme }) => theme.size100} * 3 );
   height:${({ theme }) => theme.size70};
   object-fit:cover;
   @media(max-width:${({ theme }) => theme.mobil}){
-      margin: ${({ theme }) => theme.size26} auto;
+      margin: ${({ theme }) => theme.size26} ${({ theme }) => theme.size0} ${({ theme }) => theme.size10};;
   }
   img {
     width: ${({ theme }) => theme.size75};
     height: ${({ theme }) => theme.size75};
     border-radius:${({ theme }) => theme.radiusCircle};
     box-shadow: ${({ theme }) => theme.shadow1};
+    @media(max-width:${({ theme }) => theme.mobil}){
+      width: ${({ theme }) => theme.size50};
+    }
   }
   & input {
     display: flex;
@@ -102,12 +103,6 @@ export const SectionUpload = styled.section`
 export const Form = styled.form`
   width: ${({ theme }) => theme.pct90};
   max-width: ${({ theme }) => theme.grid414};
-  & input:valid {
-    border: 2px solid green;
-  }
-  & textarea:valid {
-    border: 2px solid green;
-  }
 `;
 export const InputContainer = styled.div`
   position: relative;
@@ -187,16 +182,15 @@ export const RadioInput = styled.section`
     display: none;
   }
   input[type='radio'] + label:before {
-    position: relative;
-    top: 3px;
-    margin-right: ${({ theme }) => theme.size4};
+    position:relative;
+    top:3px;
+    margin-right:${({ theme }) => theme.size4};
     content: '';
     display: inline-block;
     margin-right: ${({ theme }) => theme.size3};
     width: ${({ theme }) => theme.size14};
     height: ${({ theme }) => theme.size14};
-    border: ${({ theme }) => theme.border} solid
-      ${({ theme }) => theme.darkGray};
+    border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.darkGray};
     border-radius: ${({ theme }) => theme.radiusCircle};
     background-clip: content-box;
     background-color: ${({ theme }) => theme.white};
@@ -218,7 +212,7 @@ export const Buttons = styled.section`
     font-size: 1.1em;
     color: ${({ theme }) => theme.black};
   }
-  button:nth-child(2) {
+  button:nth-child(1) {
     margin-right: ${({ theme }) => theme.size10};
     background-color: ${({ theme }) => theme.red};
     color: ${({ theme }) => theme.white};

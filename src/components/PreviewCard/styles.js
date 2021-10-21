@@ -4,6 +4,7 @@ export const Article = styled.article`
   border-radius: ${({ theme }) => theme.size14};
   width: ${({ theme }) => theme.pct100};
   height: ${({ theme }) => theme.size100};
+  min-height: ${({ theme }) => theme.size100};
   background-color: ${({ theme }) => theme.white};
   cursor: pointer;
   &:hover{
@@ -22,12 +23,13 @@ export const Article = styled.article`
 `;
 export const Container = styled.div`
   display: flex;
-  height: inherit;
+  height: 100%;
 `;
-export const ContainerImage = styled.div`
+export const ContainerImage = styled.figure`
   position: relative;
   height: inherit;
   min-width: ${({ theme }) => theme.size100};
+  width: -webkit-fill-available;
 `;
 export const ContainerHost = styled.div`
   display: flex;
@@ -56,6 +58,8 @@ export const ImageRoom = styled.img`
   box-shadow: ${({ theme }) => theme.size14} ${({ theme }) => theme.size0} ${({ theme }) => theme.size6} -9px ${({ theme }) => theme.white};
   border-radius: ${({ theme }) => theme.size8};
   height: ${({ theme }) => theme.pct100};
+  width: 100%;
+  object-fit: cover;
 `;
 export const OverlayHost = styled.div`
   position: absolute;
@@ -67,7 +71,8 @@ export const HostName = styled.p`
   margin: ${({ theme }) => theme.size0};
   font-size: ${({ theme }) => theme.size8};
   font-weight: ${({ theme }) => theme.regular};
-  color: ${({ theme }) => theme.white};;
+  text-shadow: 1px 1px 2px black;
+  color: ${({ theme }) => theme.white};
   @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
     font-size: ${({ theme }) => theme.size12};
   }
@@ -80,6 +85,7 @@ export const Description = styled.div`
   padding: ${({ theme }) => theme.size6};
 `;
 export const Title = styled.h2`
+  height: inherit;
   font-size: ${({ theme }) => theme.size10};
   margin: ${({ theme }) => theme.size6} 0;
   @media screen and (min-width: ${({ theme }) => theme.tablet}) {
