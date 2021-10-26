@@ -45,11 +45,9 @@ import backgroundDetailDesktopImage from '../../assets/images/BackgroundDetailDe
 import BackButton from '../../components/BackButton';
 import Tooltip from '../../components/Tooltip';
 const Detail = (props) => {
-  console.log('props: ', props);
   const {
     data: { loading, error, room },
   } = props || {};
-  console.log('data: ', room);
   if (error) {
     return <p>Sorry, we couldn&apos;t find the room</p>;
   }

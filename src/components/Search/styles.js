@@ -20,6 +20,7 @@ export const Container = styled.div`
   width: ${({ theme }) => theme.pct100};
   max-width: ${({ theme }) => theme.cardsContainerTablet};
   height: ${({ theme }) => theme.size36};
+  padding-left: 20px;
   border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.black};
   border-radius: calc(${({ theme }) => theme.size50} + ${({ theme }) => theme.size16});
   background: ${({ theme }) => theme.white};

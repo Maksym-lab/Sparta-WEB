@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdSearch, MdClose } from 'react-icons/md';
+import { MdSearch } from 'react-icons/md';
 import { Container, SearchContainer } from './styles';
 import backgroundHome from '../../assets/images/BackgroundHome.png';
 const imageBackgroundStyle = {
@@ -8,12 +8,18 @@ const imageBackgroundStyle = {
   backgroundSize: 'cover',
   backgroundPosition: 'center',
 };
-const Search = ({ keyWord }) => {
+const Search = ({ keyWord, setKeyWord }) => {
   return (
     <SearchContainer style={imageBackgroundStyle}>
       <Container role="none">
-        <MdClose aria-label="delete" />
-        <input {...keyWord} tabIndex="0" aria-label="search" type="search" placeholder="Search anywhere in Mexico City" htmlFor="search" />
+        <input
+          {...keyWord}
+          tabIndex="0"
+          aria-label="search"
+          type="search"
+          placeholder="Search anywhere in Mexico City"
+          htmlFor="search"
+        />
         <MdSearch role="none" />
       </Container>
     </SearchContainer>
