@@ -92,8 +92,7 @@ export const FirstContactInfoTabAndDesktop = styled.div`
   display: none;
   @media (min-width: ${({ theme }) => theme.tablet}) {
     display: grid;
-    grid-template-columns: ${({ theme }) => theme.pct60} ${({ theme }) =>
-        theme.pct15} ${({ theme }) => theme.pct25};
+    grid-template-columns: ${({ theme }) => theme.pct60} ${({ theme }) => theme.pct15} ${({ theme }) => theme.pct25};
     align-items: center;
     color: ${({ theme }) => theme.darkGray};
     p {
@@ -235,8 +234,7 @@ export const TagsReferences = styled.ul`
     justify-content: center;
     align-items: center;
     box-shadow:${({ theme }) => theme.shadow4};
-    border: ${({ theme }) => theme.border} solid #${({ theme }) =>
-  theme.lightGray};
+    border: ${({ theme }) => theme.border} solid #${({ theme }) => theme.lightGray};
     border-radius: ${({ theme }) => theme.radiusBtn};
     height: ${({ theme }) => theme.size30};
     padding: 5%;
@@ -358,8 +356,8 @@ export const GridIcons = styled.section`
     margin-right: ${({ theme }) => theme.size50};
   }
   @media (min-width: ${({ theme }) => theme.tablet}) and (max-width: ${({
-      theme,
-    }) => theme.desktop1024}) {
+  theme,
+}) => theme.desktop1024}) {
     grid-template-columns: repeat(6, 1fr);
   }
 `;
@@ -416,8 +414,8 @@ export const TagsInterest = styled.ul`
     list-style: none;
   }
   @media (min-width: ${({ theme }) => theme.tablet}) and (max-width: ${({
-      theme,
-    }) => theme.desktop1024}) {
+  theme,
+}) => theme.desktop1024}) {
     grid-template-columns: repeat(5, 1fr);
   }
   @media (min-width: 1025px) {
@@ -459,8 +457,8 @@ export const ContactButtons = styled.section`
     margin-top: 1.5em;
   }
   @media (min-width: ${({ theme }) => theme.tablet}) and (max-width: ${({
-      theme,
-    }) => theme.desktop1024}) {
+  theme,
+}) => theme.desktop1024}) {
     margin: auto;
     margin-top: calc(
       ${({ theme }) => theme.size100} + ${({ theme }) => theme.size30}
