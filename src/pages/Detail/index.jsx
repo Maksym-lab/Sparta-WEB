@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from '@reach/router';
 import Carousel from '../../components/Carousel';
+import LoadingComponent from '../../components/Loading';
+import ErrorComponent from '../../components/Error';
 import {
   FirstContactInfo,
   MainImage,
@@ -32,7 +34,6 @@ import {
   AtmosphereDesktop,
   BackgroundDetailDesktop,
 } from './styles';
-import testMainImageDetail from '../../assets/images/RoomImage.jpg';
 import emailIcon from '../../assets/images/EmailIcon.svg';
 import hostImage from '../../assets/images/User.png';
 import closetIcon from '../../assets/images/ClosetIcon.svg';
@@ -46,15 +47,21 @@ import BackButton from '../../components/BackButton';
 import Tooltip from '../../components/Tooltip';
 const Detail = (props) => {
   const {
+    imagesBaseUrl,
     data: { loading, error, room },
   } = props || {};
+  const [imageFromCarousel, setImageFromCarousel] = useState(
+    room && room.mainImage,
+  );
   if (error) {
-    return <p>Sorry, we couldn&apos;t find the room</p>;
+    return <ErrorComponent />;
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return <LoadingComponent />;
   }
   const {
+    mainImage,
+    images,
     title,
     description,
     host: { fullName, firstName, email } = {},
@@ -77,10 +84,17 @@ const Detail = (props) => {
               <OverlayPrice>
                 <p>${price}</p>
               </OverlayPrice>
-              <img src={testMainImageDetail} alt="room" />
+              <img
+                src={`${imagesBaseUrl}/${imageFromCarousel || mainImage}`}
+                alt={title}
+              />
             </MainImage>
             <div className="Carousel">
-              <Carousel />
+              <Carousel
+                imagesToRenderInCarousel={images}
+                baseImage={imagesBaseUrl}
+                setImageFromCarousel={setImageFromCarousel}
+              />
             </div>
             <Container>
               <FirstContactInfo>

@@ -2,8 +2,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: ${({ theme }) => theme.mobileContainerCarrousel};
   margin: ${({ theme }) => theme.size0} auto;
-  & .carousel-prev, .carousel-next {
-    color: ${({ theme }) => theme.darkGray};;
+  & .carousel-prev,
+  .carousel-next {
+    color: ${({ theme }) => theme.darkGray};
     width: 3rem;
   }
   & .carousel-prev {
@@ -14,7 +15,12 @@ export const Container = styled.div`
   }
 `;
 export const Img = styled.figure`
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
   & img {
-    width: calc(${({ theme }) => theme.size50}+ ${({ theme }) => theme.size5});
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
   }
 `;
