@@ -13,75 +13,97 @@ import backgroundHero from '../../assets/images/BackgroundRegister.png';
 import Badge from '../../components/Badge';
 import BackButton from '../../components/BackButton';
 const Register = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
   return (
     <>
-      <Hero>
+      <Hero role="group">
         <img src={backgroundHero} alt="Register form" />
-        <Badge icon={FaUserCircle} message="Register" />
+        <Badge name="Register" icon={FaUserCircle} message="Register" />
       </Hero>
       <BackButton />
       <Main>
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <InputContainer>
             <MdFace />
             <input
+              aria-label="Name"
+              tabIndex="0"
+              autoComplete="name"
               type="text"
-              id="name"
-              name="name"
-              placeholder="Write your name *"
+              id="fname"
+              name="Name"
+              minLength="3"
+              maxLength="15"
               required
-              maxLength="40"
+              placeholder="Write your name"
             />
           </InputContainer>
           <InputContainer>
             <MdFace />
             <input
+              aria-label="Last Name"
+              tabIndex="0"
               type="text"
-              id="lastName"
-              name="lastName"
-              placeholder="Write your last name *"
+              autoComplete="family-name"
+              id="flastname"
+              name="flastname"
+              minLength="3"
+              maxLength="15"
               required
-              maxLength="50"
+              placeholder="Write your last name"
             />
           </InputContainer>
           <InputContainer>
             <MdEmail />
             <input
+              aria-label="email"
+              tabIndex="0"
+              autoCorrect="off"
               autoComplete="email"
               type="email"
               id="email"
               name="email"
-              placeholder="Write your Email *"
+              inputMode="email"
+              minLength="8"
+              maxLength="24"
               required
-              minLength="7"
-              maxLength="50"
+              placeholder="Write your Email"
             />
           </InputContainer>
           <InputContainer>
             <MdVpnKey />
             <input
+              aria-label="Password"
+              autoComplete="current-password"
               type="password"
               id="password"
               name="password"
-              autoComplete="current-password"
-              placeholder="Write your password *"
+              minLength="8"
+              maxLength="24"
               required
-              minLength="6"
-              maxLength="40"
+              placeholder="Write a password"
             />
           </InputContainer>
           <RadioInput>
-            <input type="radio" name="user_rol" id="host" defaultChecked />
+            <input
+              aria-label="Host"
+              tabIndex="0"
+              type="radio"
+              name="host"
+              id="host"
+            />
             <label htmlFor="host">Host</label>
-            <input type="radio" name="user_rol" id="guess" />
-            <label htmlFor="guess">Guess</label>
+            <input type="radio" tabIndex="0" name="guess" id="guess" />
+            <label aria-label="Guess" htmlFor="guess">
+              Guess
+            </label>
           </RadioInput>
           <Buttons>
-            <button type="button">Cancel</button>
-            <button type="submit">Register</button>
+            <button name="Cancel" type="button">
+              Cancel
+            </button>
+            <button name="Register" type="submit">
+              Register
+            </button>
           </Buttons>
         </Form>
       </Main>

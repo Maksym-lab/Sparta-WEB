@@ -12,6 +12,9 @@ const input = css`
   background: ${({ theme }) => theme.absoluteWhite};
   color: ${({ theme }) => theme.black};
   font-size: ${({ theme }) => theme.size12};
+  &:focus {
+    border: ${({ theme }) => theme.radius} solid ${({ theme }) => theme.red};
+  }
   @media screen and (min-width: ${({ theme }) => theme.tablet}) {
     height: calc(
       ${({ theme }) => theme.size50} + ${({ theme }) => theme.size6}
@@ -69,62 +72,6 @@ export const SectionUpload = styled.section`
     height: ${({ theme }) => theme.size75};
     border-radius:${({ theme }) => theme.radiusCircle};
     box-shadow: ${({ theme }) => theme.shadow1};
-  }
-  & input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 91px;
-    height:${({ theme }) => theme.size20};
-    border: none;
-  }
-  & .inputUpload::-webkit-file-upload-button{
-    visibility: hidden; 
-  }
-  & .inputUpload::before{
-    content: 'Select a photo';
-    background: transparent;
-    padding: ${({ theme }) => theme.size6} ${({ theme }) => theme.size8};
-    outline: none;
-    -webkit-user-select: none;
-    cursor: pointer;
-    font-weight: ${({ theme }) => theme.bold};
-    font-size: ${({ theme }) => theme.size12};
-  }
-  & .inputUpload:hover::before{
-    border-color: black;
-  }
-  & .inputUpload:active::before{
-    background:red;
-  }
-`;
-export const Form = styled.form`
-  width: ${({ theme }) => theme.pct90};
-  max-width: ${({ theme }) => theme.grid414};
-  & input:valid {
-    border: 2px solid green;
-  }
-  & textarea:valid {
-    border: 2px solid green;
-  }
-`;
-export const InputContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: ${({ theme }) => theme.size34};
-  width: ${({ theme }) => theme.pct100};
-  & a {
-    margin-top: ${({ theme }) => theme.size10};
-    font-size: ${({ theme }) => theme.size10};
-    @media screen and (min-width: ${({ theme }) => theme.tablet}) {
-      font-size: ${({ theme }) => theme.size12};
-    }
-  }
-  & .password {
-    margin-bottom: ${({ theme }) => theme.size0};
-  }
   & svg {
     position: absolute;
     top: ${({ theme }) => theme.size10};
@@ -217,10 +164,15 @@ export const Buttons = styled.section`
     height: ${({ theme }) => theme.size50};
     font-size: 1.1em;
     color: ${({ theme }) => theme.black};
+     &:hover, &:active, &:focus{
+    background: #d6d6d6
+    }
   }
   button:nth-child(2) {
-    margin-right: ${({ theme }) => theme.size10};
+    margin-left: ${({ theme }) => theme.size10};
     background-color: ${({ theme }) => theme.red};
-    color: ${({ theme }) => theme.white};
-  }
+    color: black;
+    &:hover, &:active, &:focus{
+    background:#ff555e;
+    }
 `;

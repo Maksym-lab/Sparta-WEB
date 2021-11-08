@@ -11,16 +11,19 @@ const Login = () => {
   };
   return (
     <>
-      <Hero>
+      <Hero arial-label="Cover titles">
         <img src={backgroundHero} alt="Login" />
-        <Badge icon={FaUserCircle} message="Login" />
+        <Badge arial-label="Title" icon={FaUserCircle} message="Login" />
       </Hero>
       <BackButton />
-      <Main>
-        <Form onSubmit={handleSubmit}>
-          <InputContainer>
-            <MdEmail />
+      <Main title="Login">
+        <Form role="form" aria-label="Login form">
+          <InputContainer role="group">
+            <MdEmail aria-label="Email icon" />
             <input
+              aria-label="email"
+              tabIndex="0"
+              autoCorrect="off"
               autoComplete="email"
               type="email"
               id="email"
@@ -31,9 +34,11 @@ const Login = () => {
               maxLength="50"
             />
           </InputContainer>
-          <InputContainer>
-            <MdVpnKey />
+          <InputContainer role="group">
+            <MdVpnKey aria-label="Password icon" />
             <input
+              aria-label="password"
+              tabIndex="0"
               autoComplete="current-password"
               type="password"
               id="password"
@@ -46,7 +51,7 @@ const Login = () => {
           </InputContainer>
           <Buttons>
             <button type="button">Cancel</button>
-            <button type="submit">Register</button>
+            <button type="submit">Login</button>
           </Buttons>
         </Form>
       </Main>

@@ -84,7 +84,10 @@ export const Button = styled.button`
   width: ${({ theme }) => theme.pct100};
   height: ${({ theme }) => theme.size32};
   background: ${({ theme }) => theme.red};
-  color: ${({ theme }) => theme.white};
+  color: black;
+  &:hover, &:active, &:focus{
+    background:#ff555e;
+  }
   @media screen and (min-width: ${({ theme }) => theme.tablet}) {
     margin: ${({ theme }) => theme.size50} auto;
     width: ${({ theme }) => theme.BtnM};

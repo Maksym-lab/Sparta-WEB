@@ -12,6 +12,9 @@ const input = css`
   background: ${({ theme }) => theme.absoluteWhite};
   color: ${({ theme }) => theme.black};
   font-size: ${({ theme }) => theme.size12};
+  &:focus{
+    border: ${({ theme }) => theme.radius} solid ${({ theme }) => theme.red};;
+  }
   @media screen and (min-width: ${({ theme }) => theme.tablet}) {
     height: calc(
       ${({ theme }) => theme.size50} + ${({ theme }) => theme.size6}
@@ -126,10 +129,16 @@ export const Buttons = styled.section`
     height: ${({ theme }) => theme.size50};
     font-size: 1.1em;
     color: ${({ theme }) => theme.black};
+     &:hover, &:active, &:focus{
+    background: #d6d6d6
+    }
   }
   button:nth-child(2) {
     margin-left: ${({ theme }) => theme.size10};
     background-color: ${({ theme }) => theme.red};
-    color: ${({ theme }) => theme.white};
+    color: black;
+    &:hover, &:active, &:focus{
+    background:#ff555e;
+    }
   }
 `;
