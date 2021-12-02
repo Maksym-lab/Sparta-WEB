@@ -35,10 +35,10 @@ const HeaderModal = ({ closeModal, changeModal }) => {
                 </p>
               </Link>
               <hr title="My favorites" />
-              <Link
-                role="menuitem"
-                aria-label="Edit profile"
-                tabIndex="0"
+              <Link 
+                role="menuitem" 
+                aria-label="Edit profile" 
+                tabIndex="0" 
                 to="/editprofile"
               >
                 <p title="Edit profile">Edit Profile</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import { MdFavoriteBorder, MdFavorite } from 'react-icons/md';
 import useNearScreen from '../../hooks/useNearScreen';
 import {
   Article,
@@ -24,6 +25,8 @@ import {
 import testPhoto from '../../assets/images/TestPhotoPreviewCard.png';
 import heart from '../../assets/images/Heart.svg';
 import avatar from '../../assets/images/TestAvatarPhoto.png';
+import ToggleLikeMutation from '../../containers/ToggleLikeMutation';
+import FavButton from '../FavButton';
 const PreviewCard = (props) => {
   const {
     id,
@@ -45,7 +48,21 @@ const PreviewCard = (props) => {
           <Container role="group">
             <ContainerImage role="group">
               <OverlayHeart role="none">
-                <ImageHeart aria-label="add to favorites" src={heart} alt="add to favorite" />
+                <ToggleLikeMutation>
+                  {
+                    (toggleLike) => {
+                      const handleFavorite = () => {
+                        toggleLike({
+                          variables: {
+                            roomId: id,
+                            userId: 53,
+                          },
+                        });
+                      };
+                      return <FavButton onClick={handleFavorite} />
+                    }
+                  }
+                </ToggleLikeMutation>
               </OverlayHeart>
               <OverlayHost role="group">
                 <ContainerHost role="none">

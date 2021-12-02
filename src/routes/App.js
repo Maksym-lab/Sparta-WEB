@@ -8,7 +8,6 @@ import NotFound from '../pages/NotFound';
 import AddOffer from '../pages/AddOffer';
 import Login from '../pages/Login';
 import EditProfile from '../pages/EditProfile';
-import Favorites from '../containers/Favorites';
 const App = () => {
   const imagesBaseUrl = 'https:
   return (
@@ -21,7 +20,6 @@ const App = () => {
         <AddOffer path="/addoffer" />
         <Login path="/login" />
         <EditProfile path="/editprofile" />
-        <Favorites path="/myfavorites" />
       </Router>
     </Layout>
   );

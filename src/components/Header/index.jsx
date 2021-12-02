@@ -29,7 +29,7 @@ const Header = () => {
             <img src={logo} alt="Kumpel logo" className="logo" />
           </Link>
           <Section role="menu" tabIndex="-1">
-            <Link to="/myfavorites" tabIndex="0">
+            <Link to="/myFavorites" tabIndex="0">
               <Heart role="menuitem" src={heart} alt="Menu" />
             </Link>
             <TextLogin role="menuitem" aria-label="User Name" tabIndex="0">
