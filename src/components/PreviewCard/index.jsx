@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import { MdFavoriteBorder, MdFavorite } from 'react-icons/md';
 import useNearScreen from '../../hooks/useNearScreen';
 import {
   Article,
@@ -11,7 +10,6 @@ import {
   OverlayHost,
   HostName,
   ContainerHost,
-  ImageHeart,
   ImageHost,
   Description,
   Availability,
@@ -23,7 +21,6 @@ import {
   Address,
 } from './styles';
 import testPhoto from '../../assets/images/TestPhotoPreviewCard.png';
-import heart from '../../assets/images/Heart.svg';
 import avatar from '../../assets/images/TestAvatarPhoto.png';
 import ToggleLikeMutation from '../../containers/ToggleLikeMutation';
 import FavButton from '../FavButton';
