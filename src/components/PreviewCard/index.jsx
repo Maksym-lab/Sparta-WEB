@@ -56,7 +56,7 @@ const PreviewCard = (props) => {
                           },
                         });
                       };
-                      return <FavButton onClick={handleFavorite} />
+                      return <FavButton onClick={handleFavorite} />;
                     }
                   }
                 </ToggleLikeMutation>

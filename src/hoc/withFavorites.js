@@ -23,7 +23,7 @@ const GET_FAVORITES = gql`
   }
 `;
 const withFavorites = graphql(GET_FAVORITES, {
-  options: () => ({ variables: { userId: 53, page: 1 } }),
+  options: () => ({ variables: { userId: 228, page: 1 } }),
   props: ({ data }) => ({
     data: {
       ...data,
