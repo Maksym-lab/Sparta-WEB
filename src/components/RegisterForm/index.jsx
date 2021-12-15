@@ -46,6 +46,10 @@ const RegisterForm = ({ disabled, onSubmit }) => {
       role,
     });
     crearInputs(e.target);
+    window.history.back();
+  };
+  const handleCancel = () => {
+    window.history.back();
   };
   return (
     <>
@@ -125,7 +129,7 @@ const RegisterForm = ({ disabled, onSubmit }) => {
             <label htmlFor="guess">Guess</label>
           </RadioInput>
           <Buttons>
-            <button type="button">Cancel</button>
+            <button type="button" onClick={handleCancel}>Cancel</button>
             <button type="submit">Register</button>
           </Buttons>
           {errorMessage && <p>{errorMessage}</p>}

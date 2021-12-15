@@ -35,7 +35,6 @@ import {
   BackgroundDetailDesktop,
 } from './styles';
 import emailIcon from '../../assets/images/EmailIcon.svg';
-import hostImage from '../../assets/images/User.png';
 import closetIcon from '../../assets/images/ClosetIcon.svg';
 import infoIcon from '../../assets/images/Tooltip.svg';
 import whatsappIconWhite from '../../assets/images/WhatsAppIconWhite.svg';
@@ -64,7 +63,7 @@ const Detail = (props) => {
     images,
     title,
     description,
-    host: { fullName, firstName, email } = {},
+    host = [],
     price,
     address,
     features = [],
@@ -116,15 +115,15 @@ const Detail = (props) => {
                     </a>
                   </div>
                   <div>
-                    <p>{email}</p>
+                    <p>{host.email}</p>
                     <img src={emailIcon} alt="WhatsApp" />
                   </div>
                 </Social>
               </FirstContactInfo>
               <FirstContactInfoTabAndDesktop>
                 <HostTab>
-                  <img src={hostImage} alt="Diana Cooper Host" />
-                  <p>{fullName}</p>
+                  <img src={`${imagesBaseUrl}/${host.profile.picture}`} alt={`${host.fullName} Host`} />
+                  <p>{host.fullName}</p>
                 </HostTab>
                 <div>
                   <p>
@@ -144,14 +143,14 @@ const Detail = (props) => {
                     </a>
                   </div>
                   <div>
-                    <p>{email}</p>
+                    <p>{host.email}</p>
                     <img src={emailIcon} alt="WhatsApp" />
                   </div>
                 </Social>
               </FirstContactInfoTabAndDesktop>
               <Host>
-                <img src={hostImage} alt="Diana Cooper Host" />
-                <p>{fullName}</p>
+                <img src={`${imagesBaseUrl}/${host.profile.picture}`} alt={`${host.fullName} Host`} />
+                <p>{host.fullName}</p>
               </Host>
               <Title>
                 <h1>{title}</h1>
@@ -168,9 +167,9 @@ const Detail = (props) => {
                 <Section>
                   <Subtitle>References:</Subtitle>
                   <TagsReferences>
-                    {places.map((item) => (
+                    {places.length > 0 ? (places.map((item) => (
                       <li key={item.id}>{item.details}</li>
-                    ))}
+                    ))) : 'There aren´t references'}
                   </TagsReferences>
                 </Section>
               </AddressAndReferencesDesktop>
@@ -246,9 +245,9 @@ const Detail = (props) => {
                   </p>
                 </Section>
                 <TagsInterest>
-                  {places.map((item) => (
+                  {places.length > 0 ? (places.map((item) => (
                     <li key={item.id}>{item.details}</li>
-                  ))}
+                  ))) : 'There aren´t features'}
                 </TagsInterest>
               </AtmosphereDesktop>
               <ContactButtons>

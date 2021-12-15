@@ -42,11 +42,9 @@ export const Profile = styled.figure`
   }
 `;
 export const Options = styled.nav`
-  position:relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  top: -15%;
   p {
     display: flex;
     align-items: center;

@@ -12,6 +12,10 @@ query getRooms($page: Int) {
       mainImage
       host {
         fullName
+        profile {
+          id
+          picture
+        }
       }
       address
       price

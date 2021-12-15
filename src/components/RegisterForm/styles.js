@@ -226,10 +226,11 @@ export const Buttons = styled.section`
     height: ${({ theme }) => theme.size50};
     font-size: 1.1em;
     color: ${({ theme }) => theme.black};
+    cursor: pointer;
   }
   button:nth-child(2) {
-    margin-right: ${({ theme }) => theme.size10};
+    margin-left: ${({ theme }) => theme.size10};
     background-color: ${({ theme }) => theme.red};
-    color: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.black};
   }
 `;

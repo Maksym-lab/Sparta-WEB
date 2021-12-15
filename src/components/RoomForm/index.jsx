@@ -46,22 +46,18 @@ const GET_FEATURES_PLACES = gql`
   }
 `;
 const RoomForm = (props) => {
-  const {
-    disabled,
-    onSubmit,
-  } = props;
+  const { disabled, onSubmit } = props;
   const { data } = useQuery(GET_FEATURES_PLACES);
-  const {
-    roomsFeatures = [],
-    roomsPlacesCategories = [],
-  } = data || {};
+  const { roomsFeatures = [], roomsPlacesCategories = [] } = data || {};
   const [title, setTitle] = useInputValue('title');
   const [description, setDescription] = useInputValue('description');
   const [availability, setAvailability] = useInputValue('availability');
   const [price, setPrice] = useInputValue(0);
   const [location, setLocation] = useInputValue('location');
   const [reference, setReference] = useInputValue('reference');
-  const [referenceDetail, setReferenceDetail] = useInputValue('referenceDetail');
+  const [referenceDetail, setReferenceDetail] = useInputValue(
+    'referenceDetail',
+  );
   const [references, setReferences] = useState([]);
   const [houseFeatures, setHouseFeatures] = useState([]);
   const [roomFeatures, setRoomFeatures] = useState([]);
@@ -123,13 +119,23 @@ const RoomForm = (props) => {
     }
     for (let i = 0; i < files.length; i++) {
       if (!/\.(jpg|jpeg|png)$/.test(files[i].name)) {
-        setFilesMessage(`File '${files[i].name.substring(0, 18)}...' extension not supported, must be .jpg, .jpeg or .png`);
+        setFilesMessage(
+          `File '${files[i].name.substring(
+            0,
+            18,
+          )}...' extension not supported, must be .jpg, .jpeg or .png`,
+        );
         e.target.value = '';
         setFiles({});
         return;
       }
       if (files[i].size > 1048577) {
-        setFilesMessage(`File '${files[i].name.substring(0, 18)}...' is too big! Maximum size 1MB`);
+        setFilesMessage(
+          `File '${files[i].name.substring(
+            0,
+            18,
+          )}...' is too big! Maximum size 1MB`,
+        );
         e.target.value = '';
         setFiles({});
         return;
@@ -141,34 +147,35 @@ const RoomForm = (props) => {
     if (!reference.value || !referenceDetail.value) {
       return;
     }
-    setReferences(
-      [...references, { place: reference.value, details: referenceDetail.value }],
-    );
+    setReferences([
+      ...references,
+      { place: reference.value, details: referenceDetail.value },
+    ]);
   };
   const removeReference = (e) => {
     const value = e.target.parentNode.getAttribute('value');
     if (value) {
-      setReferences(references.filter(
-        (reference) => JSON.stringify(reference) !== value,
-      ));
+      setReferences(
+        references.filter((reference) => JSON.stringify(reference) !== value),
+      );
     }
   };
   const addHouseFeature = (e) => {
     if (e.target.checked) {
-      setHouseFeatures(
-        [...houseFeatures, { feature: e.target.value }],
-      );
+      setHouseFeatures([...houseFeatures, { feature: e.target.value }]);
     } else {
-      setHouseFeatures(houseFeatures.filter((item) => item.feature !== e.target.value));
+      setHouseFeatures(
+        houseFeatures.filter((item) => item.feature !== e.target.value),
+      );
     }
   };
   const addRoomFeature = (e) => {
     if (e.target.checked) {
-      setRoomFeatures(
-        [...roomFeatures, { feature: e.target.value }],
-      );
+      setRoomFeatures([...roomFeatures, { feature: e.target.value }]);
     } else {
-      setRoomFeatures(roomFeatures.filter((item) => item.feature !== e.target.value));
+      setRoomFeatures(
+        roomFeatures.filter((item) => item.feature !== e.target.value),
+      );
     }
   };
   return (
@@ -193,18 +200,18 @@ const RoomForm = (props) => {
             required
             disabled={disabled}
           />
-          {Object.values(files).length === 0 ?
-            <p>{filesMessage}</p> : (
-              <ul>
-                {Object.values(files)
-                  .map((file) => (
-                    <li key={file.name}>
-                      <MdCloudDone />
-                      {file.name.substring(0, 18)}
-                    </li>
-                  ))}
-              </ul>
-            )}
+          {Object.values(files).length === 0 ? (
+            <p>{filesMessage}</p>
+          ) : (
+            <ul>
+              {Object.values(files).map((file) => (
+                <li key={file.name}>
+                  <MdCloudDone />
+                  {file.name.substring(0, 18)}
+                </li>
+              ))}
+            </ul>
+          )}
         </FileUploader>
         <Form onSubmit={handleSubmit}>
           <label htmlFor="title">
@@ -267,9 +274,14 @@ const RoomForm = (props) => {
           </label>
           <Reference>
             <select required {...reference} disabled={disabled}>
-              <option disabled value="">Select</option>
-              {roomsPlacesCategories
-                .map((place) => <option key={place.id} value={place.id}>{place.name}</option>)}
+              <option disabled value="">
+                Select
+              </option>
+              {roomsPlacesCategories.map((place) => (
+                <option key={place.id} value={place.id}>
+                  {place.name}
+                </option>
+              ))}
             </select>
             <input
               type="text"
@@ -283,16 +295,16 @@ const RoomForm = (props) => {
           </Reference>
           {references && (
             <ReferencesList>
-              {references
-                .map((reference) => (
-                  <li key={reference.place} value={JSON.stringify(reference)}>
-                    {`${roomsPlacesCategories
-                      .filter(
-                        (place) => place.id === reference.place,
-                      )[0].name}: ${reference.details}`}
-                    <MdClose onClick={removeReference} />
-                  </li>
-                ))}
+              {references.map((reference) => (
+                <li key={reference.place} value={JSON.stringify(reference)}>
+                  {`${
+                    roomsPlacesCategories.filter(
+                      (place) => place.id === reference.place,
+                    )[0].name
+                  }: ${reference.details}`}
+                  <MdClose onClick={removeReference} />
+                </li>
+              ))}
             </ReferencesList>
           )}
           <label htmlFor="characteristics">
@@ -300,38 +312,48 @@ const RoomForm = (props) => {
             <MdInfoOutline />
           </label>
           <Characteristics>
-            {roomsFeatures
-              .map((feature) => {
-                if (feature.category.id === '1') {
-                  return (
-                    <li key={feature.id}>
-                      <input type="checkbox" value={feature.id} onClick={addHouseFeature} disabled={disabled} />
-                      {feature.name}
-                    </li>
-                  );
-                }
-                return '';
-              })}
+            {roomsFeatures.map((feature) => {
+              if (feature.category.id === '1') {
+                return (
+                  <li key={feature.id}>
+                    <input
+                      type="checkbox"
+                      value={feature.id}
+                      onClick={addHouseFeature}
+                      disabled={disabled}
+                    />
+                    {feature.name}
+                  </li>
+                );
+              }
+              return '';
+            })}
           </Characteristics>
           <label htmlFor="roomCharacteristics">
             The room:
             <MdInfoOutline />
           </label>
           <Characteristics>
-            {roomsFeatures
-              .map((feature) => {
-                if (feature.category.id === '2') {
-                  return (
-                    <li key={feature.id}>
-                      <input type="checkbox" value={feature.id} onClick={addRoomFeature} disabled={disabled} />
-                      {feature.name}
-                    </li>
-                  );
-                }
-                return '';
-              })}
+            {roomsFeatures.map((feature) => {
+              if (feature.category.id === '2') {
+                return (
+                  <li key={feature.id}>
+                    <input
+                      type="checkbox"
+                      value={feature.id}
+                      onClick={addRoomFeature}
+                      disabled={disabled}
+                    />
+                    {feature.name}
+                  </li>
+                );
+              }
+              return '';
+            })}
           </Characteristics>
-          <Button type="submit" disabled={disabled}>Save</Button>
+          <Button type="submit" disabled={disabled}>
+            Save
+          </Button>
         </Form>
       </Section>
     </Main>

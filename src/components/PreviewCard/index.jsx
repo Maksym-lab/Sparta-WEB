@@ -21,7 +21,6 @@ import {
   Address,
 } from './styles';
 import testPhoto from '../../assets/images/TestPhotoPreviewCard.png';
-import avatar from '../../assets/images/TestAvatarPhoto.png';
 import ToggleLikeMutation from '../../containers/ToggleLikeMutation';
 import FavButton from '../FavButton';
 const PreviewCard = (props) => {
@@ -29,9 +28,7 @@ const PreviewCard = (props) => {
     id,
     title = '3 relaxed and fun students in central area',
     mainImage = testPhoto,
-    host: {
-      fullName = 'Jane Cooper',
-    },
+    host = [],
     address = '4517 Washington Ave. Manchester, Kentucky 39495',
     price = '948.55',
     availabilityDate = '7/11/19',
@@ -63,11 +60,16 @@ const PreviewCard = (props) => {
               </OverlayHeart>
               <OverlayHost role="group">
                 <ContainerHost role="none">
-                  <HostName aria-label="Host photo">{fullName}</HostName>
-                  <ImageHost role="img" aria-label="Host name" src={avatar} alt="Janne Cooper" />
+                  <HostName aria-label="Host photo">{host.fullName}</HostName>
+                  <ImageHost
+                    role="img"
+                    aria-label="Host name"
+                    src={`${imagesBaseUrl}/${host.profile.picture}`}
+                    alt={`${host.fullName}`}
+                  />
                 </ContainerHost>
               </OverlayHost>
-              <ImageRoom role="img" aria-label="room preview preview" src={`${imagesBaseUrl}/${mainImage}`} alt="room photo preview" />
+              <ImageRoom role="img" aria-label="room preview preview" src={`${imagesBaseUrl}/${mainImage}`} alt="room preview" />
             </ContainerImage>
             <Description role="group">
               <Availability role="list">

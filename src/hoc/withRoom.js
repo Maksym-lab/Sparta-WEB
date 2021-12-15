@@ -12,6 +12,9 @@ query getRoom($id: Int!) {
       firstName
       email
       phoneNumber
+      profile {
+        picture
+      }
     }
     price
     address

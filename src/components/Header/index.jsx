@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from '@reach/router';
 import { FiMenu, FiX } from 'react-icons/fi';
 import {
@@ -14,8 +14,11 @@ import logo from '../../assets/images/Logo.svg';
 import userPhoto from '../../assets/images/UserPhoto.png';
 import heart from '../../assets/images/Heart.svg';
 import HeaderModal from '../HeaderModal';
+import SearchBarHeader from '../SearchHeader';
+import { Context } from '../../Context';
 const Header = () => {
   const [headerModal, setHeaderModal] = useState(false);
+  const { isAuth } = useContext(Context);
   return (
     <>
       <HeaderModal
@@ -29,12 +32,37 @@ const Header = () => {
             <img src={logo} alt="Kumpel logo" className="logo" />
           </Link>
           <Section role="menu" tabIndex="-1">
+            <SearchBarHeader />
             <Link to="/myfavorites" tabIndex="0">
               <Heart role="menuitem" src={heart} alt="Menu" />
             </Link>
-            <TextLogin role="menuitem" aria-label="User Name" tabIndex="0">
-              User name!
-            </TextLogin>
+            {
+              !isAuth && (
+                <Link to="/login">
+                  <TextLogin role="menuitem" aria-label="Login" tabIndex="0">
+                    Login
+                  </TextLogin>
+                </Link>
+              )
+            }
+            {
+              !isAuth && (
+                <Link to="/register">
+                  <TextLogin role="menuitem" aria-label="Register" tabIndex="0">
+                    Register
+                  </TextLogin>
+                </Link>
+              )
+            }
+            {
+              isAuth && (
+                <Link to="/">
+                  <TextLogin role="menuitem" aria-label="Logout" tabIndex="0">
+                    Logout
+                  </TextLogin>
+                </Link>
+              )
+            }
             <UserPhoto role="img" src={userPhoto} alt="Menu for Mobil" />
             <BurguerMenu
               aria-modal="true"

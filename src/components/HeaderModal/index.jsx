@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from '@reach/router';
 import { BsHeartFill } from 'react-icons/bs';
 import { FaWhatsapp, FaTwitterSquare } from 'react-icons/fa';
 import { IoLogoFacebook, IoLogoInstagram } from 'react-icons/io';
 import { BackgroundModal, Modal, Profile, Options, Footer } from './styles';
 import ImageHeaderModalTest from '../../assets/images/ImageHeaderModalTest.png';
+import { Context } from '../../Context';
 const HeaderModal = ({ closeModal, changeModal }) => {
+  const { isAuth } = useContext(Context);
   return (
     <>
       {closeModal && (
@@ -20,6 +22,36 @@ const HeaderModal = ({ closeModal, changeModal }) => {
               <p title="User profile name">Hello Robert!</p>
             </Profile>
             <Options role="menu">
+              {
+                !isAuth && (
+                  <>
+                    <Link role="menuitem" aria-label="Login" tabIndex="0" to="/login">
+                      <p title="login">Login</p>
+                    </Link>
+                    <hr title="login" />
+                  </>
+                )
+              }
+              {
+                !isAuth && (
+                  <>
+                    <Link role="menuitem" aria-label="Register" tabIndex="0" to="/register">
+                      <p title="register">Register</p>
+                    </Link>
+                    <hr title="register" />
+                  </>
+                )
+              }
+              {
+                isAuth && (
+                  <>
+                    <Link role="menuitem" aria-label="Register" tabIndex="0" to="/">
+                      <p title="logout">Logout</p>
+                    </Link>
+                    <hr title="logout" />
+                  </>
+                )
+              }
               <Link role="menuitem" aria-label="Home" tabIndex="0" to="/">
                 <p title="home">Home</p>
               </Link>

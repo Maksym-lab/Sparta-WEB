@@ -47,7 +47,11 @@ export const ImageHeart = styled.img`
   }
 `;
 export const ImageHost = styled.img`
+  border-radius: ${({ theme }) => theme.pct50};
   width: ${({ theme }) => theme.size22};
+  height: ${({ theme }) => theme.size22};
+  object-fit: cover;
+  margin-left: ${({ theme }) => theme.size8};
   @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
     width: ${({ theme }) => theme.size28};
   }

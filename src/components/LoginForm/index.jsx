@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link, navigate } from '@reach/router';
 import { MdVpnKey, MdEmail } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
-import { navigate } from '@reach/router';
 import { Hero, Main, Form, InputContainer, Buttons } from './styles';
 import backgroundHero from '../../assets/images/BackgroundRegister.png';
 import Badge from '../Badge';
@@ -70,6 +70,9 @@ const LoginForm = ({ disabled, onSubmit, error }) => {
             <button type="button" onClick={handleCancel}>Cancel</button>
             <button type="submit">Login</button>
           </Buttons>
+          <Link to="/register">
+            <p>Don&apos;t you have an account yet? Register here</p>
+          </Link>
         </Form>
       </Main>
     </>

@@ -11,6 +11,9 @@ const SEARCH_ROOMS = gql`
         mainImage
         host {
           fullName
+          profile {
+            picture
+          }
         }
         address
         price

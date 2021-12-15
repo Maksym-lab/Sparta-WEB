@@ -7,7 +7,6 @@ const AddOffer = () => {
       {(createRoom, { data, loading, error }) => {
         const onSubmit = (variables) => {
           createRoom({ variables }).then(({ data }) => {
-            console.log(data);
           });
         };
         if (error) return <p>Sorry, something went wrong</p>;
