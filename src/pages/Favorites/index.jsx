@@ -41,7 +41,7 @@ const Favorites = (props) => {
               .map(({ id, room }) => (
                 <li key={id}>
                   <MdClose />
-                  <PreviewCard {...room} />
+                  <PreviewCard {...room} showFav={false} />
                 </li>
               ))}
           </Grid>

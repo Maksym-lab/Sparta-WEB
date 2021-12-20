@@ -12,20 +12,21 @@ import Favorites from '../containers/Favorites';
 import { Context } from '../Context';
 const App = () => {
   const imagesBaseUrl = 'https:
-  const { isAuth } = useContext(Context);
+  const { isAuth, userId, role } = useContext(Context);
   return (
     <Layout>
       <Router>
         <NotFound default />
         <Home path="/" imagesBaseUrl={imagesBaseUrl} />
         <Detail path="/detail/:id" imagesBaseUrl={imagesBaseUrl} />
-        <Register path="/register" />
+        {isAuth && role === '2' && <Redirect from="/addoffer" to="/" />}
         {!isAuth && <Login path="/login" />}
+        {!isAuth && <Register path="/register" />}
         {!isAuth && <Redirect from="/myfavorites" to="/login" />}
         {!isAuth && <Redirect from="/addoffer" to="/login" />}
         {!isAuth && <Redirect from="/editprofile" to="/login" />}
-        <EditProfile path="/editprofile" />
-        <Favorites path="/myfavorites" />
+        <EditProfile path="/editprofile" userId={userId} />
+        <Favorites path="/myfavorites" userId={userId} />
         <AddOffer path="/addoffer" />
       </Router>
     </Layout>

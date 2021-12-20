@@ -20,7 +20,7 @@ const LoginForm = ({ disabled, onSubmit, error }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({
-      email: email.value,
+      email: email.value.toLowerCase(),
       password: password.value,
     });
     clearInputs();

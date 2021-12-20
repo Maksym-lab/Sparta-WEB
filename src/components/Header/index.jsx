@@ -18,7 +18,10 @@ import SearchBarHeader from '../SearchHeader';
 import { Context } from '../../Context';
 const Header = () => {
   const [headerModal, setHeaderModal] = useState(false);
-  const { isAuth } = useContext(Context);
+  const { isAuth, removeAuth } = useContext(Context);
+  const handleLogout = () => {
+    removeAuth();
+  };
   return (
     <>
       <HeaderModal
@@ -57,7 +60,7 @@ const Header = () => {
             {
               isAuth && (
                 <Link to="/">
-                  <TextLogin role="menuitem" aria-label="Logout" tabIndex="0">
+                  <TextLogin role="menuitem" aria-label="Logout" tabIndex="0" onClick={handleLogout}>
                     Logout
                   </TextLogin>
                 </Link>

@@ -39,7 +39,7 @@ const RegisterForm = ({ disabled, onSubmit }) => {
       return;
     }
     onSubmit({
-      email: email.value,
+      email: email.value.toLowerCase(),
       firstName: firstName.value,
       lastName: lastName.value,
       password: password.value,
@@ -113,7 +113,7 @@ const RegisterForm = ({ disabled, onSubmit }) => {
               type="radio"
               name="user_rol"
               id="host"
-              value="13"
+              value="1"
               onChange={addRole}
               disabled={disabled}
             />
@@ -122,7 +122,7 @@ const RegisterForm = ({ disabled, onSubmit }) => {
               type="radio"
               name="user_rol"
               id="guess"
-              value="14"
+              value="2"
               onChange={addRole}
               disabled={disabled}
             />

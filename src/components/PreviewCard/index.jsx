@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from '@reach/router';
 import useNearScreen from '../../hooks/useNearScreen';
 import {
@@ -23,7 +23,9 @@ import {
 import testPhoto from '../../assets/images/TestPhotoPreviewCard.png';
 import ToggleLikeMutation from '../../containers/ToggleLikeMutation';
 import FavButton from '../FavButton';
+import { Context } from '../../Context';
 const PreviewCard = (props) => {
+  const { isAuth, userId } = useContext(Context);
   const {
     id,
     title = '3 relaxed and fun students in central area',
@@ -33,6 +35,7 @@ const PreviewCard = (props) => {
     price = '948.55',
     availabilityDate = '7/11/19',
     imagesBaseUrl,
+    showFav = true,
   } = props;
   const [show, ref] = useNearScreen();
   return (
@@ -41,23 +44,25 @@ const PreviewCard = (props) => {
         <Article role="textbox">
           <Container role="group">
             <ContainerImage role="group">
-              <OverlayHeart role="none">
-                <ToggleLikeMutation>
-                  {
-                    (toggleLike) => {
-                      const handleFavorite = () => {
-                        toggleLike({
-                          variables: {
-                            roomId: id,
-                            userId: 53,
-                          },
-                        });
-                      };
-                      return <FavButton onClick={handleFavorite} />;
+              {isAuth && showFav && (
+                <OverlayHeart role="none">
+                  <ToggleLikeMutation>
+                    {
+                      (toggleLike) => {
+                        const handleFavorite = () => {
+                          toggleLike({
+                            variables: {
+                              roomId: id,
+                              userId,
+                            },
+                          });
+                        };
+                        return <FavButton onClick={handleFavorite} />;
+                      }
                     }
-                  }
-                </ToggleLikeMutation>
-              </OverlayHeart>
+                  </ToggleLikeMutation>
+                </OverlayHeart>
+              )}
               <OverlayHost role="group">
                 <ContainerHost role="none">
                   <HostName aria-label="Host photo">{host.fullName}</HostName>

@@ -9,6 +9,12 @@ const USER_LOGIN = gql`
       email: $email,
       password: $password) {
       token
+      user {
+        id
+        group {
+          id
+        }
+      }
     }
   }
 `;

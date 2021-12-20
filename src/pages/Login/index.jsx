@@ -10,8 +10,10 @@ const Login = () => {
       {(login, { loading, error }) => {
         const onSubmit = (variables) => {
           login({ variables }).then(({ data }) => {
-            const { token } = data.kumpelLogin;
-            activateAuth(token);
+            const { token, user } = data.kumpelLogin;
+            const { id, group } = user;
+            const roleId = group[0].id;
+            activateAuth(token, id, roleId);
             navigate('/');
           });
         };
