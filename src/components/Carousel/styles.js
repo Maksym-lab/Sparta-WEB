@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 export const Container = styled.div`
-  width: ${({ theme }) => theme.mobileContainerCarrousel};
+  width: ${({ theme }) => theme.pct80};
   margin: ${({ theme }) => theme.size0} auto;
   & .carousel-prev,
   .carousel-next {

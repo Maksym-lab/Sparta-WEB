@@ -11,7 +11,7 @@ const Carousel = ({
   const [width, ref] = useResize();
   const settings = {
     className: 'carousel',
-    slidesToShow: width > 1024 ? 8 : width > 768 ? 7 : width > 600 ? 6 : 4,
+    slidesToShow: width > 613 ? 4 : width > 500 ? 3 : width > 321 ? 2 : 1,
     initialSlide: 1,
   };
   const handleCarouselImage = (image) => {
