@@ -88,10 +88,14 @@ const PreviewCard = (props) => {
                   {price}
                 </Price>
               </Availability>
-              <Title aria-label="title">{title}</Title>
+              <Title aria-label="title">
+                {title.length > 60 ? `${title.substring(0, 61)}...` : title}
+              </Title>
               <AddressContainer role="group">
                 <AddressTitle role="none">Address:</AddressTitle>
-                <Address aria-label="address">{address}</Address>
+                <Address aria-label="address">
+                  {address.length > 55 ? `${address.substring(0, 56)}...` : address}
+                </Address>
               </AddressContainer>
             </Description>
           </Container>
