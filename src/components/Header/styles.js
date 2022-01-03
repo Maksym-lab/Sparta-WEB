@@ -62,6 +62,10 @@ export const TextLogin = styled.p`
   margin-right: ${({ theme }) => theme.size8};
   font-size: ${({ theme }) => theme.size12};
   color: ${({ theme }) => theme.white};
+  svg {
+    width: 26px;
+    height: 26px;
+  }
   @media screen and (min-width: ${({ theme }) => theme.tablet}) {
     font-size: ${({ theme }) => theme.size14};
   }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 const Circle = styled.span`
   position: absolute;
-  z-index: 2;
+  z-index: 0;
   top: 9%;
   left: 5%;
   display: flex;

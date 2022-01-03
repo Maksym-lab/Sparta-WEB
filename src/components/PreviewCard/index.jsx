@@ -20,7 +20,7 @@ import {
   AddressTitle,
   Address,
 } from './styles';
-import testPhoto from '../../assets/images/TestPhotoPreviewCard.png';
+import PhotoDefault from '../../assets/images/PhotoPreviewCard.png';
 import ToggleLikeMutation from '../../containers/ToggleLikeMutation';
 import FavButton from '../FavButton';
 import { Context } from '../../Context';
@@ -29,7 +29,7 @@ const PreviewCard = (props) => {
   const {
     id,
     title = '3 relaxed and fun students in central area',
-    mainImage = testPhoto,
+    mainImage = PhotoDefault,
     host = [],
     address = '4517 Washington Ave. Manchester, Kentucky 39495',
     price = '948.55',
