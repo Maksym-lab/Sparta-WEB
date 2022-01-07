@@ -1,23 +1,24 @@
 import React, { useState, useContext } from 'react';
 import { Link } from '@reach/router';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { MdHome } from 'react-icons/md';
 import {
   HeaderBar,
   TextLogin,
   Container,
+  UserPhoto,
   Heart,
   BurguerMenu,
   Section,
 } from './styles';
 import logo from '../../assets/images/Logo.svg';
+import userPhoto from '../../assets/images/UserPhoto.png';
 import heart from '../../assets/images/Heart.svg';
 import HeaderModal from '../HeaderModal';
 import SearchBarHeader from '../SearchHeader';
 import { Context } from '../../Context';
 const Header = () => {
   const [headerModal, setHeaderModal] = useState(false);
-  const { isAuth, removeAuth, role } = useContext(Context);
+  const { isAuth, removeAuth } = useContext(Context);
   const handleLogout = () => {
     removeAuth();
   };
@@ -57,15 +58,6 @@ const Header = () => {
               )
             }
             {
-              isAuth && role === '1' && (
-                <Link to="/addoffer">
-                  <TextLogin role="menuitem" aria-label="Add Offer" tabIndex="0">
-                    <MdHome />
-                  </TextLogin>
-                </Link>
-              )
-            }
-            {
               isAuth && (
                 <Link to="/">
                   <TextLogin role="menuitem" aria-label="Logout" tabIndex="0" onClick={handleLogout}>
@@ -74,6 +66,7 @@ const Header = () => {
                 </Link>
               )
             }
+            <UserPhoto role="img" src={userPhoto} alt="Menu for Mobil" />
             <BurguerMenu
               aria-modal="true"
               onClick={() => setHeaderModal(!headerModal)}

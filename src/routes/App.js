@@ -26,7 +26,7 @@ const App = () => {
         {!isAuth && <Redirect from="/addoffer" to="/login" />}
         {!isAuth && <Redirect from="/editprofile" to="/login" />}
         <EditProfile path="/editprofile" userId={userId} />
-        <Favorites path="/myfavorites" userId={userId} />
+        <Favorites path="/myfavorites" userId={userId} imagesBaseUrl={imagesBaseUrl} />
         <AddOffer path="/addoffer" />
       </Router>
     </Layout>

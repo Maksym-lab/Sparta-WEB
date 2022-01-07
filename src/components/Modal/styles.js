@@ -81,7 +81,6 @@ export const Content = styled.div`
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: ${({ theme }) => theme.size8};
     border: none;
     border-radius: ${({ theme }) => theme.radiusBtn};
     width: 140px;

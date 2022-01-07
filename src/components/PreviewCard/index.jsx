@@ -20,7 +20,7 @@ import {
   AddressTitle,
   Address,
 } from './styles';
-import PhotoDefault from '../../assets/images/PhotoPreviewCard.png';
+import testPhoto from '../../assets/images/TestPhotoPreviewCard.png';
 import ToggleLikeMutation from '../../containers/ToggleLikeMutation';
 import FavButton from '../FavButton';
 import { Context } from '../../Context';
@@ -29,7 +29,7 @@ const PreviewCard = (props) => {
   const {
     id,
     title = '3 relaxed and fun students in central area',
-    mainImage = PhotoDefault,
+    mainImage = testPhoto,
     host = [],
     address = '4517 Washington Ave. Manchester, Kentucky 39495',
     price = '948.55',
@@ -89,7 +89,7 @@ const PreviewCard = (props) => {
                 </Price>
               </Availability>
               <Title aria-label="title">
-                {title.length > 60 ? `${title.substring(0, 61)}...` : title}
+                {title.length > 49 ? `${title.substring(0, 50)}...` : title}
               </Title>
               <AddressContainer role="group">
                 <AddressTitle role="none">Address:</AddressTitle>

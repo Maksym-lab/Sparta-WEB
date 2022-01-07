@@ -17,6 +17,7 @@ const Favorites = (props) => {
       roomsFavorites = {},
       loadMore = {},
     } = {},
+    imagesBaseUrl,
   } = props;
   if (loading) return <Loading />;
   if (error) return <Error />;
@@ -41,7 +42,7 @@ const Favorites = (props) => {
               .map(({ id, room }) => (
                 <li key={id}>
                   <MdClose />
-                  <PreviewCard {...room} showFav={false} />
+                  <PreviewCard {...room} showFav={false} imagesBaseUrl={imagesBaseUrl} />
                 </li>
               ))}
           </Grid>

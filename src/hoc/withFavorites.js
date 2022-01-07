@@ -15,7 +15,12 @@ const GET_FAVORITES = gql`
           address
           availabilityDate
           host {
+            id
             fullName
+            profile {
+              id
+              picture
+            }
           }
         }
       }

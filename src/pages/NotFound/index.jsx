@@ -22,7 +22,7 @@ const NotFound = () => {
         <h2>Page not Found</h2>
         <p>Sorry the page you are looking for does not exist</p>
       </Description>
-      <Button tabIndex="0" name="Return button">Return</Button>
+      <Button tabIndex="0" name="Return button" >Return</Button>
     </Hero>
   );
 };

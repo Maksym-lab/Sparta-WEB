@@ -4,9 +4,10 @@ import { BsHeartFill } from 'react-icons/bs';
 import { FaWhatsapp, FaTwitterSquare } from 'react-icons/fa';
 import { IoLogoFacebook, IoLogoInstagram } from 'react-icons/io';
 import { BackgroundModal, Modal, Profile, Options, Footer } from './styles';
+import ImageHeaderModalTest from '../../assets/images/ImageHeaderModalTest.png';
 import { Context } from '../../Context';
 const HeaderModal = ({ closeModal, changeModal }) => {
-  const { isAuth, role, name } = useContext(Context);
+  const { isAuth } = useContext(Context);
   return (
     <>
       {closeModal && (
@@ -16,13 +17,10 @@ const HeaderModal = ({ closeModal, changeModal }) => {
           tabIndex="0"
         >
           <Modal role="navigation">
-            {
-              isAuth && (
-                <Profile role="group">
-                  <p title="User profile name">Hello {name}!</p>
-                </Profile>
-              )
-            }
+            <Profile role="group">
+              <img src={ImageHeaderModalTest} alt="Robert" />
+              <p title="User profile name">Hello Robert!</p>
+            </Profile>
             <Options role="menu">
               {
                 !isAuth && (
@@ -51,16 +49,6 @@ const HeaderModal = ({ closeModal, changeModal }) => {
                       <p title="logout">Logout</p>
                     </Link>
                     <hr title="logout" />
-                  </>
-                )
-              }
-              {
-                isAuth && role === '1' && (
-                  <>
-                    <Link role="menuitem" aria-label="Add Offer" tabIndex="0" to="/addoffer">
-                      <p title="addoffer">Add Offer</p>
-                    </Link>
-                    <hr title="addoffer" />
                   </>
                 )
               }

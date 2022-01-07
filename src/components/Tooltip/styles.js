@@ -9,7 +9,7 @@ export const Cursor = styled.span`
       z-index: 2;
       position: absolute;
       display: block;
-      margin-top: -36px;
+      margin-top: -100px;
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
       border: 1px solid #8c8979;
       border-radius: 8px;

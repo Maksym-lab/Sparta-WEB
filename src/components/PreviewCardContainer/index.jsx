@@ -16,6 +16,7 @@ const PreviewCardContainer = (props) => {
     },
     imagesBaseUrl,
   } = props;
+  console.log(props);
   if (loading) return <Loading />;
   if (error) return <Error />;
   const {

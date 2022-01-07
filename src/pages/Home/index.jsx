@@ -1,13 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import Search from '../../components/Search';
 import useInputValue from '../../hooks/useInputValue';
 import PreviewCardContainer from '../../containers/PreviewCardContainer';
 import PreviewCardContainerWithSearch from '../../containers/PreviewCardContainerWithSearch';
 import Modal from '../../components/Modal';
-import { Context } from '../../Context';
 const Home = ({ imagesBaseUrl }) => {
-  const { isAuth } = useContext(Context);
   const [keyWord, setKeyWord] = useInputValue('');
   return (
     <>
@@ -24,9 +22,7 @@ const Home = ({ imagesBaseUrl }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Kumpel || Find your roomie </title>
       </Helmet>
-      {
-        !isAuth && (<Modal aria-modal="true" />)
-      }
+      <Modal aria-modal="true" />
       <Search role="searchbox" keyWord={keyWord} setKeyWord={setKeyWord} />
       {keyWord.value ?
         <PreviewCardContainerWithSearch role="main" keyword={keyWord.value} imagesBaseUrl={imagesBaseUrl} /> :

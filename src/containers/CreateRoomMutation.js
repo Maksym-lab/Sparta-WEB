@@ -8,7 +8,6 @@ const CREATE_ROOM = gql`
     $availabilityDate: String
     $address: String!
     $files: Upload!
-    $price: Int!
     $visibility: Boolean
     $places: [PlacesInput]!
     $features: [FeaturesInput]!
@@ -21,7 +20,6 @@ const CREATE_ROOM = gql`
       images: $files
       hostId: 1
       statusId: 1
-      price: $price
       visibility: $visibility
       places: $places
       features: $features

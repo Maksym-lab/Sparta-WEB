@@ -11,6 +11,7 @@ query getRooms($page: Int) {
       title
       mainImage
       host {
+        id
         fullName
         profile {
           id

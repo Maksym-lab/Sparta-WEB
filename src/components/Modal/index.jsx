@@ -57,9 +57,6 @@ const Modal = () => {
               <Link to="/register">
                 <button type="button">Register</button>
               </Link>
-              <Link to="/login">
-                <button type="button">Login</button>
-              </Link>
             </Content>
           </Section>
         </BlackBackground>

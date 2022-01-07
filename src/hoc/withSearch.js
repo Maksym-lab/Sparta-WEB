@@ -10,8 +10,10 @@ const SEARCH_ROOMS = gql`
         title
         mainImage
         host {
+          id
           fullName
           profile {
+            id
             picture
           }
         }
