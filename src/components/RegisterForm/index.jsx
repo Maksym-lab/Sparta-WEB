@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from '@reach/router';
 import { MdFace, MdVpnKey, MdEmail } from 'react-icons/md';
 import { FaUserCircle } from 'react-icons/fa';
 import {
@@ -132,6 +133,9 @@ const RegisterForm = ({ disabled, onSubmit }) => {
             <button type="button" onClick={handleCancel}>Cancel</button>
             <button type="submit">Register</button>
           </Buttons>
+          <Link to="/login">
+            <p>Do you have and account? Login here</p>
+          </Link>
           {errorMessage && <p>{errorMessage}</p>}
         </Form>
       </Main>
