@@ -32,3 +32,15 @@ export const Description = styled.div`
     font-size:${({ theme }) => theme.size16};;
   }
 `;
+export const Button = styled.button`
+    border: none;
+    border-radius: ${({ theme }) => theme.size4};
+    width: 190px;
+    height: ${({ theme }) => theme.size50};
+    font-size: 1.1em;
+    color: ${({ theme }) => theme.black};
+    background:${({ theme }) => theme.red};
+    &:hover, &:active, &:focus{
+      background: #ff555e;
+    }
+`

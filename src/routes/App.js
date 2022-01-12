@@ -28,6 +28,7 @@ const App = () => {
         <EditProfile path="/editprofile" userId={userId} />
         <Favorites path="/myfavorites" userId={userId} imagesBaseUrl={imagesBaseUrl} />
         <AddOffer path="/addoffer" />
+        <Register path="/register" />
       </Router>
     </Layout>
   );

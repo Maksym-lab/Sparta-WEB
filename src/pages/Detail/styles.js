@@ -107,6 +107,7 @@ export const FirstContactInfoTabAndDesktop = styled.div`
     }
   }
   @media (min-width: 1025px) {
+    grid-template-columns: ${({ theme }) => theme.pct60} ${({ theme }) => theme.pct10} ${({ theme }) => theme.pct30};
     div:nth-child(2) {
       text-align: right;
     }
@@ -236,7 +237,7 @@ export const TagsReferences = styled.ul`
     box-shadow:${({ theme }) => theme.shadow4};
     border: ${({ theme }) => theme.border} solid #${({ theme }) => theme.lightGray};
     border-radius: ${({ theme }) => theme.radiusBtn};
-    height: ${({ theme }) => theme.size30};
+    height: ${({ theme }) => theme.size40};
     padding: 5%;
     background-color: ${({ theme }) => theme.absoluteWhite};
     font-weight: ${({ theme }) => theme.regular};
@@ -259,7 +260,7 @@ export const DescriptionAndImageDesktop = styled.div`
     column-gap: ${({ theme }) => theme.size10};
     margin: ${({ theme }) => theme.size30} ${({ theme }) => theme.size0};
     img {
-      width: ${({ theme }) => theme.pct100};
+      width: ${({ theme }) => theme.pct80};
     }
     h3 {
       margin-top: calc(
@@ -322,6 +323,7 @@ export const Address = styled.div`
   flex-direction: column;
   p {
     margin-bottom: ${({ theme }) => theme.size30};
+    font-size:${({ theme }) => theme.fontSize16};
   }
 `;
 export const Red = styled.p`
@@ -406,7 +408,7 @@ export const TagsInterest = styled.ul`
     box-shadow: ${({ theme }) => theme.shadow4};
     border: ${({ theme }) => theme.border} solid #${({ theme }) => theme.lightGray};
     border-radius: ${({ theme }) => theme.radiusBtn};
-    height: ${({ theme }) => theme.size30};
+    height: ${({ theme }) => theme.size40};
     padding: 5%;
     background-color: ${({ theme }) => theme.absoluteWhite};
     font-weight: ${({ theme }) => theme.regular};

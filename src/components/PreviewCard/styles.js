@@ -54,6 +54,7 @@ export const ImageHost = styled.img`
   margin-left: ${({ theme }) => theme.size8};
   @media screen and (min-width: ${({ theme }) => theme.desktop1024}) {
     width: ${({ theme }) => theme.size28};
+    height: ${({ theme }) => theme.size28};
   }
 `;
 export const ImageRoom = styled.img`
@@ -64,6 +65,7 @@ export const ImageRoom = styled.img`
   height: ${({ theme }) => theme.pct100};
   width: 100%;
   object-fit: cover;
+  border: ${({ theme }) => theme.border} solid ${({ theme }) => theme.lightGray};
 `;
 export const OverlayHost = styled.div`
   position: absolute;

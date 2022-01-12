@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import { MdPanoramaFishEye } from 'react-icons/md';
 import { Hero, Illustration, Page, Description, Button } from './styles';
 import womanIllustration from '../../assets/images/notFoundIllustration.svg';
@@ -22,7 +23,9 @@ const NotFound = () => {
         <h2>Page not Found</h2>
         <p>Sorry the page you are looking for does not exist</p>
       </Description>
-      <Button tabIndex="0" name="Return button">Return</Button>
+      <Link to="/">
+        <Button tabIndex="0" name="Return button">Return</Button>
+      </Link>
     </Hero>
   );
 };
