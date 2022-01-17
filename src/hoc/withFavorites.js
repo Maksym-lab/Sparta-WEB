@@ -1,8 +1,8 @@
 import { graphql } from 'react-apollo';
 import { gql } from 'apollo-boost';
 const GET_FAVORITES = gql`
-  query getFavorites($userId: Int, $page: Int) {
-    roomsFavorites(userId: $userId, page: $page, limit: 10) {
+  query getFavorites($page: Int) {
+    roomsFavorites(page: $page, limit: 10) {
       page
       hasNext
       data {
@@ -28,7 +28,7 @@ const GET_FAVORITES = gql`
   }
 `;
 const withFavorites = graphql(GET_FAVORITES, {
-  options: ({ userId }) => ({ variables: { userId, page: 1 } }),
+  options: () => ({ variables: { page: 1 } }),
   props: ({ data }) => ({
     data: {
       ...data,

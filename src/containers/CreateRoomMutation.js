@@ -19,7 +19,6 @@ const CREATE_ROOM = gql`
       availabilityDate: $availabilityDate
       address: $address
       images: $files
-      hostId: 1
       statusId: 1
       price: $price
       visibility: $visibility

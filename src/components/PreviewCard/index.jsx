@@ -56,6 +56,7 @@ const PreviewCard = (props) => {
                               userId,
                             },
                           });
+                          alert('Room added to favorites');
                         };
                         return <FavButton onClick={handleFavorite} />;
                       }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import styled, { css } from 'styled-components';
 const flex = css`
   display: flex;
@@ -227,6 +226,5 @@ export const Buttons = styled.section`
     &:hover, &:active, &:focus{
     background:#ff555e;
     }
+  }
 `;
-=======
->>>>>>> fd62646f83bf08e868b3f6e3d4a18b4c5522eb03

@@ -43,4 +43,4 @@ export const Button = styled.button`
     &:hover, &:active, &:focus{
       background: #ff555e;
     }
-`
+`;
