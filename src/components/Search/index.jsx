@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdSearch } from 'react-icons/md';
 import { Container, SearchContainer } from './styles';
-import backgroundHome from '../../assets/images/BackgroundHome.png';
+import backgroundHome from '../../assets/images/BackgroundHome.webp';
 const imageBackgroundStyle = {
   backgroundImage: `url(${backgroundHome})`,
   backgroundRepeat: 'no-repeat',

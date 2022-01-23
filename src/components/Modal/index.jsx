@@ -10,7 +10,7 @@ import {
   BlackBackground,
   Circle,
 } from './styles';
-import background from '../../assets/images/BGModal.png';
+import background from '../../assets/images/BGModal.webp';
 import logoKumpel from '../../assets/images/Logo.svg';
 const Modal = () => {
   const [modal, setModal] = useState(true);

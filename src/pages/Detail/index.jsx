@@ -40,7 +40,7 @@ import whatsappIconWhite from '../../assets/images/WhatsAppIconWhite.svg';
 import heart from '../../assets/images/Heart.svg';
 import twoGirls from '../../assets/images/TwoGirls.png';
 import peopleImage from '../../assets/images/PeopleImage.png';
-import backgroundDetailDesktopImage from '../../assets/images/BackgroundDetailDesktop.png';
+import backgroundDetailDesktopImage from '../../assets/images/BackgroundDetailDesktop.jpg';
 import BackButton from '../../components/BackButton';
 import Tooltip from '../../components/Tooltip';
 import { Context } from '../../Context';
@@ -105,32 +105,28 @@ const Detail = (props) => {
                   </p>
                 </div>
                 <Social>
-                  {
-                    isAuth && (
-                      <div>
-                        <a
-                          href={`https:
-                        >
-                          <button type="submit">
-                            <img src={whatsappIconWhite} alt="WhatsApp" />
-                            WhatsApp
-                          </button>
-                        </a>
-                      </div>
-                    )
-                  }
-                  {
-                    !isAuth && (
-                      <div>
-                        <Link to="/login">
-                          <button type="submit">
-                            <img src={whatsappIconWhite} alt="WhatsApp" />
-                            WhatsApp
-                          </button>
-                        </Link>
-                      </div>
-                    )
-                  }
+                  {isAuth && (
+                    <div>
+                      <a
+                        href={`https:
+                      >
+                        <button type="submit">
+                          <img src={whatsappIconWhite} alt="WhatsApp" />
+                          WhatsApp
+                        </button>
+                      </a>
+                    </div>
+                  )}
+                  {!isAuth && (
+                    <div>
+                      <Link to="/login">
+                        <button type="submit">
+                          <img src={whatsappIconWhite} alt="WhatsApp" />
+                          WhatsApp
+                        </button>
+                      </Link>
+                    </div>
+                  )}
                   <div>
                     <p>{host.email}</p>
                     <img src={emailIcon} alt="WhatsApp" />
@@ -152,32 +148,28 @@ const Detail = (props) => {
                   </p>
                 </div>
                 <Social>
-                  {
-                    isAuth && (
-                      <div>
-                        <a
-                          href={`https:
-                        >
-                          <button type="submit">
-                            <img src={whatsappIconWhite} alt="WhatsApp" />
-                            WhatsApp
-                          </button>
-                        </a>
-                      </div>
-                    )
-                  }
-                  {
-                    !isAuth && (
-                      <div>
-                        <Link to="/login">
-                          <button type="submit">
-                            <img src={whatsappIconWhite} alt="WhatsApp" />
-                            WhatsApp
-                          </button>
-                        </Link>
-                      </div>
-                    )
-                  }
+                  {isAuth && (
+                    <div>
+                      <a
+                        href={`https:
+                      >
+                        <button type="submit">
+                          <img src={whatsappIconWhite} alt="WhatsApp" />
+                          WhatsApp
+                        </button>
+                      </a>
+                    </div>
+                  )}
+                  {!isAuth && (
+                    <div>
+                      <Link to="/login">
+                        <button type="submit">
+                          <img src={whatsappIconWhite} alt="WhatsApp" />
+                          WhatsApp
+                        </button>
+                      </Link>
+                    </div>
+                  )}
                   <div>
                     <p>{host.email}</p>
                     <img src={emailIcon} alt="WhatsApp" />
@@ -206,11 +198,11 @@ const Detail = (props) => {
                 <Section>
                   <Subtitle>References:</Subtitle>
                   <TagsReferences>
-                    {places.length > 0 ?
-                      places.map((item) => (
-                        <li key={item.id}>{item.details}</li>
-                      )) :
-                      'No features Found'}
+                    {places.length > 0
+                      ? places.map((item) => (
+                          <li key={item.id}>{item.details}</li>
+                        ))
+                      : 'No features Found'}
                   </TagsReferences>
                 </Section>
               </AddressAndReferencesDesktop>
@@ -227,7 +219,10 @@ const Detail = (props) => {
                         return (
                           <Tooltip text={feature.name} key={feature.id}>
                             <GridEach>
-                              <img src={`${imagesBaseUrl}/${feature.icon}`} alt={`${feature.name}`} />
+                              <img
+                                src={`${imagesBaseUrl}/${feature.icon}`}
+                                alt={`${feature.name}`}
+                              />
                               <img
                                 src={infoIcon}
                                 alt={`More information about ${feature.name}`}
@@ -259,7 +254,10 @@ const Detail = (props) => {
                         return (
                           <Tooltip text={feature.name} key={feature.id}>
                             <GridEach>
-                              <img src={`${imagesBaseUrl}/${feature.icon}`} alt={`${feature.name}`} />
+                              <img
+                                src={`${imagesBaseUrl}/${feature.icon}`}
+                                alt={`${feature.name}`}
+                              />
                               <img
                                 src={infoIcon}
                                 alt={`More information about ${feature.name}`}
@@ -286,11 +284,11 @@ const Detail = (props) => {
                   </p>
                 </Section>
                 <TagsInterest>
-                  {places.length > 0 ?
-                    places.map((item) => (
-                      <li key={item.id}>{item.details}</li>
-                    )) :
-                    'No features Found'}
+                  {places.length > 0
+                    ? places.map((item) => (
+                        <li key={item.id}>{item.details}</li>
+                      ))
+                    : 'No features Found'}
                 </TagsInterest>
               </AtmosphereDesktop>
               <ContactButtons>

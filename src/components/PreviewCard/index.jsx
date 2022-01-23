@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from '@reach/router';
+import LazyLoad from 'react-lazyload';
 import useNearScreen from '../../hooks/useNearScreen';
 import {
   Article,
@@ -39,16 +40,22 @@ const PreviewCard = (props) => {
   } = props;
   const [show, ref] = useNearScreen();
   return (
-    <Link role="group" aria-label={`room ${id}`} to={`/detail/${id}`} ref={ref} alt={`Room Offer ${id}`}>
+    <Link
+      role="group"
+      aria-label={`room ${id}`}
+      to={`/detail/${id}`}
+      ref={ref}
+      alt={`Room Offer ${id}`}
+    >
       {show && (
-        <Article role="textbox">
-          <Container role="group">
-            <ContainerImage role="group">
-              {isAuth && showFav && (
-                <OverlayHeart role="none">
-                  <ToggleLikeMutation>
-                    {
-                      (toggleLike) => {
+        <LazyLoad height={250}>
+          <Article role="textbox">
+            <Container role="group">
+              <ContainerImage role="group">
+                {isAuth && showFav && (
+                  <OverlayHeart role="none">
+                    <ToggleLikeMutation>
+                      {(toggleLike) => {
                         const handleFavorite = () => {
                           toggleLike({
                             variables: {
@@ -59,48 +66,53 @@ const PreviewCard = (props) => {
                           alert('Room added to favorites');
                         };
                         return <FavButton onClick={handleFavorite} />;
-                      }
-                    }
-                  </ToggleLikeMutation>
-                </OverlayHeart>
-              )}
-              <OverlayHost role="group">
-                <ContainerHost role="none">
-                  <HostName aria-label="Host photo">{host.fullName}</HostName>
-                  <ImageHost
-                    role="img"
-                    aria-label="Host name"
-                    src={`${imagesBaseUrl}/${host.profile.picture}`}
-                    alt={`${host.fullName}`}
-                  />
-                </ContainerHost>
-              </OverlayHost>
-              <ImageRoom role="img" aria-label="room preview preview" src={`${imagesBaseUrl}/${mainImage}`} alt="room preview" />
-            </ContainerImage>
-            <Description role="group">
-              <Availability role="list">
-                <Available role="listitem" arial-label="availability">
-                  Availability:
-                  {' '}
-                  {new Date(availabilityDate).toLocaleDateString('en-US')}
-                </Available>
-                <Price role="listitem" aria-label="price">
-                  $
-                  {price}
-                </Price>
-              </Availability>
-              <Title aria-label="title">
-                {title.length > 49 ? `${title.substring(0, 50)}...` : title}
-              </Title>
-              <AddressContainer role="group">
-                <AddressTitle role="none">Address:</AddressTitle>
-                <Address aria-label="address">
-                  {address.length > 55 ? `${address.substring(0, 56)}...` : address}
-                </Address>
-              </AddressContainer>
-            </Description>
-          </Container>
-        </Article>
+                      }}
+                    </ToggleLikeMutation>
+                  </OverlayHeart>
+                )}
+                <OverlayHost role="group">
+                  <ContainerHost role="none">
+                    <HostName aria-label="Host photo">{host.fullName}</HostName>
+                    <ImageHost
+                      role="img"
+                      aria-label="Host name"
+                      src={`${imagesBaseUrl}/${host.profile.picture}`}
+                      alt={`${host.fullName}`}
+                    />
+                  </ContainerHost>
+                </OverlayHost>
+                <ImageRoom
+                  role="img"
+                  aria-label="room preview preview"
+                  src={`${imagesBaseUrl}/${mainImage}`}
+                  alt="room preview"
+                />
+              </ContainerImage>
+              <Description role="group">
+                <Availability role="list">
+                  <Available role="listitem" arial-label="availability">
+                    Availability:{' '}
+                    {new Date(availabilityDate).toLocaleDateString('en-US')}
+                  </Available>
+                  <Price role="listitem" aria-label="price">
+                    ${price}
+                  </Price>
+                </Availability>
+                <Title aria-label="title">
+                  {title.length > 49 ? `${title.substring(0, 50)}...` : title}
+                </Title>
+                <AddressContainer role="group">
+                  <AddressTitle role="none">Address:</AddressTitle>
+                  <Address aria-label="address">
+                    {address.length > 55
+                      ? `${address.substring(0, 56)}...`
+                      : address}
+                  </Address>
+                </AddressContainer>
+              </Description>
+            </Container>
+          </Article>
+        </LazyLoad>
       )}
     </Link>
   );
